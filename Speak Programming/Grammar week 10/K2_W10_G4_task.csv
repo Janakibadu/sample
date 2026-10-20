@@ -1,0 +1,10 @@
+trial;image1;image2;image2_silhouette;instruction;correct_position;follow_up_correct;follow_up_incorrect_first_time;follow_up_incorrect_second_time
+1;i_567.png;i_579.png;i_580.png;at_2275.mp3;next_to;stars_correct.mp3;ai_122.mp3;at_2284.mp3
+1;i_567.png;i_579.png;i_580.png;at_2276.mp3;under;stars_correct.mp3;ai_122.mp3;at_2285.mp3
+1;i_567.png;i_579.png;i_580.png;at_2277.mp3;above;stars_correct.mp3;ai_122.mp3;at_2286.mp3
+2;i_581.png;i_582.png;i_585.png;at_2278.mp3;next_to;stars_correct.mp3;ai_122.mp3;at_2287.mp3
+2;i_581.png;i_582.png;i_585.png;at_2279.mp3;under;stars_correct.mp3;ai_122.mp3;at_2288.mp3
+2;i_581.png;i_582.png;i_585.png;at_2280.mp3;above;stars_correct.mp3;ai_122.mp3;at_2289.mp3
+3;i_572.png;i_583.png;i_584.png;at_2281.mp3;next_to;stars_correct.mp3;ai_122.mp3;at_2290.mp3
+3;i_572.png;i_583.png;i_584.png;at_2282.mp3;under;stars_correct.mp3;ai_122.mp3;at_2291.mp3
+3;i_572.png;i_583.png;i_584.png;at_2283.mp3;above;stars_correct.mp4;ai_122.mp3;at_2292.mp3

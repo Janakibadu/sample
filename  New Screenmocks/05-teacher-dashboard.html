@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>SPEAK — Lehrkraft-Dashboard</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+  .grid-stats { display:grid; grid-template-columns: repeat(4, 1fr); gap:16px; margin-bottom:22px; }
+  .stat { padding:18px 20px; }
+  .stat .num { font-family:var(--font-fun); font-size:30px; font-weight:800; }
+  .two-col { display:grid; grid-template-columns: 1.4fr 1fr; gap:20px; }
+  .bar-row { display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+  .bar-row .name { width:110px; font-size:13.5px; font-weight:600; }
+  .bar-row .track { flex:1; }
+  .bar-row .pct { width:38px; text-align:right; font-size:13px; color:var(--ink-soft); }
+  .chart-donut {
+    width:150px; height:150px; border-radius:50%; margin: 6px auto 14px;
+    background: conic-gradient(var(--mint) 0 68%, var(--line) 68% 100%);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .chart-donut span { width:104px; height:104px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; font-family:var(--font-fun); font-weight:800; font-size:22px;}
+</style>
+</head>
+<body class="app">
+
+  <div class="funder-bar">
+    <img class="funder-logo-tud" src="assets/tud_logo_cmyk.png" alt="TU Dortmund Logo">
+    <img src="assets/IFS.png" alt="IFS Logo">
+    <img src="assets/speak-logo.png" alt="SPEAK Logo">
+    <img class="funder-logo-bund" src="assets/Bundesministrerium.jpg" alt="Bundesministerium Logo">
+    <img src="assets/EBF.jpg" alt="EBF Logo">
+  </div>
+
+  <div class="app-shell">
+    <div class="sidebar">
+      <img class="logo-mark" src="assets/speak-logo.png" alt="SPEAK" style="height:65px; margin-bottom:20px;">
+      <a class="nav-item active" href="05-teacher-dashboard.html"><span class="ic">🏠</span> Dashboard</a>
+      <a class="nav-item" href="06-class-management.html"><span class="ic">👥</span> Klassen &amp; Schüler:innen</a>
+      <a class="nav-item" href="07-assignment.html"><span class="ic">📌</span> Zuweisungen</a>
+      <a class="nav-item" href="09-results.html"><span class="ic">📊</span> Ergebnisse</a>
+      <div class="nav-spacer"></div>
+      <div class="nav-foot">
+        <a class="nav-item" href="01-home.html"><span class="ic">🚪</span> Abmelden</a>
+      </div>
+    </div>
+
+    <div style="flex:1; display:flex; flex-direction:column;">
+      <div class="topbar">
+        <div class="h3">Guten Tag, Frau Müller 👋</div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <span class="pill pill-sky">🇪🇺 In der EU gehostet</span>
+          <a class="avatar" href="01-home.html" title="Abmelden">FM</a>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="grid-stats">
+          <div class="card stat"><div class="muted">Klassen</div><div class="num">3</div></div>
+          <div class="card stat"><div class="muted">Schüler:innen</div><div class="num">57</div></div>
+          <div class="card stat"><div class="muted">Zugewiesene Module</div><div class="num">9</div></div>
+          <div class="card stat"><div class="muted">Ø Abschlussquote</div><div class="num" style="color:var(--mint-ink);">72%</div></div>
+        </div>
+
+        <div class="two-col">
+          <div class="card">
+            <div class="h3" style="margin-bottom:16px;">Klassenabschluss — Einheit 10 · Grammatik</div>
+            <div class="bar-row"><div class="name">1A</div><div class="track progress-track"><div class="progress-fill" style="width:82%; background:var(--mint);"></div></div><div class="pct">82%</div></div>
+            <div class="bar-row"><div class="name">1B</div><div class="track progress-track"><div class="progress-fill" style="width:64%; background:var(--sky);"></div></div><div class="pct">64%</div></div>
+            <div class="bar-row"><div class="name">1C</div><div class="track progress-track"><div class="progress-fill" style="width:41%; background:var(--sun);"></div></div><div class="pct">41%</div></div>
+
+            <div class="h3" style="margin:22px 0 14px;">Letzte Aktivitäten</div>
+            <table class="data">
+              <tr><th>Schüler:in</th><th>Modul</th><th>Aufgabe</th><th>Ergebnis</th></tr>
+              <tr><td>🧒 Elli</td><td>W10 Grammatik</td><td>G1 Artikel</td><td><span class="pill pill-mint">Abgeschlossen 5/5</span></td></tr>
+              <tr><td>🧒 Yusuf</td><td>W6 Wortschatz</td><td>B Audio→Bild</td><td><span class="pill pill-sun">In Bearbeitung</span></td></tr>
+              <tr><td>🧒 Lio</td><td>W12 Grammatik</td><td>V_3 Lückentext</td><td><span class="pill pill-coral">Unterstützung benötigt</span></td></tr>
+            </table>
+          </div>
+
+          <div class="card" style="text-align:center;">
+            <div class="h3">Gesamtabschluss</div>
+            <div class="chart-donut"><span>68%</span></div>
+            <div class="muted">Über alle zugewiesenen Module dieses Halbjahr</div>
+            <a class="btn btn-md btn-primary" href="09-results.html" style="width:100%; margin-top:16px;">📄 Alle Ergebnisse ansehen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

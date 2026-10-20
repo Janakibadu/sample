@@ -1,0 +1,1924 @@
+W10_G5
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 block_type W10_G5
+setcycle 0 explanation_audio "ai_104.mp3"
+setcycle 0 goodbye_audio "ai_105.mp3"
+setcycle 0 welcome_image "Week10_G5.png"
+setcycle 0 week 10
+setcycle 0 task_type G5
+setcycle 0 audio_your_turn "ai_113.mp3"
+run AD_block_sequence
+
+AD_block_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run AD_init_block_booleans True
+run AD_block_variables True
+run AD_pair_function True
+run AD_show_instructions True
+run AD_play_instructions True
+run AD_examples True
+run new_3_sampler True
+run AD_block_loop True
+run yoohoo True
+
+AD_init_block_booleans
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+word_audio = "None.mp3"
+resulting_sentence = "None.mp3"
+__end__
+
+AD_block_variables
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+x_speaker = 0
+y_speaker = -250
+
+x_top_coordinates = linspace(-350, 350, 4);
+
+[x_image1, x_image2, x_article, x_image3] = x_top_coordinates;
+y_image1 = -200;
+y_image2 = -200;
+y_article = -200;
+y_image3 = -200;
+
+
+
+
+y_image4 = 200
+y_image5 = 200
+y_image6 = 200
+y_image7 = 200
+y_image8 = 200
+y_image9 = 200
+
+y_article4 = y_image4 + 100
+y_article5 = y_image5 + 100
+y_article6 = y_image6 + 100
+y_article7 = y_image7 + 100
+y_article8 = y_image8 + 100
+y_article9 = y_image9 + 100
+
+scale_upper = 0.4
+scale_box_upper = 0.8
+
+scale_lower = 0.25
+scale_box_lower = 0.5
+
+font_size = 100
+font_size_nominative_article = 50
+__end__
+
+AD_pair_function
+
+set description "Executes Python code"
+___run__
+function getPair(value) {
+    const pairs = {
+        4: 7, 7: 4,
+        5: 8, 8: 5,
+        6: 9, 9: 6
+    };
+
+    return pairs[value];
+}
+__end__
+set _prepare ""
+
+AD_show_instructions
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{welcome_image}" scale=1 show_if=True x=0 y=0 z_index=0
+
+AD_play_instructions
+
+set volume 1
+set stop_after 0
+set sample "{explanation_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+AD_examples
+
+set source_file ""
+set source table
+set repeat 1
+set order sequential
+set description "Repeatedly runs another item"
+set cycles 3
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 image1 "i_140.jpg"
+setcycle 0 image1_audio "at_1445.mp3"
+setcycle 0 image2 "i_417.png"
+setcycle 0 image2_audio "at_1437.mp3"
+setcycle 0 article die
+setcycle 0 image3 "i_115.jpg"
+setcycle 0 image3_audio "at_5206.mp3"
+setcycle 0 image4 "i_113.jpg"
+setcycle 0 image5 "i_369.jpg"
+setcycle 0 image6 "i_184.jpg"
+setcycle 0 image7 "i_156.jpg"
+setcycle 0 image8 "i_371.jpg"
+setcycle 0 image9 "i_115.jpg"
+setcycle 0 color red
+setcycle 0 nominative_article4 die
+setcycle 0 nominative_article5 der
+setcycle 0 nominative_article6 das
+setcycle 0 nominative_article7 das
+setcycle 0 nominative_article8 der
+setcycle 0 nominative_article9 die
+setcycle 0 color4 red
+setcycle 0 color5 blue
+setcycle 0 color6 green
+setcycle 0 color7 green
+setcycle 0 color8 blue
+setcycle 0 color9 red
+setcycle 1 image1 "i_140.jpg"
+setcycle 1 image1_audio "at_1445.mp3"
+setcycle 1 image2 "i_417.png"
+setcycle 1 image2_audio "at_1437.mp3"
+setcycle 1 article das
+setcycle 1 image3 "i_184.jpg"
+setcycle 1 image3_audio "at_1439.mp3"
+setcycle 1 image4 "i_115.jpg"
+setcycle 1 image5 "i_369.jpg"
+setcycle 1 image6 "i_113.jpg"
+setcycle 1 image7 "i_156.jpg"
+setcycle 1 image8 "i_371.jpg"
+setcycle 1 image9 "i_184.jpg"
+setcycle 1 color green
+setcycle 1 nominative_article4 die
+setcycle 1 nominative_article5 der
+setcycle 1 nominative_article6 die
+setcycle 1 nominative_article7 das
+setcycle 1 nominative_article8 der
+setcycle 1 nominative_article9 das
+setcycle 1 color4 red
+setcycle 1 color5 blue
+setcycle 1 color6 red
+setcycle 1 color7 green
+setcycle 1 color8 blue
+setcycle 1 color9 green
+setcycle 2 image1 "i_140.jpg"
+setcycle 2 image1_audio "at_1445.mp3"
+setcycle 2 image2 "i_417.png"
+setcycle 2 image2_audio "at_1437.mp3"
+setcycle 2 article den
+setcycle 2 image3 "i_369.jpg"
+setcycle 2 image3_audio "at_5207.mp3"
+setcycle 2 image4 "i_115.jpg"
+setcycle 2 image5 "i_371.jpg"
+setcycle 2 image6 "i_113.jpg"
+setcycle 2 image7 "i_184.jpg"
+setcycle 2 image8 "i_156.jpg"
+setcycle 2 image9 "i_369.jpg"
+setcycle 2 color blue
+setcycle 2 nominative_article4 die
+setcycle 2 nominative_article5 der
+setcycle 2 nominative_article6 die
+setcycle 2 nominative_article7 das
+setcycle 2 nominative_article8 das
+setcycle 2 nominative_article9 der
+setcycle 2 color4 red
+setcycle 2 color5 blue
+setcycle 2 color6 red
+setcycle 2 color7 green
+setcycle 2 color8 green
+setcycle 2 color9 blue
+run AD_examples_sequence
+
+AD_examples_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run AD_init_coordinates True
+run AD_example_booleans True
+run AD_example_loop True
+run AD_example_show_stars True
+run AD_example_display True
+run AD_stars_sampler True
+run AD_pause_after_examples True
+run AD_empty True
+run AD_flip_examples True
+
+AD_init_coordinates
+
+set description "Executes Python code"
+___run__
+x_lower_coordinates = linspace(-400, 400, 6);
+
+[x_image4, x_image5, x_image6, x_image7, x_image8, x_image9] = x_lower_coordinates;
+__end__
+set _prepare ""
+
+AD_example_booleans
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+show_example_image1 = 0
+show_example_image2 = 0
+show_example_image3 = 0
+show_example_article = 0
+
+show_example_image4 = 1
+show_example_image5 = 1
+show_example_image6 = 1
+show_example_image7 = 1
+show_example_image8 = 1
+show_example_image9 = 1
+show_example_box4 = 1
+show_example_box5 = 1
+show_example_box6 = 1
+show_example_box7 = 1
+show_example_box8 = 1
+show_example_box9 = 1
+
+show_nominative_article4 = 1
+show_nominative_article5 = 1
+show_nominative_article6 = 1
+show_nominative_article7 = 1
+show_nominative_article8 = 1
+show_nominative_article9 = 1
+
+show_stars = 0
+__end__
+
+AD_example_loop
+
+set source_file ""
+set source table
+set repeat 1
+set order sequential
+set description "Repeatedly runs another item"
+set cycles 3
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 stimulus image1
+setcycle 0 example_audio "{image1_audio}"
+setcycle 1 stimulus image2
+setcycle 1 example_audio "{image2_audio}"
+setcycle 2 stimulus image3
+setcycle 2 example_audio "{image3_audio}"
+run AD_example_sequence
+
+AD_example_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run AD_example_variables True
+run AD_example_display True
+run AD_example_sampler True
+
+
+AD_example_variables
+
+set description "Executes Python code"
+___run__
+window["show_example_" + stimulus] = 1
+
+if (stimulus === 'image3') {
+  show_example_article = 1
+  show_example_box9 = 0
+  show_example_image9 = 0
+  show_nominative_article9 = 0
+  }
+__end__
+set _prepare ""
+
+
+AD_example_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=None scale="{scale_upper}" show_if="show_example_image1 == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=None scale="{scale_upper}" show_if="show_example_image2 == 1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" name=None scale="{scale_upper}" show_if="show_example_image3 == 1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_article}" y="{y_article}" z_index=0
+draw textline center=1 color="{color}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_example_article==1" text="{article}" x="{x_article}" y="{y_article}" z_index=0
+draw image center=1 file="{image4}" name=image4 scale="{scale_lower}" show_if="show_example_image4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="{image5}" name=image5 scale="{scale_lower}" show_if="show_example_image5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="{image6}" name=image6 scale="{scale_lower}" show_if="show_example_image6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="{image7}" name=image7 scale="{scale_lower}" show_if="show_example_image7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="{image8}" name=image8 scale="{scale_lower}" show_if="show_example_image8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="{image9}" name=image9 scale="{scale_lower}" show_if="show_example_image9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_example_box4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_example_box5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_example_box6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_example_box7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_example_box8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_example_box9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw textline center=1 color="{color4}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article4==1" text="{nominative_article4}" x="{x_image4}" y="{y_article4}" z_index=0
+draw textline center=1 color="{color5}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article5==1" text="{nominative_article5}" x="{x_image5}" y="{y_article5}" z_index=0
+draw textline center=1 color="{color6}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article6==1" text="{nominative_article6}" x="{x_image6}" y="{y_article6}" z_index=0
+draw textline center=1 color="{color7}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article7==1" text="{nominative_article7}" x="{x_image7}" y="{y_article7}" z_index=0
+draw textline center=1 color="{color8}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article8==1" text="{nominative_article8}" x="{x_image8}" y="{y_article8}" z_index=0
+draw textline center=1 color="{color9}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article9==1" text="{nominative_article9}" x="{x_image9}" y="{y_article9}" z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="show_stars==1" x=0 y=0 z_index=0
+
+AD_example_sampler
+
+set volume 1
+set stop_after 0
+set sample "{example_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+AD_example_show_stars
+
+set description "Executes Python code"
+set _run "show_stars = 1"
+set _prepare ""
+
+AD_example_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=None scale="{scale_upper}" show_if="show_example_image1 == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=None scale="{scale_upper}" show_if="show_example_image2 == 1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" name=None scale="{scale_upper}" show_if="show_example_image3 == 1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_article}" y="{y_article}" z_index=0
+draw textline center=1 color="{color}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_example_article==1" text="{article}" x="{x_article}" y="{y_article}" z_index=0
+draw image center=1 file="{image4}" name=image4 scale="{scale_lower}" show_if="show_example_image4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="{image5}" name=image5 scale="{scale_lower}" show_if="show_example_image5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="{image6}" name=image6 scale="{scale_lower}" show_if="show_example_image6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="{image7}" name=image7 scale="{scale_lower}" show_if="show_example_image7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="{image8}" name=image8 scale="{scale_lower}" show_if="show_example_image8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="{image9}" name=image9 scale="{scale_lower}" show_if="show_example_image9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_example_box4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_example_box5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_example_box6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_example_box7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_example_box8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_example_box9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw textline center=1 color="{color4}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article4==1" text="{nominative_article4}" x="{x_image4}" y="{y_article4}" z_index=0
+draw textline center=1 color="{color5}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article5==1" text="{nominative_article5}" x="{x_image5}" y="{y_article5}" z_index=0
+draw textline center=1 color="{color6}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article6==1" text="{nominative_article6}" x="{x_image6}" y="{y_article6}" z_index=0
+draw textline center=1 color="{color7}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article7==1" text="{nominative_article7}" x="{x_image7}" y="{y_article7}" z_index=0
+draw textline center=1 color="{color8}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article8==1" text="{nominative_article8}" x="{x_image8}" y="{y_article8}" z_index=0
+draw textline center=1 color="{color9}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article9==1" text="{nominative_article9}" x="{x_image9}" y="{y_article9}" z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="show_stars==1" x=0 y=0 z_index=0
+
+AD_stars_sampler
+
+set volume 1
+set stop_after 0
+set sample "stars_correct.mp3"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+AD_pause_after_examples
+
+set jitter_mode Uniform
+set jitter 0
+set duration 3000
+set description "A random delay sampled from either a normal or uniform distribution"
+
+AD_empty
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_article}" y="{y_article}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if=True x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if=True x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if=True x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if=True x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if=True x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if=True x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if=True x=0 y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+
+AD_flip_examples
+
+set volume 0.3
+set stop_after 0
+set sample "flip_sound.wav"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+new_3_sampler
+
+set volume 1
+set stop_after 0
+set sample "{audio_your_turn}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+AD_block_loop
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 3
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 question "at_1667.mp3"
+setcycle 0 image1 "i_001.jpg"
+setcycle 0 audio1 "at_1303.mp3"
+setcycle 0 image2 "i_451.jpg"
+setcycle 0 audio2 "at_1668.mp3"
+setcycle 0 image4 "i_005.jpg"
+setcycle 0 audio4 "at_3975.mp3"
+setcycle 0 article4 die
+setcycle 0 nominative_article4 die
+setcycle 0 whole_sentence_image4 "at_5199.mp3"
+setcycle 0 image5 "i_147.jpg"
+setcycle 0 audio5 "at_421.mp3"
+setcycle 0 article5 das
+setcycle 0 nominative_article5 das
+setcycle 0 whole_sentence_image5 "at_5200.mp3"
+setcycle 0 image6 "i_249.jpg"
+setcycle 0 audio6 "at_1548.mp3"
+setcycle 0 article6 den
+setcycle 0 nominative_article6 der
+setcycle 0 whole_sentence_image6 "at_5201.mp3"
+setcycle 0 image7 "i_411.jpg"
+setcycle 0 audio7 "at_5205.mp3"
+setcycle 0 article7 die
+setcycle 0 nominative_article7 die
+setcycle 0 whole_sentence_image7 "at_5202.mp3"
+setcycle 0 image8 "i_150.jpg"
+setcycle 0 audio8 "at_3216.mp3"
+setcycle 0 article8 das
+setcycle 0 nominative_article8 das
+setcycle 0 whole_sentence_image8 "at_5203.mp3"
+setcycle 0 image9 "i_135.jpg"
+setcycle 0 audio9 "at_1422.mp3"
+setcycle 0 article9 den
+setcycle 0 nominative_article9 der
+setcycle 0 whole_sentence_image9 "at_5204.mp3"
+setcycle 0 color4 red
+setcycle 0 color5 green
+setcycle 0 color6 blue
+setcycle 0 color7 red
+setcycle 0 color8 green
+setcycle 0 color9 blue
+setcycle 1 question "at_1444.mp3"
+setcycle 1 image1 "i_140.jpg"
+setcycle 1 audio1 "at_1445.mp3"
+setcycle 1 image2 "i_417.png"
+setcycle 1 audio2 "at_1437.mp3"
+setcycle 1 image4 "i_115.jpg"
+setcycle 1 audio4 "at_5206.mp3"
+setcycle 1 article4 die
+setcycle 1 nominative_article4 die
+setcycle 1 whole_sentence_image4 "at_5209.mp3"
+setcycle 1 image5 "i_184.jpg"
+setcycle 1 audio5 "at_1439.mp3"
+setcycle 1 article5 das
+setcycle 1 nominative_article5 das
+setcycle 1 whole_sentence_image5 "at_5210.mp3"
+setcycle 1 image6 "i_369.jpg"
+setcycle 1 audio6 "at_5207.mp3"
+setcycle 1 article6 den
+setcycle 1 nominative_article6 der
+setcycle 1 whole_sentence_image6 "at_5211.mp3"
+setcycle 1 image7 "i_113.jpg"
+setcycle 1 audio7 "at_4059.mp3"
+setcycle 1 article7 die
+setcycle 1 nominative_article7 die
+setcycle 1 whole_sentence_image7 "at_5212.mp3"
+setcycle 1 image8 "i_156.jpg"
+setcycle 1 audio8 "at_4216.mp3"
+setcycle 1 article8 das
+setcycle 1 nominative_article8 das
+setcycle 1 whole_sentence_image8 "at_5213.mp3"
+setcycle 1 image9 "i_371.jpg"
+setcycle 1 audio9 "at_5208.mp3"
+setcycle 1 article9 den
+setcycle 1 nominative_article9 der
+setcycle 1 whole_sentence_image9 "at_5214.mp3"
+setcycle 1 color4 red
+setcycle 1 color5 green
+setcycle 1 color6 blue
+setcycle 1 color7 red
+setcycle 1 color8 green
+setcycle 1 color9 blue
+setcycle 2 question "at_1449.mp3"
+setcycle 2 image1 "i_526.jpg"
+setcycle 2 audio1 "at_5198.mp3"
+setcycle 2 image2 "i_416.png"
+setcycle 2 audio2 "at_1436.mp3"
+setcycle 2 image4 "i_114.jpg"
+setcycle 2 audio4 "at_430.mp3"
+setcycle 2 article4 die
+setcycle 2 nominative_article4 die
+setcycle 2 whole_sentence_image4 "at_5218.mp3"
+setcycle 2 image5 "i_370.jpg"
+setcycle 2 audio5 "at_2010.mp3"
+setcycle 2 article5 das
+setcycle 2 nominative_article5 das
+setcycle 2 whole_sentence_image5 "at_5219.mp3"
+setcycle 2 image6 "i_364.jpg"
+setcycle 2 audio6 "at_5215.mp3"
+setcycle 2 article6 den
+setcycle 2 nominative_article6 der
+setcycle 2 whole_sentence_image6 "at_5220.mp3"
+setcycle 2 image7 "i_120.jpg"
+setcycle 2 audio7 "at_5216.mp3"
+setcycle 2 article7 die
+setcycle 2 nominative_article7 die
+setcycle 2 whole_sentence_image7 "at_5221.mp3"
+setcycle 2 image8 "i_478.jpg"
+setcycle 2 audio8 "at_5217.mp3"
+setcycle 2 article8 das
+setcycle 2 nominative_article8 das
+setcycle 2 whole_sentence_image8 "at_5222.mp3"
+setcycle 2 image9 "i_200.jpg"
+setcycle 2 audio9 "at_4775.mp3"
+setcycle 2 article9 den
+setcycle 2 nominative_article9 der
+setcycle 2 whole_sentence_image9 "at_5223.mp3"
+setcycle 2 color4 red
+setcycle 2 color5 green
+setcycle 2 color6 blue
+setcycle 2 color7 red
+setcycle 2 color8 green
+setcycle 2 color9 blue
+run AD_play_four_times_sequence
+
+AD_play_four_times_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run AD_init_list True
+run AD_init_coordinates True
+run AD_init_trial_booleans True
+run new_7_inline_javascript True
+run AD_display True
+run AD_animation True
+run AD_show_upper_images True
+run AD_display True
+run AD_animation_loop True
+run AD_shuffle_coordinates True
+run AD_reveal_lower_row True
+run AD_display True
+run AD_appear True
+run AD_play_four_times True
+run new_8_inline_javascript True
+run new_2_logger True
+
+AD_init_list
+
+image_list = []
+
+AD_init_coordinates
+
+set description "Executes Python code"
+___run__
+x_lower_coordinates = linspace(-400, 400, 6);
+
+[x_image4, x_image5, x_image6, x_image7, x_image8, x_image9] = x_lower_coordinates;
+__end__
+set _prepare ""
+
+AD_init_trial_booleans
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+repeat_click = 1
+
+show_image1 = 0
+show_image2 = 0
+show_image3 = 0
+show_article = 0
+show_image4 = 0
+show_image5 = 0
+show_image6 = 0
+show_image7 = 0
+show_image8 = 0
+show_image9 = 0
+
+show_box4 = 0
+show_box5 = 0
+show_box6 = 0
+show_box7 = 0
+show_box8 = 0
+show_box9 = 0
+
+
+show_nominative_article4 = 0
+show_nominative_article5 = 0
+show_nominative_article6 = 0
+show_nominative_article7 = 0
+show_nominative_article8 = 0
+show_nominative_article9 = 0
+
+
+image3 ="None.png"
+
+show_highlight = 0
+
+upper_image_audio = "None.mp3"
+show_selected_upper_word = 0
+
+show_stars = 0
+show_selection = 0
+
+x_selected = 0
+y_selected = 0
+__end__
+
+new_7_inline_javascript
+
+set description "Executes Python code"
+set _run "s_time = Date.now()"
+set _prepare ""
+
+AD_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=None scale="{scale_upper}" show_if="show_image1 == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=None scale="{scale_upper}" show_if="show_image2 == 1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_article}" y="{y_article}" z_index=0
+draw image center=1 file="{image3}" name=None scale="{scale_upper}" show_if="show_image3 == 1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="{image4}" name=image4 scale="{scale_lower}" show_if="show_image4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="{image5}" name=image5 scale="{scale_lower}" show_if="show_image5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="{image6}" name=image6 scale="{scale_lower}" show_if="show_image6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="{image7}" name=image7 scale="{scale_lower}" show_if="show_image7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="{image8}" name=image8 scale="{scale_lower}" show_if="show_image8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="{image9}" name=image9 scale="{scale_lower}" show_if="show_image9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio1 scale="{scale_box_upper}" show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio2 scale="{scale_box_upper}" show_if=True x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_selected_upper_word==1" x="{x_selected_upper_word}" y="{y_selected_upper_word}" z_index=0
+draw textline center=1 color="{color}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_article==1" text="{article}" x="{x_article}" y="{y_article}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw textline center=1 color="{color4}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article4==1" text="{nominative_article4}" x="{x_image4}" y="{y_article4}" z_index=0
+draw textline center=1 color="{color5}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article5==1" text="{nominative_article5}" x="{x_image5}" y="{y_article5}" z_index=0
+draw textline center=1 color="{color6}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article6==1" text="{nominative_article6}" x="{x_image6}" y="{y_article6}" z_index=0
+draw textline center=1 color="{color7}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article7==1" text="{nominative_article7}" x="{x_image7}" y="{y_article7}" z_index=0
+draw textline center=1 color="{color8}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article8==1" text="{nominative_article8}" x="{x_image8}" y="{y_article8}" z_index=0
+draw textline center=1 color="{color9}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article9==1" text="{nominative_article9}" x="{x_image9}" y="{y_article9}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="show_stars==1" x=0 y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box_lower}" show_if="show_selection==1" x="{x_selected}" y="{y_selected}" z_index=0
+
+AD_animation
+
+set volume 0.05
+set stop_after 0
+set sample "prepare.wav"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration 0
+set description "Plays a sound file in .wav or .ogg format"
+
+AD_show_upper_images
+
+set description "Executes Python code"
+___run__
+show_image1 = 1
+show_image2 = 1
+__end__
+set _prepare ""
+
+AD_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=None scale="{scale_upper}" show_if="show_image1 == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=None scale="{scale_upper}" show_if="show_image2 == 1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_article}" y="{y_article}" z_index=0
+draw image center=1 file="{image3}" name=None scale="{scale_upper}" show_if="show_image3 == 1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="{image4}" name=image4 scale="{scale_lower}" show_if="show_image4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="{image5}" name=image5 scale="{scale_lower}" show_if="show_image5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="{image6}" name=image6 scale="{scale_lower}" show_if="show_image6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="{image7}" name=image7 scale="{scale_lower}" show_if="show_image7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="{image8}" name=image8 scale="{scale_lower}" show_if="show_image8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="{image9}" name=image9 scale="{scale_lower}" show_if="show_image9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio1 scale="{scale_box_upper}" show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio2 scale="{scale_box_upper}" show_if=True x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_selected_upper_word==1" x="{x_selected_upper_word}" y="{y_selected_upper_word}" z_index=0
+draw textline center=1 color="{color}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_article==1" text="{article}" x="{x_article}" y="{y_article}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw textline center=1 color="{color4}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article4==1" text="{nominative_article4}" x="{x_image4}" y="{y_article4}" z_index=0
+draw textline center=1 color="{color5}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article5==1" text="{nominative_article5}" x="{x_image5}" y="{y_article5}" z_index=0
+draw textline center=1 color="{color6}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article6==1" text="{nominative_article6}" x="{x_image6}" y="{y_article6}" z_index=0
+draw textline center=1 color="{color7}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article7==1" text="{nominative_article7}" x="{x_image7}" y="{y_article7}" z_index=0
+draw textline center=1 color="{color8}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article8==1" text="{nominative_article8}" x="{x_image8}" y="{y_article8}" z_index=0
+draw textline center=1 color="{color9}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article9==1" text="{nominative_article9}" x="{x_image9}" y="{y_article9}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="show_stars==1" x=0 y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box_lower}" show_if="show_selection==1" x="{x_selected}" y="{y_selected}" z_index=0
+
+
+AD_animation_loop
+
+set source_file ""
+set source table
+set repeat 1
+set order sequential
+set description "Repeatedly runs another item"
+set cycles 6
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 counter 4
+setcycle 1 counter 5
+setcycle 2 counter 6
+setcycle 3 counter 7
+setcycle 4 counter 8
+setcycle 5 counter 9
+run AD_animation_sequence
+
+AD_animation_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run AD_animation_update True
+run AD_display True
+run AD_wait True
+
+AD_animation_update
+
+window["show_box" + counter] = 1
+
+AD_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=None scale="{scale_upper}" show_if="show_image1 == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=None scale="{scale_upper}" show_if="show_image2 == 1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_article}" y="{y_article}" z_index=0
+draw image center=1 file="{image3}" name=None scale="{scale_upper}" show_if="show_image3 == 1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="{image4}" name=image4 scale="{scale_lower}" show_if="show_image4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="{image5}" name=image5 scale="{scale_lower}" show_if="show_image5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="{image6}" name=image6 scale="{scale_lower}" show_if="show_image6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="{image7}" name=image7 scale="{scale_lower}" show_if="show_image7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="{image8}" name=image8 scale="{scale_lower}" show_if="show_image8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="{image9}" name=image9 scale="{scale_lower}" show_if="show_image9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio1 scale="{scale_box_upper}" show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio2 scale="{scale_box_upper}" show_if=True x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_selected_upper_word==1" x="{x_selected_upper_word}" y="{y_selected_upper_word}" z_index=0
+draw textline center=1 color="{color}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_article==1" text="{article}" x="{x_article}" y="{y_article}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw textline center=1 color="{color4}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article4==1" text="{nominative_article4}" x="{x_image4}" y="{y_article4}" z_index=0
+draw textline center=1 color="{color5}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article5==1" text="{nominative_article5}" x="{x_image5}" y="{y_article5}" z_index=0
+draw textline center=1 color="{color6}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article6==1" text="{nominative_article6}" x="{x_image6}" y="{y_article6}" z_index=0
+draw textline center=1 color="{color7}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article7==1" text="{nominative_article7}" x="{x_image7}" y="{y_article7}" z_index=0
+draw textline center=1 color="{color8}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article8==1" text="{nominative_article8}" x="{x_image8}" y="{y_article8}" z_index=0
+draw textline center=1 color="{color9}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article9==1" text="{nominative_article9}" x="{x_image9}" y="{y_article9}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="show_stars==1" x=0 y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box_lower}" show_if="show_selection==1" x="{x_selected}" y="{y_selected}" z_index=0
+
+
+AD_wait
+
+set jitter_mode Uniform
+set jitter 0
+set duration 150
+set description "A random delay sampled from either a normal or uniform distribution"
+
+
+AD_shuffle_coordinates
+
+set description "Executes Python code"
+___run__
+
+x_lower_coordinates = linspace(-400, 400, 6);
+//shuffleArray(x_lower_coordinates);
+
+[x_image4, x_image5, x_image6, x_image7, x_image8, x_image9] = x_lower_coordinates;
+
+[x_image4, x_image7, x_image5, x_image8, x_image6, x_image9] = x_lower_coordinates;
+__end__
+set _prepare ""
+
+AD_reveal_lower_row
+
+show_image4 =1 
+show_image5 =1 
+show_image6 =1 
+show_image7 =1 
+show_image8 =1 
+show_image9 =1 
+
+show_nominative_article4 = 1
+show_nominative_article5 = 1
+show_nominative_article6 = 1
+show_nominative_article7 = 1
+show_nominative_article8 = 1
+show_nominative_article9 = 1
+
+AD_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=None scale="{scale_upper}" show_if="show_image1 == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=None scale="{scale_upper}" show_if="show_image2 == 1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_article}" y="{y_article}" z_index=0
+draw image center=1 file="{image3}" name=None scale="{scale_upper}" show_if="show_image3 == 1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="{image4}" name=image4 scale="{scale_lower}" show_if="show_image4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="{image5}" name=image5 scale="{scale_lower}" show_if="show_image5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="{image6}" name=image6 scale="{scale_lower}" show_if="show_image6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="{image7}" name=image7 scale="{scale_lower}" show_if="show_image7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="{image8}" name=image8 scale="{scale_lower}" show_if="show_image8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="{image9}" name=image9 scale="{scale_lower}" show_if="show_image9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio1 scale="{scale_box_upper}" show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio2 scale="{scale_box_upper}" show_if=True x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_selected_upper_word==1" x="{x_selected_upper_word}" y="{y_selected_upper_word}" z_index=0
+draw textline center=1 color="{color}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_article==1" text="{article}" x="{x_article}" y="{y_article}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw textline center=1 color="{color4}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article4==1" text="{nominative_article4}" x="{x_image4}" y="{y_article4}" z_index=0
+draw textline center=1 color="{color5}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article5==1" text="{nominative_article5}" x="{x_image5}" y="{y_article5}" z_index=0
+draw textline center=1 color="{color6}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article6==1" text="{nominative_article6}" x="{x_image6}" y="{y_article6}" z_index=0
+draw textline center=1 color="{color7}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article7==1" text="{nominative_article7}" x="{x_image7}" y="{y_article7}" z_index=0
+draw textline center=1 color="{color8}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article8==1" text="{nominative_article8}" x="{x_image8}" y="{y_article8}" z_index=0
+draw textline center=1 color="{color9}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article9==1" text="{nominative_article9}" x="{x_image9}" y="{y_article9}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="show_stars==1" x=0 y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box_lower}" show_if="show_selection==1" x="{x_selected}" y="{y_selected}" z_index=0
+
+AD_appear
+
+set volume 0.2
+set stop_after 0
+set sample "appear.mp3"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+AD_play_four_times
+
+set source table
+set repeat 3
+set order sequential
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 empty_column ""
+run AD_trial_sequence
+
+AD_trial_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run AD_reset True
+run AD_trial_properties True
+run AD_play_question True
+run AD_display True
+run AD_show_highlight True
+run AD_start_sentence True
+run AD_remove_highlight True
+run AD_click_loop True
+run AD_show_stars True
+run AD_display True
+run AD_stars_sampler True
+run AD_play_result True
+run AD_pause_after_sentence True
+run remove_from_lower_bar True
+run AD_flip_remove True
+run AD_display True
+run AD_pause True
+
+AD_reset
+
+show_article = 0
+show_image3 = 0
+
+AD_trial_properties
+
+console.log("image list = " + image_list)
+play_upper_image = 0
+
+AD_play_question
+
+set volume 1
+set stop_after 0
+set sample "{question}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+AD_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=None scale="{scale_upper}" show_if="show_image1 == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=None scale="{scale_upper}" show_if="show_image2 == 1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_article}" y="{y_article}" z_index=0
+draw image center=1 file="{image3}" name=None scale="{scale_upper}" show_if="show_image3 == 1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="{image4}" name=image4 scale="{scale_lower}" show_if="show_image4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="{image5}" name=image5 scale="{scale_lower}" show_if="show_image5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="{image6}" name=image6 scale="{scale_lower}" show_if="show_image6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="{image7}" name=image7 scale="{scale_lower}" show_if="show_image7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="{image8}" name=image8 scale="{scale_lower}" show_if="show_image8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="{image9}" name=image9 scale="{scale_lower}" show_if="show_image9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio1 scale="{scale_box_upper}" show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio2 scale="{scale_box_upper}" show_if=True x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_selected_upper_word==1" x="{x_selected_upper_word}" y="{y_selected_upper_word}" z_index=0
+draw textline center=1 color="{color}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_article==1" text="{article}" x="{x_article}" y="{y_article}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw textline center=1 color="{color4}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article4==1" text="{nominative_article4}" x="{x_image4}" y="{y_article4}" z_index=0
+draw textline center=1 color="{color5}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article5==1" text="{nominative_article5}" x="{x_image5}" y="{y_article5}" z_index=0
+draw textline center=1 color="{color6}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article6==1" text="{nominative_article6}" x="{x_image6}" y="{y_article6}" z_index=0
+draw textline center=1 color="{color7}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article7==1" text="{nominative_article7}" x="{x_image7}" y="{y_article7}" z_index=0
+draw textline center=1 color="{color8}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article8==1" text="{nominative_article8}" x="{x_image8}" y="{y_article8}" z_index=0
+draw textline center=1 color="{color9}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article9==1" text="{nominative_article9}" x="{x_image9}" y="{y_article9}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="show_stars==1" x=0 y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box_lower}" show_if="show_selection==1" x="{x_selected}" y="{y_selected}" z_index=0
+
+AD_show_highlight
+
+set description "Executes Python code"
+___run__
+show_highlight = 1
+__end__
+set _prepare ""
+
+AD_start_sentence
+
+set source_file ""
+set source table
+set repeat 1
+set order sequential
+set description "Repeatedly runs another item"
+set cycles 2
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 word_counter 1
+setcycle 1 word_counter 2
+run AD_start_sentence_sequence
+
+AD_start_sentence_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run AD_update_highlight True
+run AD_display True
+run AD_hack_loop_1 True
+run AD_display True
+
+
+AD_update_highlight
+
+x_highlight = window["x_image" + word_counter]
+y_highlight = window["y_image" + word_counter]
+
+word_audio = window["audio" + word_counter]
+
+
+AD_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=None scale="{scale_upper}" show_if="show_image1 == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=None scale="{scale_upper}" show_if="show_image2 == 1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_article}" y="{y_article}" z_index=0
+draw image center=1 file="{image3}" name=None scale="{scale_upper}" show_if="show_image3 == 1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="{image4}" name=image4 scale="{scale_lower}" show_if="show_image4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="{image5}" name=image5 scale="{scale_lower}" show_if="show_image5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="{image6}" name=image6 scale="{scale_lower}" show_if="show_image6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="{image7}" name=image7 scale="{scale_lower}" show_if="show_image7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="{image8}" name=image8 scale="{scale_lower}" show_if="show_image8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="{image9}" name=image9 scale="{scale_lower}" show_if="show_image9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio1 scale="{scale_box_upper}" show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio2 scale="{scale_box_upper}" show_if=True x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_selected_upper_word==1" x="{x_selected_upper_word}" y="{y_selected_upper_word}" z_index=0
+draw textline center=1 color="{color}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_article==1" text="{article}" x="{x_article}" y="{y_article}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw textline center=1 color="{color4}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article4==1" text="{nominative_article4}" x="{x_image4}" y="{y_article4}" z_index=0
+draw textline center=1 color="{color5}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article5==1" text="{nominative_article5}" x="{x_image5}" y="{y_article5}" z_index=0
+draw textline center=1 color="{color6}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article6==1" text="{nominative_article6}" x="{x_image6}" y="{y_article6}" z_index=0
+draw textline center=1 color="{color7}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article7==1" text="{nominative_article7}" x="{x_image7}" y="{y_article7}" z_index=0
+draw textline center=1 color="{color8}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article8==1" text="{nominative_article8}" x="{x_image8}" y="{y_article8}" z_index=0
+draw textline center=1 color="{color9}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article9==1" text="{nominative_article9}" x="{x_image9}" y="{y_article9}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="show_stars==1" x=0 y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box_lower}" show_if="show_selection==1" x="{x_selected}" y="{y_selected}" z_index=0
+
+AD_hack_loop_1
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 empty_column ""
+run AD_hack_sequence_1
+
+AD_hack_sequence_1
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run AD_play_word True
+
+AD_play_word
+
+set volume 1
+set stop_after 0
+set sample "{word_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+AD_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=None scale="{scale_upper}" show_if="show_image1 == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=None scale="{scale_upper}" show_if="show_image2 == 1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_article}" y="{y_article}" z_index=0
+draw image center=1 file="{image3}" name=None scale="{scale_upper}" show_if="show_image3 == 1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="{image4}" name=image4 scale="{scale_lower}" show_if="show_image4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="{image5}" name=image5 scale="{scale_lower}" show_if="show_image5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="{image6}" name=image6 scale="{scale_lower}" show_if="show_image6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="{image7}" name=image7 scale="{scale_lower}" show_if="show_image7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="{image8}" name=image8 scale="{scale_lower}" show_if="show_image8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="{image9}" name=image9 scale="{scale_lower}" show_if="show_image9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio1 scale="{scale_box_upper}" show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio2 scale="{scale_box_upper}" show_if=True x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_selected_upper_word==1" x="{x_selected_upper_word}" y="{y_selected_upper_word}" z_index=0
+draw textline center=1 color="{color}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_article==1" text="{article}" x="{x_article}" y="{y_article}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw textline center=1 color="{color4}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article4==1" text="{nominative_article4}" x="{x_image4}" y="{y_article4}" z_index=0
+draw textline center=1 color="{color5}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article5==1" text="{nominative_article5}" x="{x_image5}" y="{y_article5}" z_index=0
+draw textline center=1 color="{color6}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article6==1" text="{nominative_article6}" x="{x_image6}" y="{y_article6}" z_index=0
+draw textline center=1 color="{color7}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article7==1" text="{nominative_article7}" x="{x_image7}" y="{y_article7}" z_index=0
+draw textline center=1 color="{color8}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article8==1" text="{nominative_article8}" x="{x_image8}" y="{y_article8}" z_index=0
+draw textline center=1 color="{color9}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article9==1" text="{nominative_article9}" x="{x_image9}" y="{y_article9}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="show_stars==1" x=0 y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box_lower}" show_if="show_selection==1" x="{x_selected}" y="{y_selected}" z_index=0
+
+
+AD_remove_highlight
+
+set description "Executes Python code"
+___run__
+show_highlight = 0
+__end__
+set _prepare ""
+
+AD_click_loop
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 empty_column ""
+run AD_click_sequence
+
+AD_click_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run AD_display True
+run AD_click True
+run AD_analyze_click True
+run AD_display True
+run AD_HACK_loop_2 "play_upper_image == 1"
+run AD_dselect True
+run AD_display True
+run new_repeat_cycle True
+
+AD_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=None scale="{scale_upper}" show_if="show_image1 == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=None scale="{scale_upper}" show_if="show_image2 == 1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_article}" y="{y_article}" z_index=0
+draw image center=1 file="{image3}" name=None scale="{scale_upper}" show_if="show_image3 == 1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="{image4}" name=image4 scale="{scale_lower}" show_if="show_image4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="{image5}" name=image5 scale="{scale_lower}" show_if="show_image5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="{image6}" name=image6 scale="{scale_lower}" show_if="show_image6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="{image7}" name=image7 scale="{scale_lower}" show_if="show_image7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="{image8}" name=image8 scale="{scale_lower}" show_if="show_image8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="{image9}" name=image9 scale="{scale_lower}" show_if="show_image9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio1 scale="{scale_box_upper}" show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio2 scale="{scale_box_upper}" show_if=True x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_selected_upper_word==1" x="{x_selected_upper_word}" y="{y_selected_upper_word}" z_index=0
+draw textline center=1 color="{color}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_article==1" text="{article}" x="{x_article}" y="{y_article}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw textline center=1 color="{color4}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article4==1" text="{nominative_article4}" x="{x_image4}" y="{y_article4}" z_index=0
+draw textline center=1 color="{color5}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article5==1" text="{nominative_article5}" x="{x_image5}" y="{y_article5}" z_index=0
+draw textline center=1 color="{color6}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article6==1" text="{nominative_article6}" x="{x_image6}" y="{y_article6}" z_index=0
+draw textline center=1 color="{color7}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article7==1" text="{nominative_article7}" x="{x_image7}" y="{y_article7}" z_index=0
+draw textline center=1 color="{color8}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article8==1" text="{nominative_article8}" x="{x_image8}" y="{y_article8}" z_index=0
+draw textline center=1 color="{color9}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article9==1" text="{nominative_article9}" x="{x_image9}" y="{y_article9}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="show_stars==1" x=0 y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box_lower}" show_if="show_selection==1" x="{x_selected}" y="{y_selected}" z_index=0
+
+AD_click
+
+set timeout infinite
+set show_cursor yes
+set linked_sketchpad AD_display
+set flush yes
+set event_type mouseclick
+set duration mouseclick
+set description "Collects mouse responses"
+
+AD_analyze_click
+
+set description "Executes Python code"
+___run__
+// HACK:
+// Strip cursor_roi:
+cursor_roi = removeSubstring(cursor_roi, "None")
+cursor_roi = removeSubstring(cursor_roi, ";")
+
+console.log("roi " + cursor_roi)
+repeat_click = 1
+play_upper_image = 0
+show_selected_upper_word = 0
+show_highlight = 0
+
+if 	(cursor_roi.includes("image") ) {
+  clicked_on_image = 1
+  repeat_click = 0
+
+
+
+
+  image_id = (cursor_roi.slice(5))
+  image3 = window[cursor_roi]
+  article = window["article" + image_id]
+
+  resulting_sentence = window["whole_sentence_image" + image_id]
+
+  image_list.push(image_id)
+
+  x_selected = window["x_image" + image_id]
+  y_selected = window["y_image" + image_id]
+
+  }
+
+if 	(cursor_roi.includes("audio") ) {
+  play_upper_image = 1
+  upper_image_audio = window[cursor_roi]
+  show_selected_upper_word = 1
+
+  id_upper_word = cursor_roi.slice(5)
+  x_selected_upper_word = window["x_image" + id_upper_word]
+  y_selected_upper_word = window["y_image" + id_upper_word]
+  }
+__end__
+set _prepare ""
+
+AD_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=None scale="{scale_upper}" show_if="show_image1 == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=None scale="{scale_upper}" show_if="show_image2 == 1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_article}" y="{y_article}" z_index=0
+draw image center=1 file="{image3}" name=None scale="{scale_upper}" show_if="show_image3 == 1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="{image4}" name=image4 scale="{scale_lower}" show_if="show_image4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="{image5}" name=image5 scale="{scale_lower}" show_if="show_image5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="{image6}" name=image6 scale="{scale_lower}" show_if="show_image6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="{image7}" name=image7 scale="{scale_lower}" show_if="show_image7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="{image8}" name=image8 scale="{scale_lower}" show_if="show_image8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="{image9}" name=image9 scale="{scale_lower}" show_if="show_image9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio1 scale="{scale_box_upper}" show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio2 scale="{scale_box_upper}" show_if=True x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_selected_upper_word==1" x="{x_selected_upper_word}" y="{y_selected_upper_word}" z_index=0
+draw textline center=1 color="{color}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_article==1" text="{article}" x="{x_article}" y="{y_article}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw textline center=1 color="{color4}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article4==1" text="{nominative_article4}" x="{x_image4}" y="{y_article4}" z_index=0
+draw textline center=1 color="{color5}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article5==1" text="{nominative_article5}" x="{x_image5}" y="{y_article5}" z_index=0
+draw textline center=1 color="{color6}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article6==1" text="{nominative_article6}" x="{x_image6}" y="{y_article6}" z_index=0
+draw textline center=1 color="{color7}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article7==1" text="{nominative_article7}" x="{x_image7}" y="{y_article7}" z_index=0
+draw textline center=1 color="{color8}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article8==1" text="{nominative_article8}" x="{x_image8}" y="{y_article8}" z_index=0
+draw textline center=1 color="{color9}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article9==1" text="{nominative_article9}" x="{x_image9}" y="{y_article9}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="show_stars==1" x=0 y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box_lower}" show_if="show_selection==1" x="{x_selected}" y="{y_selected}" z_index=0
+
+AD_HACK_loop_2
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 empty_column ""
+run AD_HACK_sequence_2
+
+AD_HACK_sequence_2
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run AD_play_upper_word True
+
+AD_play_upper_word
+
+set volume 1
+set stop_after 0
+set sample "{upper_image_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+AD_dselect
+
+set description "Executes Python code"
+set _run "show_selected_upper_word = 0"
+set _prepare ""
+
+AD_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=None scale="{scale_upper}" show_if="show_image1 == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=None scale="{scale_upper}" show_if="show_image2 == 1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_article}" y="{y_article}" z_index=0
+draw image center=1 file="{image3}" name=None scale="{scale_upper}" show_if="show_image3 == 1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="{image4}" name=image4 scale="{scale_lower}" show_if="show_image4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="{image5}" name=image5 scale="{scale_lower}" show_if="show_image5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="{image6}" name=image6 scale="{scale_lower}" show_if="show_image6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="{image7}" name=image7 scale="{scale_lower}" show_if="show_image7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="{image8}" name=image8 scale="{scale_lower}" show_if="show_image8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="{image9}" name=image9 scale="{scale_lower}" show_if="show_image9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio1 scale="{scale_box_upper}" show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio2 scale="{scale_box_upper}" show_if=True x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_selected_upper_word==1" x="{x_selected_upper_word}" y="{y_selected_upper_word}" z_index=0
+draw textline center=1 color="{color}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_article==1" text="{article}" x="{x_article}" y="{y_article}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw textline center=1 color="{color4}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article4==1" text="{nominative_article4}" x="{x_image4}" y="{y_article4}" z_index=0
+draw textline center=1 color="{color5}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article5==1" text="{nominative_article5}" x="{x_image5}" y="{y_article5}" z_index=0
+draw textline center=1 color="{color6}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article6==1" text="{nominative_article6}" x="{x_image6}" y="{y_article6}" z_index=0
+draw textline center=1 color="{color7}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article7==1" text="{nominative_article7}" x="{x_image7}" y="{y_article7}" z_index=0
+draw textline center=1 color="{color8}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article8==1" text="{nominative_article8}" x="{x_image8}" y="{y_article8}" z_index=0
+draw textline center=1 color="{color9}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article9==1" text="{nominative_article9}" x="{x_image9}" y="{y_article9}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="show_stars==1" x=0 y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box_lower}" show_if="show_selection==1" x="{x_selected}" y="{y_selected}" z_index=0
+
+new_repeat_cycle
+
+set description "Optionally repeat a cycle from a loop"
+set condition "repeat_click == 1"
+
+AD_show_stars
+
+set description "Executes Python code"
+___run__
+show_stars = 1
+show_selection = 1 
+
+console.log("coordinates")
+console.log(x_selected)
+console.log(y_selected)
+__end__
+set _prepare ""
+
+AD_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=None scale="{scale_upper}" show_if="show_image1 == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=None scale="{scale_upper}" show_if="show_image2 == 1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_article}" y="{y_article}" z_index=0
+draw image center=1 file="{image3}" name=None scale="{scale_upper}" show_if="show_image3 == 1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="{image4}" name=image4 scale="{scale_lower}" show_if="show_image4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="{image5}" name=image5 scale="{scale_lower}" show_if="show_image5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="{image6}" name=image6 scale="{scale_lower}" show_if="show_image6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="{image7}" name=image7 scale="{scale_lower}" show_if="show_image7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="{image8}" name=image8 scale="{scale_lower}" show_if="show_image8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="{image9}" name=image9 scale="{scale_lower}" show_if="show_image9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio1 scale="{scale_box_upper}" show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio2 scale="{scale_box_upper}" show_if=True x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_selected_upper_word==1" x="{x_selected_upper_word}" y="{y_selected_upper_word}" z_index=0
+draw textline center=1 color="{color}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_article==1" text="{article}" x="{x_article}" y="{y_article}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw textline center=1 color="{color4}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article4==1" text="{nominative_article4}" x="{x_image4}" y="{y_article4}" z_index=0
+draw textline center=1 color="{color5}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article5==1" text="{nominative_article5}" x="{x_image5}" y="{y_article5}" z_index=0
+draw textline center=1 color="{color6}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article6==1" text="{nominative_article6}" x="{x_image6}" y="{y_article6}" z_index=0
+draw textline center=1 color="{color7}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article7==1" text="{nominative_article7}" x="{x_image7}" y="{y_article7}" z_index=0
+draw textline center=1 color="{color8}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article8==1" text="{nominative_article8}" x="{x_image8}" y="{y_article8}" z_index=0
+draw textline center=1 color="{color9}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article9==1" text="{nominative_article9}" x="{x_image9}" y="{y_article9}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="show_stars==1" x=0 y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box_lower}" show_if="show_selection==1" x="{x_selected}" y="{y_selected}" z_index=0
+
+AD_stars_sampler
+
+set volume 1
+set stop_after 0
+set sample "stars_correct.mp3"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+AD_play_result
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 empty_column ""
+run AD_play_result_sequence
+
+
+AD_play_result_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run AD_update_booleans True
+run AD_display True
+run AD_play_resulting_sentence True
+
+AD_update_booleans
+
+set description "Executes Python code"
+___run__
+show_image3 = 1
+show_article = 1
+
+if (article === "den") {
+  color = "blue"
+  }
+else if (article === "das") {
+  color = "green"
+  }
+else if (article === "die") {
+  color = "red"
+  }
+else {
+  color = "black"
+  }
+__end__
+set _prepare ""
+
+AD_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=None scale="{scale_upper}" show_if="show_image1 == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=None scale="{scale_upper}" show_if="show_image2 == 1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_article}" y="{y_article}" z_index=0
+draw image center=1 file="{image3}" name=None scale="{scale_upper}" show_if="show_image3 == 1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="{image4}" name=image4 scale="{scale_lower}" show_if="show_image4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="{image5}" name=image5 scale="{scale_lower}" show_if="show_image5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="{image6}" name=image6 scale="{scale_lower}" show_if="show_image6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="{image7}" name=image7 scale="{scale_lower}" show_if="show_image7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="{image8}" name=image8 scale="{scale_lower}" show_if="show_image8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="{image9}" name=image9 scale="{scale_lower}" show_if="show_image9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio1 scale="{scale_box_upper}" show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio2 scale="{scale_box_upper}" show_if=True x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_selected_upper_word==1" x="{x_selected_upper_word}" y="{y_selected_upper_word}" z_index=0
+draw textline center=1 color="{color}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_article==1" text="{article}" x="{x_article}" y="{y_article}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw textline center=1 color="{color4}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article4==1" text="{nominative_article4}" x="{x_image4}" y="{y_article4}" z_index=0
+draw textline center=1 color="{color5}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article5==1" text="{nominative_article5}" x="{x_image5}" y="{y_article5}" z_index=0
+draw textline center=1 color="{color6}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article6==1" text="{nominative_article6}" x="{x_image6}" y="{y_article6}" z_index=0
+draw textline center=1 color="{color7}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article7==1" text="{nominative_article7}" x="{x_image7}" y="{y_article7}" z_index=0
+draw textline center=1 color="{color8}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article8==1" text="{nominative_article8}" x="{x_image8}" y="{y_article8}" z_index=0
+draw textline center=1 color="{color9}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article9==1" text="{nominative_article9}" x="{x_image9}" y="{y_article9}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="show_stars==1" x=0 y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box_lower}" show_if="show_selection==1" x="{x_selected}" y="{y_selected}" z_index=0
+
+AD_play_resulting_sentence
+
+set volume 1
+set stop_after 0
+set sample "{resulting_sentence}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+AD_pause_after_sentence
+
+set jitter_mode Uniform
+set jitter 0
+set duration 3000
+set description "A random delay sampled from either a normal or uniform distribution"
+
+remove_from_lower_bar
+set description "Executes Python code"
+___run__
+window["show_image" + image_id] = 0
+window["show_box" + image_id] = 0
+window["show_nominative_article" + image_id] = 0
+
+
+other = getPair(image_id)
+
+window["show_image" + other] = 0
+window["show_box" + other] = 0
+window["show_nominative_article" + other] = 0
+
+show_stars = 0
+show_selection = 0
+__end__
+set _prepare ""
+
+AD_flip_remove
+
+set volume 0.3
+set stop_after 0
+set sample "flip_sound.wav"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration 0
+set description "Plays a sound file in .wav or .ogg format"
+
+AD_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=None scale="{scale_upper}" show_if="show_image1 == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=None scale="{scale_upper}" show_if="show_image2 == 1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_article}" y="{y_article}" z_index=0
+draw image center=1 file="{image3}" name=None scale="{scale_upper}" show_if="show_image3 == 1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="{image4}" name=image4 scale="{scale_lower}" show_if="show_image4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="{image5}" name=image5 scale="{scale_lower}" show_if="show_image5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="{image6}" name=image6 scale="{scale_lower}" show_if="show_image6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="{image7}" name=image7 scale="{scale_lower}" show_if="show_image7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="{image8}" name=image8 scale="{scale_lower}" show_if="show_image8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="{image9}" name=image9 scale="{scale_lower}" show_if="show_image9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio1 scale="{scale_box_upper}" show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=audio2 scale="{scale_box_upper}" show_if=True x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_upper}" show_if=True x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box4 == 1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box5 == 1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box6 == 1" x="{x_image6}" y="{y_image6}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box7 == 1" x="{x_image7}" y="{y_image7}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box8 == 1" x="{x_image8}" y="{y_image8}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box_lower}" show_if="show_box9 == 1" x="{x_image9}" y="{y_image9}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box_upper}" show_if="show_selected_upper_word==1" x="{x_selected_upper_word}" y="{y_selected_upper_word}" z_index=0
+draw textline center=1 color="{color}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_article==1" text="{article}" x="{x_article}" y="{y_article}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw textline center=1 color="{color4}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article4==1" text="{nominative_article4}" x="{x_image4}" y="{y_article4}" z_index=0
+draw textline center=1 color="{color5}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article5==1" text="{nominative_article5}" x="{x_image5}" y="{y_article5}" z_index=0
+draw textline center=1 color="{color6}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article6==1" text="{nominative_article6}" x="{x_image6}" y="{y_article6}" z_index=0
+draw textline center=1 color="{color7}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article7==1" text="{nominative_article7}" x="{x_image7}" y="{y_article7}" z_index=0
+draw textline center=1 color="{color8}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article8==1" text="{nominative_article8}" x="{x_image8}" y="{y_article8}" z_index=0
+draw textline center=1 color="{color9}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size_nominative_article}" html=yes show_if="show_nominative_article9==1" text="{nominative_article9}" x="{x_image9}" y="{y_article9}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="show_stars==1" x=0 y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box_lower}" show_if="show_selection==1" x="{x_selected}" y="{y_selected}" z_index=0
+
+AD_pause
+
+set jitter_mode Uniform
+set jitter 0
+set duration 0
+set description "A random delay sampled from either a normal or uniform distribution"
+
+new_8_inline_javascript
+
+set description "Executes Python code"
+___run__
+// Get end time
+e_time = Date.now()
+
+response_time = e_time - s_time
+__end__
+set _prepare ""
+
+new_2_logger
+
+set description "Logs experimental data"
+set auto_log yes
+
+yoohoo
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 show_continue_button 0
+run yoohoo_sequence
+
+yoohoo_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run yoohoo_variables True
+run yoohoo_display True
+run play_yoohoo True
+run yoohoo_click_loop True
+
+yoohoo_variables
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+scale_yoohoo = 0.5
+yoohoo_image = "i_002.jpg"
+__end__
+
+yoohoo_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="i_002.jpg" scale="{scale_yoohoo}" show_if=True x=0 y=-96 z_index=0
+draw image center=1 file="next.png" name=continue_arrow scale=1 show_if="show_continue_button==1" x=0 y=288 z_index=0
+
+play_yoohoo
+
+set volume 1
+set stop_after 0
+set sample "{goodbye_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+yoohoo_click_loop
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 show_continue_button 1
+run yoohoo_click_sequence
+
+yoohoo_click_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run yoohoo_display True
+run yoohoo_click True
+run analyze_yoohoo_click True
+run repeat_yoohoo_cycle True
+
+yoohoo_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="i_002.jpg" scale="{scale_yoohoo}" show_if=True x=0 y=-96 z_index=0
+draw image center=1 file="next.png" name=continue_arrow scale=1 show_if="show_continue_button==1" x=0 y=288 z_index=0
+
+yoohoo_click
+
+set timeout infinite
+set show_cursor yes
+set linked_sketchpad yoohoo_display
+set flush yes
+set event_type mouseclick
+set duration mouseclick
+set description "Collects mouse responses"
+
+analyze_yoohoo_click
+
+set description "Executes Python code"
+___run__
+repeat_yoohoo = 1
+if (cursor_roi === 'continue_arrow'){
+  repeat_yoohoo = 0
+  }
+__end__
+set _prepare ""
+
+repeat_yoohoo_cycle
+
+set description "Optionally repeat a cycle from a loop"
+set condition "repeat_yoohoo == 1"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

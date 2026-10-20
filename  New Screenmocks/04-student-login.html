@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>SPEAK — Schüler:innen-Login</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+  .wrap {
+    min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:26px;
+    background: radial-gradient(circle at 20% 15%, rgba(255,201,60,.35), transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(76,201,240,.3), transparent 40%);
+    position:relative;
+  }
+  .code-boxes { display:flex; gap:14px; }
+  .code-boxes div {
+    width:74px; height:90px; border-radius:20px; background:#fff; border:3px solid var(--line);
+    display:flex; align-items:center; justify-content:center; font-family:var(--font-fun); font-size:36px;
+    color:var(--ink-faint); box-shadow: var(--shadow-sm);
+  }
+  .code-boxes div.filled { color:var(--ink); border-color:var(--sky); }
+  .keypad { display:grid; grid-template-columns: repeat(3, 84px); gap:14px; }
+  .key {
+    width:84px; height:84px; border-radius:22px; background:#fff; box-shadow:var(--shadow-sm);
+    display:flex; align-items:center; justify-content:center; font-family:var(--font-fun); font-size:26px; color:var(--ink);
+    text-decoration:none;
+  }
+  .key.go { background: var(--mint); color: var(--mint-ink); }
+</style>
+</head>
+<body class="app-student">
+
+  <div class="funder-bar">
+    <img class="funder-logo-tud" src="assets/tud_logo_cmyk.png" alt="TU Dortmund Logo">
+    <img src="assets/IFS.png" alt="IFS Logo">
+    <img src="assets/speak-logo.png" alt="SPEAK Logo">
+    <img class="funder-logo-bund" src="assets/Bundesministrerium.jpg" alt="Bundesministerium Logo">
+    <img src="assets/EBF.jpg" alt="EBF Logo">
+  </div>
+
+  <div class="wrap">
+    <a class="back-link" href="01-home.html" style="position:absolute; top:28px; left:28px;">← Startseite</a>
+
+    <img class="logo-mark" src="assets/speak-logo.png" alt="SPEAK" style="height:90px;">
+    <div class="h1" style="font-size:30px;">Hallo! Wie lautet dein Code?</div>
+
+    <div class="code-boxes">
+      <div class="filled">4</div><div class="filled">7</div><div class="filled">2</div>
+      <div>9</div><div>1</div><div>6</div>
+    </div>
+
+    <div class="keypad">
+      <div class="key">1</div><div class="key">2</div><div class="key">3</div>
+      <div class="key">4</div><div class="key">5</div><div class="key">6</div>
+      <div class="key">7</div><div class="key">8</div><div class="key">9</div>
+      <div class="key">⌫</div><div class="key">0</div>
+      <a class="key go" href="10-student-home.html">✅</a>
+    </div>
+
+    <div class="muted" style="font-size:15px;">🔊 „Tippe die Zahlen ein, die dir deine Lehrkraft gegeben hat"</div>
+  </div>
+
+</body>
+</html>

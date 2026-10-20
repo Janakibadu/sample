@@ -1,0 +1,1802 @@
+W12_G3
+
+set source_file "W1_V2.CSV"
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 block_type W12_G3
+setcycle 0 goodbye_audio "ai_107.mp3"
+setcycle 0 week 12
+setcycle 0 task_type G3
+setcycle 0 explanation_audio "ai_246.mp3"
+setcycle 0 explanation_image "Week12_G3.png"
+setcycle 0 audio_your_turn "ai_247.mp3"
+setcycle 0 second_time 0
+run V3_block_sequence
+
+
+V3_block_sequence
+
+
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run V3_introduction_display True
+run V3_introduction_audio True
+run V3_block_properties True
+run V3_block_booleans True
+run V3_example_loop True
+run your_turn True
+run V3_block_loop True
+run yoohoo "n_incorrect_trials < 3 or second_time == 1"
+
+
+V3_introduction_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{explanation_image}" scale=1 show_if=True x=0 y=0 z_index=0
+
+
+V3_introduction_audio
+
+set volume 1
+set stop_after 0
+set sample "{explanation_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+V3_block_properties
+
+set description "Executes Python code"
+___run__
+x_coordinates = linspace(-350, 350, 4);
+[x_image2, x_article1, x_article2, x_image3] = x_coordinates;
+
+x_image1 = 0
+y_image1 = -200
+
+y_image2 = 100
+y_image3 = 100
+y_article1 = 100
+y_article2 = 100
+
+scale_image = 0.4
+scale_box = 0.8
+
+y_next = 300
+x_next = 0
+
+font_size = 100
+__end__
+set _prepare ""
+
+
+V3_block_booleans
+
+set description "Executes Python code"
+___run__
+play_your_turn = 1
+reveal_example = 0
+
+n_incorrect_trials = 0 
+__end__
+set _prepare ""
+
+
+
+V3_example_loop
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 3
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 pre_sentence "at_2965.mp3"
+setcycle 0 image1 "i_784.jpg"
+setcycle 0 image2_audio "at_5377.mp3"
+setcycle 0 article1_audio "at_3242.mp3"
+setcycle 0 article2_audio "at_3241.mp3"
+setcycle 0 image3 "i_784.jpg"
+setcycle 0 image3_audio "at_5368.mp3"
+setcycle 0 article1 der
+setcycle 0 article2 dem
+setcycle 0 correct_article article1
+setcycle 0 image2 "i_679.jpg"
+setcycle 0 image1_audio "at_5377.mp3"
+setcycle 0 color1 red
+setcycle 0 color2 blue
+setcycle 1 pre_sentence "at_4878.mp3"
+setcycle 1 image1 "i_250.jpg"
+setcycle 1 image2_audio "at_5370.mp3"
+setcycle 1 article1_audio "at_3241.mp3"
+setcycle 1 article2_audio "at_3242.mp3"
+setcycle 1 image3 "i_250.jpg"
+setcycle 1 image3_audio "at_1342.mp3"
+setcycle 1 article1 dem
+setcycle 1 article2 der
+setcycle 1 correct_article article1
+setcycle 1 image2 "i_688.jpg"
+setcycle 1 image1_audio "at_5370.mp3"
+setcycle 1 color1 green
+setcycle 1 color2 red
+setcycle 2 pre_sentence "at_2069.mp3"
+setcycle 2 image1 "i_362.jpg"
+setcycle 2 image2_audio "at_5373.mp3"
+setcycle 2 article1_audio "at_3241.mp3"
+setcycle 2 article2_audio "at_3242.mp3"
+setcycle 2 image3 "i_362.jpg"
+setcycle 2 image3_audio "at_1618.mp3"
+setcycle 2 article1 dem
+setcycle 2 article2 der
+setcycle 2 correct_article article1
+setcycle 2 image2 "i_685.jpg"
+setcycle 2 image1_audio "at_5373.mp3"
+setcycle 2 color1 blue
+setcycle 2 color2 red
+run V3_example_sequence
+
+
+V3_example_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run V3_example_booleans True
+run V3_display True
+run V3_show_image1 True
+run V3_display True
+run V3_presentence True
+run V3_update_example_booleans True
+run V3_wait_1000ms True
+run V3_example_per_word True
+run V3_example_reveal_correct True
+run V3_display True
+run V3_remove_incorrect_option True
+run V3_display True
+run V3_wait_3000ms True
+run V3_example_hide_correct True
+
+
+V3_example_booleans
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+show_image1 = 0
+show_image2 = 0
+show_image3 = 0
+show_article1 = 0
+show_article2 = 0
+
+show_box_image1 = 1
+show_box_image2 = 0
+show_box_image3 = 0
+show_box_article1 = 0
+show_box_article2 = 0
+
+show_highlight = 0
+
+//repeat_click = 1
+show_next_empty = 0
+show_next = 0
+play_article = 0
+reveal_correct = 0
+n_incorrect = 0
+responded_correctly = "None"
+
+reveal_example = 0
+__end__
+
+
+
+V3_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=image1 scale="{scale_image}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=image2 scale="{scale_image}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" name=image3 scale="{scale_image}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article1 scale="{scale_box}" show_if="show_box_article1==1" x="{x_article1}" y="{y_article1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article2 scale="{scale_box}" show_if="show_box_article2==1" x="{x_article2}" y="{y_article2}" z_index=0
+draw textline center=1 color="{color1}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article1==1" text="{article1}" x="{x_article1}" y="{y_article1}" z_index=0
+draw textline center=1 color="{color2}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article2==1" text="{article2}" x="{x_article2}" y="{y_article2}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red.png" name=None scale="{scale_box}" show_if="responded_correctly==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="responded_correctly==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="next_box_empty.png" name=None scale=1 show_if="show_next_empty==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="next.png" name=next scale=1 show_if="show_next==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="highlight_box_yellow.png" name=None scale="{scale_box}" show_if="reveal_correct==1" x="{x_reveal_correct}" y="{y_reveal_correct}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="responded_correctly==1 and show_fb==1" x="{x_next}" y="{y_next}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="reveal_example==1" x="{x_reveal_example}" y="{y_reveal_example}" z_index=0
+
+
+
+V3_show_image1
+
+set description "Executes Python code"
+set _run "show_image1 = 1"
+set _prepare ""
+
+
+V3_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=image1 scale="{scale_image}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=image2 scale="{scale_image}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" name=image3 scale="{scale_image}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article1 scale="{scale_box}" show_if="show_box_article1==1" x="{x_article1}" y="{y_article1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article2 scale="{scale_box}" show_if="show_box_article2==1" x="{x_article2}" y="{y_article2}" z_index=0
+draw textline center=1 color="{color1}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article1==1" text="{article1}" x="{x_article1}" y="{y_article1}" z_index=0
+draw textline center=1 color="{color2}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article2==1" text="{article2}" x="{x_article2}" y="{y_article2}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red.png" name=None scale="{scale_box}" show_if="responded_correctly==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="responded_correctly==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="next_box_empty.png" name=None scale=1 show_if="show_next_empty==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="next.png" name=next scale=1 show_if="show_next==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="highlight_box_yellow.png" name=None scale="{scale_box}" show_if="reveal_correct==1" x="{x_reveal_correct}" y="{y_reveal_correct}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="responded_correctly==1 and show_fb==1" x="{x_next}" y="{y_next}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="reveal_example==1" x="{x_reveal_example}" y="{y_reveal_example}" z_index=0
+
+V3_presentence
+
+set volume 1
+set stop_after 0
+set sample "{pre_sentence}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+V3_update_example_booleans
+
+set description "Executes Python code"
+___run__
+show_image1 = 1
+show_image2 = 1
+show_image3 = 1
+show_article1 = 1
+show_article2 = 1
+
+show_box_image1 = 1
+show_box_image2 = 1
+show_box_image3 = 1
+show_box_article1 = 1
+show_box_article2 = 1
+__end__
+set _prepare ""
+
+
+V3_wait_1000ms
+
+set jitter_mode Uniform
+set jitter 0
+set duration 1000
+set description "A random delay sampled from either a normal or uniform distribution"
+
+
+
+V3_example_per_word
+
+set source_file ""
+set source table
+set repeat 1
+set order sequential
+set description "Repeatedly runs another item"
+set cycles 3
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 word image2
+setcycle 1 word "{correct_article}"
+setcycle 2 word image3
+run V3_example_per_word_sequence
+
+V3_example_per_word_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run V3_word_properties True
+run V3_display True
+run V3_HACK True
+
+
+V3_word_properties
+
+set description "Executes Python code"
+___run__
+show_highlight = 1
+
+console.log("WORD = " + word)
+
+x_highlight = window["x_" + word]
+y_highlight = window["y_" + word]
+
+word_audio = window[word + "_audio"]
+__end__
+set _prepare ""
+
+
+V3_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=image1 scale="{scale_image}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=image2 scale="{scale_image}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" name=image3 scale="{scale_image}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article1 scale="{scale_box}" show_if="show_box_article1==1" x="{x_article1}" y="{y_article1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article2 scale="{scale_box}" show_if="show_box_article2==1" x="{x_article2}" y="{y_article2}" z_index=0
+draw textline center=1 color="{color1}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article1==1" text="{article1}" x="{x_article1}" y="{y_article1}" z_index=0
+draw textline center=1 color="{color2}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article2==1" text="{article2}" x="{x_article2}" y="{y_article2}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red.png" name=None scale="{scale_box}" show_if="responded_correctly==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="responded_correctly==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="next_box_empty.png" name=None scale=1 show_if="show_next_empty==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="next.png" name=next scale=1 show_if="show_next==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="highlight_box_yellow.png" name=None scale="{scale_box}" show_if="reveal_correct==1" x="{x_reveal_correct}" y="{y_reveal_correct}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="responded_correctly==1 and show_fb==1" x="{x_next}" y="{y_next}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="reveal_example==1" x="{x_reveal_example}" y="{y_reveal_example}" z_index=0
+
+
+V3_HACK
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 empty_column ""
+run V3_HACK_sequence
+
+
+V3_HACK_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run V3_display True
+run V3_word True
+
+
+V3_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=image1 scale="{scale_image}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=image2 scale="{scale_image}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" name=image3 scale="{scale_image}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article1 scale="{scale_box}" show_if="show_box_article1==1" x="{x_article1}" y="{y_article1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article2 scale="{scale_box}" show_if="show_box_article2==1" x="{x_article2}" y="{y_article2}" z_index=0
+draw textline center=1 color="{color1}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article1==1" text="{article1}" x="{x_article1}" y="{y_article1}" z_index=0
+draw textline center=1 color="{color2}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article2==1" text="{article2}" x="{x_article2}" y="{y_article2}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red.png" name=None scale="{scale_box}" show_if="responded_correctly==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="responded_correctly==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="next_box_empty.png" name=None scale=1 show_if="show_next_empty==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="next.png" name=next scale=1 show_if="show_next==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="highlight_box_yellow.png" name=None scale="{scale_box}" show_if="reveal_correct==1" x="{x_reveal_correct}" y="{y_reveal_correct}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="responded_correctly==1 and show_fb==1" x="{x_next}" y="{y_next}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="reveal_example==1" x="{x_reveal_example}" y="{y_reveal_example}" z_index=0
+
+
+V3_remove_incorrect_option
+
+set description "Executes Python code"
+___run__
+show_article1 = 0
+show_article2 = 0
+
+show_box_article1 = 0
+show_box_article2 = 0
+
+window["show_" + correct_article] = 1
+//window["show_" + ] = 1
+__end__
+set _prepare ""
+
+
+
+V3_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=image1 scale="{scale_image}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=image2 scale="{scale_image}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" name=image3 scale="{scale_image}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article1 scale="{scale_box}" show_if="show_box_article1==1" x="{x_article1}" y="{y_article1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article2 scale="{scale_box}" show_if="show_box_article2==1" x="{x_article2}" y="{y_article2}" z_index=0
+draw textline center=1 color="{color1}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article1==1" text="{article1}" x="{x_article1}" y="{y_article1}" z_index=0
+draw textline center=1 color="{color2}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article2==1" text="{article2}" x="{x_article2}" y="{y_article2}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red.png" name=None scale="{scale_box}" show_if="responded_correctly==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="responded_correctly==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="next_box_empty.png" name=None scale=1 show_if="show_next_empty==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="next.png" name=next scale=1 show_if="show_next==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="highlight_box_yellow.png" name=None scale="{scale_box}" show_if="reveal_correct==1" x="{x_reveal_correct}" y="{y_reveal_correct}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="responded_correctly==1 and show_fb==1" x="{x_next}" y="{y_next}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="reveal_example==1" x="{x_reveal_example}" y="{y_reveal_example}" z_index=0
+
+
+V3_wait_3000ms
+
+set jitter_mode Uniform
+set jitter 0
+set duration 3000
+set description "A random delay sampled from either a normal or uniform distribution"
+
+
+V3_example_hide_correct
+
+set description "Executes Python code"
+___run__
+x_reveal_example = window["x_" + correct_article]
+y_reveal_example = window["y_" + correct_article]
+
+reveal_example = 0
+__end__
+set _prepare ""
+
+
+
+your_turn
+
+set volume 1
+set stop_after 0
+set sample "{audio_your_turn}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+V3_block_loop
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 6
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 pre_sentence "at_4890.mp3"
+setcycle 0 image2 "i_662.jpg"
+setcycle 0 image2_audio "at_5327.mp3"
+setcycle 0 article1_audio "at_3241.mp3"
+setcycle 0 article2_audio "at_3242.mp3"
+setcycle 0 image3 "i_848.jpg"
+setcycle 0 image3_audio "at_1195.mp3"
+setcycle 0 whole_sentence "at_2782.mp3"
+setcycle 0 incorrect_second_time "ai_083.mp3"
+setcycle 0 correct_article article1
+setcycle 0 article1 dem
+setcycle 0 article2 der
+setcycle 0 incorrect_first_time "at_137.mp3"
+setcycle 0 image1 "i_848.jpg"
+setcycle 0 image1_audio "at_4890.mp3"
+setcycle 0 color1 green
+setcycle 0 color2 red
+setcycle 1 pre_sentence "at_4880.mp3"
+setcycle 1 image2 "i_681.jpg"
+setcycle 1 image2_audio "at_5375.mp3"
+setcycle 1 article1_audio "at_3242.mp3"
+setcycle 1 article2_audio "at_3241.mp3"
+setcycle 1 image3 "i_115.jpg"
+setcycle 1 image3_audio "at_199.mp3"
+setcycle 1 whole_sentence "at_5374.mp3"
+setcycle 1 incorrect_second_time "ai_083.mp3"
+setcycle 1 correct_article article1
+setcycle 1 article1 der
+setcycle 1 article2 dem
+setcycle 1 incorrect_first_time "at_137.mp3"
+setcycle 1 image1 "i_115.jpg"
+setcycle 1 image1_audio "at_4880.mp3"
+setcycle 1 color1 red
+setcycle 1 color2 green
+setcycle 2 pre_sentence "at_2069.mp3"
+setcycle 2 image2 "i_685.jpg"
+setcycle 2 image2_audio "at_5373.mp3"
+setcycle 2 article1_audio "at_3241.mp3"
+setcycle 2 article2_audio "at_3242.mp3"
+setcycle 2 image3 "i_362.jpg"
+setcycle 2 image3_audio "at_1618.mp3"
+setcycle 2 whole_sentence "at_5372.mp3"
+setcycle 2 incorrect_second_time "ai_083.mp3"
+setcycle 2 correct_article article1
+setcycle 2 article1 dem
+setcycle 2 article2 der
+setcycle 2 incorrect_first_time "at_137.mp3"
+setcycle 2 image1 "i_362.jpg"
+setcycle 2 image1_audio "at_2069.mp3"
+setcycle 2 color1 blue
+setcycle 2 color2 red
+setcycle 3 pre_sentence "at_2965.mp3"
+setcycle 3 image2 "i_679.jpg"
+setcycle 3 image2_audio "at_5377.mp3"
+setcycle 3 article1_audio "at_3242.mp3"
+setcycle 3 article2_audio "at_3241.mp3"
+setcycle 3 image3 "i_784.jpg"
+setcycle 3 image3_audio "at_5368.mp3"
+setcycle 3 whole_sentence "at_5376.mp3"
+setcycle 3 incorrect_second_time "ai_083.mp3"
+setcycle 3 correct_article article1
+setcycle 3 article1 der
+setcycle 3 article2 dem
+setcycle 3 incorrect_first_time "at_137.mp3"
+setcycle 3 image1 "i_784.jpg"
+setcycle 3 image1_audio "at_2965.mp3"
+setcycle 3 color1 red
+setcycle 3 color2 blue
+setcycle 4 pre_sentence "at_4878.mp3"
+setcycle 4 image2 "i_688.jpg"
+setcycle 4 image2_audio "at_5370.mp3"
+setcycle 4 article1_audio "at_3241.mp3"
+setcycle 4 article2_audio "at_3242.mp3"
+setcycle 4 image3 "i_250.jpg"
+setcycle 4 image3_audio "at_1342.mp3"
+setcycle 4 whole_sentence "at_5369.mp3"
+setcycle 4 incorrect_second_time "ai_083.mp3"
+setcycle 4 correct_article article1
+setcycle 4 article1 dem
+setcycle 4 article2 der
+setcycle 4 incorrect_first_time "at_137.mp3"
+setcycle 4 image1 "i_250.jpg"
+setcycle 4 image1_audio "at_4878.mp3"
+setcycle 4 color1 green
+setcycle 4 color2 red
+setcycle 5 pre_sentence "at_2069.mp3"
+setcycle 5 image2 "i_686.jpg"
+setcycle 5 image2_audio "at_5631.mp3"
+setcycle 5 article1_audio "at_3241.mp3"
+setcycle 5 article2_audio "at_3242.mp3"
+setcycle 5 image3 "i_362.jpg"
+setcycle 5 image3_audio "at_1618.mp3"
+setcycle 5 whole_sentence "at_5371.mp3"
+setcycle 5 incorrect_second_time "ai_083.mp3"
+setcycle 5 correct_article article1
+setcycle 5 article1 dem
+setcycle 5 article2 der
+setcycle 5 incorrect_first_time "at_137.mp3"
+setcycle 5 image1 "i_362.jpg"
+setcycle 5 image1_audio "at_2069.mp3"
+setcycle 5 color1 blue
+setcycle 5 color2 red
+run V3_trial_sequence
+
+
+V3_trial_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run V3_trial_booleans True
+run V3_shuffle True
+run new_3_inline_javascript True
+run V3_display True
+run V3_show_image1 True
+run V3_display True
+run V3_presentence True
+run V3_animation True
+run V3_try_twice True
+run V3_remove_incorrect_option True
+run V3_display True
+run V3_whole_sentence True
+run V3_wait_3000ms True
+run end_timing True
+run new_1_logger True
+
+
+V3_trial_booleans
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+show_image1 = 0
+show_image2 = 0
+show_image3 = 0
+show_article1 = 0
+show_article2 = 0
+
+show_box_image1 = 1
+show_box_image2 = 0
+show_box_image3 = 0
+
+show_box_article1 = 0
+show_box_article2 = 0
+
+show_highlight = 0
+
+word_audio = "None.mp3"
+clicked_sound = "None.mp3"
+repeat_click = 1
+show_next_empty = 1
+show_next = 0
+play_clicked_image = 0
+reveal_correct = 0
+n_incorrect = 0
+responded_correctly = "None"
+
+play_your_turn = 0
+replay_audio = 0
+__end__
+
+
+V3_shuffle
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+// Shuffle sound position:
+l = [x_article1, x_article2];
+random.shuffle(l);
+
+console.log(l);
+
+[x_article1, x_article2] = l;
+__end__
+
+
+new_3_inline_javascript
+
+set description "Executes Python code"
+set _run "s_time = Date.now()"
+set _prepare ""
+
+
+V3_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=image1 scale="{scale_image}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=image2 scale="{scale_image}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" name=image3 scale="{scale_image}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article1 scale="{scale_box}" show_if="show_box_article1==1" x="{x_article1}" y="{y_article1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article2 scale="{scale_box}" show_if="show_box_article2==1" x="{x_article2}" y="{y_article2}" z_index=0
+draw textline center=1 color="{color1}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article1==1" text="{article1}" x="{x_article1}" y="{y_article1}" z_index=0
+draw textline center=1 color="{color2}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article2==1" text="{article2}" x="{x_article2}" y="{y_article2}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red.png" name=None scale="{scale_box}" show_if="responded_correctly==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="responded_correctly==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="next_box_empty.png" name=None scale=1 show_if="show_next_empty==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="next.png" name=next scale=1 show_if="show_next==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="highlight_box_yellow.png" name=None scale="{scale_box}" show_if="reveal_correct==1" x="{x_reveal_correct}" y="{y_reveal_correct}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="responded_correctly==1 and show_fb==1" x="{x_next}" y="{y_next}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="reveal_example==1" x="{x_reveal_example}" y="{y_reveal_example}" z_index=0
+
+
+V3_show_image1
+
+set description "Executes Python code"
+set _run "show_image1 = 1"
+set _prepare ""
+
+
+V3_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=image1 scale="{scale_image}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=image2 scale="{scale_image}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" name=image3 scale="{scale_image}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article1 scale="{scale_box}" show_if="show_box_article1==1" x="{x_article1}" y="{y_article1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article2 scale="{scale_box}" show_if="show_box_article2==1" x="{x_article2}" y="{y_article2}" z_index=0
+draw textline center=1 color="{color1}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article1==1" text="{article1}" x="{x_article1}" y="{y_article1}" z_index=0
+draw textline center=1 color="{color2}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article2==1" text="{article2}" x="{x_article2}" y="{y_article2}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red.png" name=None scale="{scale_box}" show_if="responded_correctly==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="responded_correctly==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="next_box_empty.png" name=None scale=1 show_if="show_next_empty==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="next.png" name=next scale=1 show_if="show_next==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="highlight_box_yellow.png" name=None scale="{scale_box}" show_if="reveal_correct==1" x="{x_reveal_correct}" y="{y_reveal_correct}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="responded_correctly==1 and show_fb==1" x="{x_next}" y="{y_next}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="reveal_example==1" x="{x_reveal_example}" y="{y_reveal_example}" z_index=0
+
+
+V3_presentence
+
+set volume 1
+set stop_after 0
+set sample "{pre_sentence}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+
+V3_animation
+
+set source_file ""
+set source table
+set repeat 1
+set order sequential
+set description "Repeatedly runs another item"
+set cycles 4
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 stimulus image2
+setcycle 0 animation_audio "{image2_audio}"
+setcycle 1 stimulus article1
+setcycle 1 animation_audio "None.mp3"
+setcycle 2 stimulus article2
+setcycle 2 animation_audio "None.mp3"
+setcycle 3 stimulus image3
+setcycle 3 animation_audio "flip_sound.wav"
+run V3_animation_sequence
+
+
+V3_animation_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run V3_update_animation True
+run V3_display True
+run V3_pause "animation_audio == \"None.mp3\""
+run V3_animation_audio "animation_audio != \"None.mp3\""
+
+
+V3_update_animation
+
+set description "Executes Python code"
+___run__
+window["show_" + stimulus] = 1
+window["show_box_" + stimulus] = 1
+__end__
+set _prepare ""
+
+
+V3_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=image1 scale="{scale_image}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=image2 scale="{scale_image}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" name=image3 scale="{scale_image}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article1 scale="{scale_box}" show_if="show_box_article1==1" x="{x_article1}" y="{y_article1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article2 scale="{scale_box}" show_if="show_box_article2==1" x="{x_article2}" y="{y_article2}" z_index=0
+draw textline center=1 color="{color1}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article1==1" text="{article1}" x="{x_article1}" y="{y_article1}" z_index=0
+draw textline center=1 color="{color2}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article2==1" text="{article2}" x="{x_article2}" y="{y_article2}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red.png" name=None scale="{scale_box}" show_if="responded_correctly==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="responded_correctly==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="next_box_empty.png" name=None scale=1 show_if="show_next_empty==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="next.png" name=next scale=1 show_if="show_next==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="highlight_box_yellow.png" name=None scale="{scale_box}" show_if="reveal_correct==1" x="{x_reveal_correct}" y="{y_reveal_correct}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="responded_correctly==1 and show_fb==1" x="{x_next}" y="{y_next}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="reveal_example==1" x="{x_reveal_example}" y="{y_reveal_example}" z_index=0
+
+
+V3_pause
+
+set jitter_mode Uniform
+set jitter 0
+set duration 0
+set description "A random delay sampled from either a normal or uniform distribution"
+
+
+V3_animation_audio
+
+set volume 1
+set stop_after 0
+set sample "{animation_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+
+V3_try_twice
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 empty_column ""
+run V3_try_twice_sequence
+
+
+V3_try_twice_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run V3_inner_booleans True
+run V3_click_loop True
+run V3_determine_response_accuracy True
+run V3_show_fb True
+run V3_display True
+run V3_HACK_3 True
+run remove_fb True
+run V3_display True
+run V3_replay_presentence "n_incorrect == 1 and responded_correctly != 1"
+run V3_replay_first_part "n_incorrect == 1 and responded_correctly != 1"
+run V3_play_correct "n_incorrect == 2"
+run V3_try_again True
+
+V3_inner_booleans
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+show_fb = 0
+play_clicked_image = 0
+responded_correctly = "None"
+__end__
+
+
+
+V3_click_loop
+
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 empty_column ""
+run V3_click_sequence
+
+
+V3_click_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run V3_display True
+run V3_click True
+run V3_analyze_click True
+run V3_HACK_2 "play_clicked_image == 1"
+run V3_repeat_click True
+
+
+V3_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=image1 scale="{scale_image}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=image2 scale="{scale_image}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" name=image3 scale="{scale_image}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article1 scale="{scale_box}" show_if="show_box_article1==1" x="{x_article1}" y="{y_article1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article2 scale="{scale_box}" show_if="show_box_article2==1" x="{x_article2}" y="{y_article2}" z_index=0
+draw textline center=1 color="{color1}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article1==1" text="{article1}" x="{x_article1}" y="{y_article1}" z_index=0
+draw textline center=1 color="{color2}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article2==1" text="{article2}" x="{x_article2}" y="{y_article2}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red.png" name=None scale="{scale_box}" show_if="responded_correctly==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="responded_correctly==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="next_box_empty.png" name=None scale=1 show_if="show_next_empty==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="next.png" name=next scale=1 show_if="show_next==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="highlight_box_yellow.png" name=None scale="{scale_box}" show_if="reveal_correct==1" x="{x_reveal_correct}" y="{y_reveal_correct}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="responded_correctly==1 and show_fb==1" x="{x_next}" y="{y_next}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="reveal_example==1" x="{x_reveal_example}" y="{y_reveal_example}" z_index=0
+
+
+V3_click
+
+set timeout infinite
+set show_cursor yes
+set linked_sketchpad V3_display
+set flush yes
+set event_type mouseclick
+set duration mouseclick
+set description "Collects mouse responses"
+
+
+V3_analyze_click
+
+set description "Executes Python code"
+___run__
+play_clicked_image = 0
+replay_audio = 1
+
+// HACK:
+// Strip cursor_roi:
+cursor_roi = removeSubstring(cursor_roi, "None")
+cursor_roi = removeSubstring(cursor_roi, ";")
+
+console.log("roi " + cursor_roi)
+
+show_next = 0
+play_clicked_image = 0
+show_highlight = 0
+repeat_click = 1
+if 	(cursor_roi.includes("article") ) {
+  clicked_on_article = 1
+
+  image_id = (cursor_roi.slice(7))
+
+  x_highlight = window["x_" + cursor_roi]
+  y_highlight = window["y_" + cursor_roi]
+
+  show_highlight = 1
+  clicked_sound = window[cursor_roi + "_audio"]
+  play_clicked_image = 1
+  show_next = 1
+
+  if (cursor_roi === correct_article) {
+    responded_correctly = 1
+    }
+  else {
+    responded_correctly = 0
+    }
+  console.log("CORRECT = " + responded_correctly)
+}
+
+if (cursor_roi === 'next') {
+  repeat_click = 0
+  }
+
+if 	(cursor_roi === "image1" || cursor_roi === "image2" ) {
+  play_clicked_image = 1
+
+  clicked_sound = window[cursor_roi + "_audio"]
+
+  x_highlight = window["x_" + cursor_roi]
+  y_highlight = window["y_" + cursor_roi]
+
+  show_highlight = 1
+  }
+
+console.log("Clicked sound = " + clicked_sound)
+__end__
+set _prepare ""
+
+
+V3_HACK_2
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 empty_column ""
+run V3_HACK_2_sequence
+
+
+V3_HACK_2_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run V3_display True
+run V3_play_article True
+run V3_highlight True
+run V3_display False
+
+
+V3_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=image1 scale="{scale_image}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=image2 scale="{scale_image}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" name=image3 scale="{scale_image}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article1 scale="{scale_box}" show_if="show_box_article1==1" x="{x_article1}" y="{y_article1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article2 scale="{scale_box}" show_if="show_box_article2==1" x="{x_article2}" y="{y_article2}" z_index=0
+draw textline center=1 color="{color1}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article1==1" text="{article1}" x="{x_article1}" y="{y_article1}" z_index=0
+draw textline center=1 color="{color2}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article2==1" text="{article2}" x="{x_article2}" y="{y_article2}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red.png" name=None scale="{scale_box}" show_if="responded_correctly==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="responded_correctly==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="next_box_empty.png" name=None scale=1 show_if="show_next_empty==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="next.png" name=next scale=1 show_if="show_next==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="highlight_box_yellow.png" name=None scale="{scale_box}" show_if="reveal_correct==1" x="{x_reveal_correct}" y="{y_reveal_correct}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="responded_correctly==1 and show_fb==1" x="{x_next}" y="{y_next}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="reveal_example==1" x="{x_reveal_example}" y="{y_reveal_example}" z_index=0
+
+
+V3_play_article
+
+set volume 1
+set stop_after 0
+set sample "{clicked_sound}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+V3_highlight
+
+set description "Executes Python code"
+___run__
+//show_fb = 1
+
+console.log("roi = " + cursor_roi)
+
+if (cursor_roi === 'image1' || cursor_roi === 'image2'){
+  show_highlight = 0
+  }
+
+console.log("SHOW = " + show_highlight)
+__end__
+set _prepare ""
+
+
+V3_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=image1 scale="{scale_image}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=image2 scale="{scale_image}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" name=image3 scale="{scale_image}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article1 scale="{scale_box}" show_if="show_box_article1==1" x="{x_article1}" y="{y_article1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article2 scale="{scale_box}" show_if="show_box_article2==1" x="{x_article2}" y="{y_article2}" z_index=0
+draw textline center=1 color="{color1}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article1==1" text="{article1}" x="{x_article1}" y="{y_article1}" z_index=0
+draw textline center=1 color="{color2}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article2==1" text="{article2}" x="{x_article2}" y="{y_article2}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red.png" name=None scale="{scale_box}" show_if="responded_correctly==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="responded_correctly==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="next_box_empty.png" name=None scale=1 show_if="show_next_empty==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="next.png" name=next scale=1 show_if="show_next==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="highlight_box_yellow.png" name=None scale="{scale_box}" show_if="reveal_correct==1" x="{x_reveal_correct}" y="{y_reveal_correct}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="responded_correctly==1 and show_fb==1" x="{x_next}" y="{y_next}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="reveal_example==1" x="{x_reveal_example}" y="{y_reveal_example}" z_index=0
+
+
+V3_repeat_click
+
+set description "Optionally repeat a cycle from a loop"
+set condition "repeat_click == 1"
+
+
+V3_determine_response_accuracy
+
+set description "Executes Python code"
+___run__
+console.log("CLICKED ON: " + cursor_roi)
+
+if (responded_correctly === 0) {
+  n_incorrect += 1
+  n_incorrect_trials +=1
+  }
+
+console.log("n incorrect = " + n_incorrect_trials)
+__end__
+set _prepare ""
+
+
+V3_show_fb
+
+set description "Executes Python code"
+set _run "show_fb = 1"
+set _prepare ""
+
+
+V3_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=image1 scale="{scale_image}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=image2 scale="{scale_image}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" name=image3 scale="{scale_image}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article1 scale="{scale_box}" show_if="show_box_article1==1" x="{x_article1}" y="{y_article1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article2 scale="{scale_box}" show_if="show_box_article2==1" x="{x_article2}" y="{y_article2}" z_index=0
+draw textline center=1 color="{color1}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article1==1" text="{article1}" x="{x_article1}" y="{y_article1}" z_index=0
+draw textline center=1 color="{color2}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article2==1" text="{article2}" x="{x_article2}" y="{y_article2}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red.png" name=None scale="{scale_box}" show_if="responded_correctly==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="responded_correctly==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="next_box_empty.png" name=None scale=1 show_if="show_next_empty==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="next.png" name=next scale=1 show_if="show_next==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="highlight_box_yellow.png" name=None scale="{scale_box}" show_if="reveal_correct==1" x="{x_reveal_correct}" y="{y_reveal_correct}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="responded_correctly==1 and show_fb==1" x="{x_next}" y="{y_next}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="reveal_example==1" x="{x_reveal_example}" y="{y_reveal_example}" z_index=0
+
+
+V3_HACK_3
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 empty_column ""
+run V3_HACK_3_sequence
+
+
+V3_HACK_3_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run fb_correct "responded_correctly == 1"
+run fb_incorrect_first_time "responded_correctly == 0 and n_incorrect < 2"
+run fb_incorrect_second_time "responded_correctly == 0 and n_incorrect == 2"
+run V3_reveal_correct "responded_correctly == 0 and n_incorrect == 2"
+
+
+fb_correct
+
+set volume 1
+set stop_after 0
+set sample "stars_correct.mp3"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+fb_incorrect_first_time
+
+set volume 1
+set stop_after 0
+set sample "{incorrect_first_time}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+fb_incorrect_second_time
+
+set volume 1
+set stop_after 0
+set sample "{incorrect_second_time}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+V3_reveal_correct
+
+set description "Executes Python code"
+___run__
+show_fb = 0
+reveal_correct = 1
+x_reveal_correct = window["x_" + correct_article]
+y_reveal_correct = window["y_" + correct_article]
+
+console.log("xy = " + x_reveal_correct + y_reveal_correct)
+
+correct_audio = window[window["correct_article"] + "_audio"]
+__end__
+set _prepare ""
+
+
+remove_fb
+
+set description "Executes Python code"
+___run__
+if (responded_correctly != 1) {
+    show_fb = 0}
+__end__
+set _prepare ""
+
+
+V3_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=image1 scale="{scale_image}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=image2 scale="{scale_image}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" name=image3 scale="{scale_image}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article1 scale="{scale_box}" show_if="show_box_article1==1" x="{x_article1}" y="{y_article1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article2 scale="{scale_box}" show_if="show_box_article2==1" x="{x_article2}" y="{y_article2}" z_index=0
+draw textline center=1 color="{color1}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article1==1" text="{article1}" x="{x_article1}" y="{y_article1}" z_index=0
+draw textline center=1 color="{color2}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article2==1" text="{article2}" x="{x_article2}" y="{y_article2}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red.png" name=None scale="{scale_box}" show_if="responded_correctly==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="responded_correctly==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="next_box_empty.png" name=None scale=1 show_if="show_next_empty==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="next.png" name=next scale=1 show_if="show_next==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="highlight_box_yellow.png" name=None scale="{scale_box}" show_if="reveal_correct==1" x="{x_reveal_correct}" y="{y_reveal_correct}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="responded_correctly==1 and show_fb==1" x="{x_next}" y="{y_next}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="reveal_example==1" x="{x_reveal_example}" y="{y_reveal_example}" z_index=0
+
+
+V3_replay_presentence
+
+set volume 1
+set stop_after 0
+set sample "{pre_sentence}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+
+V3_replay_first_part
+
+set volume 1
+set stop_after 0
+set sample "{image2_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+V3_play_correct
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 empty_column ""
+run V3_play_correct_sequence
+
+
+V3_play_correct_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run new_4_inline_javascript True
+run V3_display True
+run V3_reveal_correct_article True
+
+
+new_4_inline_javascript
+
+set description "Executes Python code"
+set _run "reveal_correct = 1"
+set _prepare ""
+
+
+V3_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=image1 scale="{scale_image}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=image2 scale="{scale_image}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" name=image3 scale="{scale_image}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article1 scale="{scale_box}" show_if="show_box_article1==1" x="{x_article1}" y="{y_article1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article2 scale="{scale_box}" show_if="show_box_article2==1" x="{x_article2}" y="{y_article2}" z_index=0
+draw textline center=1 color="{color1}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article1==1" text="{article1}" x="{x_article1}" y="{y_article1}" z_index=0
+draw textline center=1 color="{color2}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article2==1" text="{article2}" x="{x_article2}" y="{y_article2}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red.png" name=None scale="{scale_box}" show_if="responded_correctly==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="responded_correctly==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="next_box_empty.png" name=None scale=1 show_if="show_next_empty==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="next.png" name=next scale=1 show_if="show_next==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="highlight_box_yellow.png" name=None scale="{scale_box}" show_if="reveal_correct==1" x="{x_reveal_correct}" y="{y_reveal_correct}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="responded_correctly==1 and show_fb==1" x="{x_next}" y="{y_next}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="reveal_example==1" x="{x_reveal_example}" y="{y_reveal_example}" z_index=0
+
+
+
+V3_reveal_correct_article
+
+set volume 1
+set stop_after 0
+set sample "{correct_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+
+V3_try_again
+
+set description "Optionally repeat a cycle from a loop"
+set condition "responded_correctly == 0 and n_incorrect < 2"
+
+
+V3_remove_incorrect_option
+
+set description "Executes Python code"
+___run__
+show_article1 = 0
+show_article2 = 0
+
+show_box_article1 = 0
+show_box_article2 = 0
+
+window["show_" + correct_article] = 1
+//window["show_" + ] = 1
+__end__
+set _prepare ""
+
+
+V3_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" name=image1 scale="{scale_image}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=image2 scale="{scale_image}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" name=image3 scale="{scale_image}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=None scale="{scale_box}" show_if="show_box_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article1 scale="{scale_box}" show_if="show_box_article1==1" x="{x_article1}" y="{y_article1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=article2 scale="{scale_box}" show_if="show_box_article2==1" x="{x_article2}" y="{y_article2}" z_index=0
+draw textline center=1 color="{color1}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article1==1" text="{article1}" x="{x_article1}" y="{y_article1}" z_index=0
+draw textline center=1 color="{color2}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes name=None show_if="show_article2==1" text="{article2}" x="{x_article2}" y="{y_article2}" z_index=0
+draw image center=1 file="highlight_box_orange.png" name=None scale="{scale_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red.png" name=None scale="{scale_box}" show_if="responded_correctly==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="responded_correctly==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="next_box_empty.png" name=None scale=1 show_if="show_next_empty==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="next.png" name=next scale=1 show_if="show_next==1" x="{x_next}" y="{y_next}" z_index=0
+draw image center=1 file="highlight_box_yellow.png" name=None scale="{scale_box}" show_if="reveal_correct==1" x="{x_reveal_correct}" y="{y_reveal_correct}" z_index=0
+draw image center=1 file="stars.png" name=None scale=1 show_if="responded_correctly==1 and show_fb==1" x="{x_next}" y="{y_next}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="reveal_example==1" x="{x_reveal_example}" y="{y_reveal_example}" z_index=0
+
+
+
+V3_whole_sentence
+
+set volume 1
+set stop_after 0
+set sample "{whole_sentence}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+V3_wait_3000ms
+
+set jitter_mode Uniform
+set jitter 0
+set duration 3000
+set description "A random delay sampled from either a normal or uniform distribution"
+
+
+end_timing
+
+set description "Executes Python code"
+___run__
+// Get end time
+e_time = Date.now()
+
+response_time = e_time - s_time
+__end__
+set _prepare ""
+
+
+
+new_1_logger
+
+set description "Logs experimental data"
+set auto_log yes
+
+
+yoohoo
+
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 show_continue_button 0
+run yoohoo_sequence
+
+
+
+yoohoo_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run yoohoo_variables True
+run yoohoo_display True
+run play_yoohoo True
+run yoohoo_click_loop True
+
+
+yoohoo_variables
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+scale_yoohoo = 0.5
+yoohoo_image = "i_002.jpg"
+__end__
+
+
+yoohoo_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="i_002.jpg" scale="{scale_yoohoo}" show_if=True x=0 y=-96 z_index=0
+draw image center=1 file="next.png" name=continue_arrow scale=1 show_if="show_continue_button==1" x=0 y=288 z_index=0
+
+
+play_yoohoo
+
+set volume 1
+set stop_after 0
+set sample "{goodbye_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+yoohoo_click_loop
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 show_continue_button 1
+run yoohoo_click_sequence
+
+
+yoohoo_click_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run yoohoo_display True
+run yoohoo_click True
+run analyze_yoohoo_click True
+run repeat_yoohoo_cycle True
+
+
+yoohoo_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="i_002.jpg" scale="{scale_yoohoo}" show_if=True x=0 y=-96 z_index=0
+draw image center=1 file="next.png" name=continue_arrow scale=1 show_if="show_continue_button==1" x=0 y=288 z_index=0
+
+
+yoohoo_click
+
+set timeout infinite
+set show_cursor yes
+set linked_sketchpad yoohoo_display
+set flush yes
+set event_type mouseclick
+set duration mouseclick
+set description "Collects mouse responses"
+
+
+analyze_yoohoo_click
+
+set description "Executes Python code"
+___run__
+repeat_yoohoo = 1
+if (cursor_roi === 'continue_arrow'){
+  repeat_yoohoo = 0
+  }
+__end__
+set _prepare ""
+
+
+repeat_yoohoo_cycle
+
+set description "Optionally repeat a cycle from a loop"
+set condition "repeat_yoohoo == 1"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

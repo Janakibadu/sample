@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>SPEAK — Klassen- &amp; Schüler:innenverwaltung — Schüler:in hinzufügen</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+  .class-tabs { display:flex; gap:10px; margin-bottom:18px; }
+  .class-tab { padding:9px 18px; border-radius:12px; font-weight:700; font-size:13.5px; background:#fff; border:1px solid var(--line); color:var(--ink-soft); }
+  .class-tab.active { background:var(--ink); color:#fff; border-color:var(--ink); }
+  .toolbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
+  .code-chip { font-family:"Consolas",monospace; background:var(--app-bg); padding:4px 10px; border-radius:8px; font-weight:700; letter-spacing:.06em; }
+</style>
+</head>
+<body class="app">
+
+  <div class="funder-bar">
+    <img class="funder-logo-tud" src="assets/tud_logo_cmyk.png" alt="TU Dortmund Logo">
+    <img src="assets/IFS.png" alt="IFS Logo">
+    <img src="assets/speak-logo.png" alt="SPEAK Logo">
+    <img class="funder-logo-bund" src="assets/Bundesministrerium.jpg" alt="Bundesministerium Logo">
+    <img src="assets/EBF.jpg" alt="EBF Logo">
+  </div>
+
+  <div class="app-shell">
+    <div class="sidebar">
+      <img class="logo-mark" src="assets/speak-logo.png" alt="SPEAK" style="height:65px; margin-bottom:20px;">
+      <a class="nav-item" href="05-teacher-dashboard.html"><span class="ic">🏠</span> Dashboard</a>
+      <a class="nav-item active" href="06-class-management.html"><span class="ic">👥</span> Klassen &amp; Schüler:innen</a>
+      <a class="nav-item" href="07-assignment.html"><span class="ic">📌</span> Zuweisungen</a>
+      <a class="nav-item" href="09-results.html"><span class="ic">📊</span> Ergebnisse</a>
+      <div class="nav-spacer"></div>
+      <div class="nav-foot"><a class="nav-item" href="01-home.html"><span class="ic">🚪</span> Abmelden</a></div>
+    </div>
+
+    <div style="flex:1; display:flex; flex-direction:column;">
+      <div class="topbar">
+        <div class="h3">Klassen &amp; Schüler:innen</div>
+        <a class="avatar" href="01-home.html" title="Abmelden">FM</a>
+      </div>
+
+      <div class="main">
+        <div class="class-tabs">
+          <div class="class-tab active">Klasse 1A · 19 Schüler:innen</div>
+          <div class="class-tab">Klasse 1B · 21 Schüler:innen</div>
+          <div class="class-tab">Klasse 1C · 17 Schüler:innen</div>
+          <a class="class-tab" style="background:transparent; border-style:dashed; text-decoration:none;" href="06a-modal-new-class.html">＋ Neue Klasse</a>
+        </div>
+
+        <div class="toolbar">
+          <span class="muted">Zugangscodes werden nur einmal angezeigt - bitte geben Sie diese direkt an die Schüler:innen weiter.</span>
+          <a class="btn btn-md btn-coral" href="06b-modal-add-student.html">＋ Schüler:in hinzufügen</a>
+        </div>
+
+        <div class="card" style="padding:0;">
+          <table class="data">
+            <tr><th>Anzeigename</th><th>Zugangscode</th><th>Status</th><th>Zuletzt aktiv</th><th></th></tr>
+            <tr><td>🧒 Elli</td><td><span class="code-chip">F7KQ2M</span></td><td><span class="pill pill-mint">Aktiv</span></td><td>Heute</td>
+              <td style="text-align:right;"><a class="btn btn-ghost" style="height:34px; padding:0 14px; font-size:12.5px;" href="06c-modal-code-qr.html">Code &amp; QR</a></td></tr>
+            <tr><td>🧒 Yusuf</td><td><span class="code-chip">R2XZ9B</span></td><td><span class="pill pill-mint">Aktiv</span></td><td>Gestern</td>
+              <td style="text-align:right;"><a class="btn btn-ghost" style="height:34px; padding:0 14px; font-size:12.5px;" href="06c-modal-code-qr.html">Code &amp; QR</a></td></tr>
+            <tr><td>🧒 Lio</td><td><span class="code-chip">L9QQ4T</span></td><td><span class="pill pill-mint">Aktiv</span></td><td>Vor 2 Tagen</td>
+              <td style="text-align:right;"><a class="btn btn-ghost" style="height:34px; padding:0 14px; font-size:12.5px;" href="06c-modal-code-qr.html">Code &amp; QR</a></td></tr>
+            <tr><td>🧒 Wiki</td><td><span class="code-chip">•••••• </span></td><td><span class="pill pill-coral">Deaktiviert</span></td><td>Vor 3 Wochen</td>
+              <td style="text-align:right;"><button class="btn btn-ghost" style="height:34px; padding:0 14px; font-size:12.5px;">Reaktivieren</button></td></tr>
+          </table>
+        </div>
+
+        <div style="margin-top:22px; text-align:right;">
+          <a class="btn btn-md btn-primary" href="07-assignment.html">📌 Modul dieser Klasse zuweisen ▶</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div class="h2">Schüler:in hinzufügen</div>
+        <a class="modal-close" href="06-class-management.html" title="Schließen">✕</a>
+      </div>
+      <div class="modal-sub">Ein rein numerischer Zugangscode und QR-Code werden automatisch generiert.</div>
+
+      <label class="field-label" for="student-name">Anzeigename</label>
+      <input class="field-input" id="student-name" value="Lio">
+
+      <a class="btn btn-lg btn-coral" href="06c-modal-code-qr.html" style="width:100%;">Schüler:in hinzufügen</a>
+    </div>
+  </div>
+
+</body>
+</html>

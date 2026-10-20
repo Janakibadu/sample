@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>SPEAK — Aufgabe: Audio-Auswahl (Typ F) + Feedback-Zustände</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+  .stage { padding: 24px 40px 48px; max-width:1180px; margin:0 auto; }
+  .variants { display:grid; grid-template-columns: repeat(3, 1fr); gap:20px; }
+  .variant { background:#fff; border-radius:24px; padding:26px; box-shadow: var(--shadow-md); text-align:center; }
+  .variant .tag { font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; margin-bottom:14px; display:inline-block; padding:4px 12px; border-radius:999px; }
+  .subject { font-size:96px; margin: 6px 0 18px; }
+  .audio-opts { display:flex; gap:16px; justify-content:center; }
+  .audio-opt {
+    width:84px; height:84px; border-radius:50%; background:var(--app-bg); display:flex; align-items:center; justify-content:center;
+    font-size:30px; border:4px solid transparent;
+  }
+  .feedback-banner { margin-top:18px; padding:12px; border-radius:14px; font-weight:700; font-size:14px; }
+</style>
+</head>
+<body class="app-student">
+
+  <div class="funder-bar">
+    <img class="funder-logo-tud" src="assets/tud_logo_cmyk.png" alt="TU Dortmund Logo">
+    <img src="assets/IFS.png" alt="IFS Logo">
+    <img src="assets/speak-logo.png" alt="SPEAK Logo">
+    <img class="funder-logo-bund" src="assets/Bundesministrerium.jpg" alt="Bundesministerium Logo">
+    <img src="assets/EBF.jpg" alt="EBF Logo">
+  </div>
+
+  <div class="student-top">
+    <a class="back-link" href="11-module-player.html">← Aufgabenpfad</a>
+    <div class="h3">Typ F_1/F_2 · Bild → Audio, klanglich ähnlicher Distraktor</div>
+    <div class="progress-track" style="width:220px;"><div class="progress-fill" style="width:55%; background:var(--sky);"></div></div>
+  </div>
+
+  <div class="stage">
+    <div class="muted" style="text-align:center; margin-bottom:16px;">🔊 „Welcher Ton passt zum Bild?" — hier als drei Momente desselben Durchgangs gezeigt</div>
+    <div class="variants">
+
+      <div class="variant">
+        <span class="tag" style="background:var(--app-bg); color:var(--ink-soft);">Vor der Antwort</span>
+        <div class="subject">🐘</div>
+        <div class="audio-opts">
+          <div class="audio-opt">🔊 A</div>
+          <div class="audio-opt">🔊 B</div>
+        </div>
+      </div>
+
+      <div class="variant">
+        <span class="tag pill-coral">1. falscher Versuch</span>
+        <div class="subject">🐘</div>
+        <div class="audio-opts">
+          <div class="audio-opt" style="border-color:var(--coral); background:rgba(255,107,107,.15);">🔊 A</div>
+          <div class="audio-opt">🔊 B</div>
+        </div>
+        <div class="feedback-banner pill-coral">😅 Nicht ganz — hör noch einmal genau hin und versuch's noch einmal!</div>
+      </div>
+
+      <div class="variant">
+        <span class="tag pill-mint">Richtig — Versuch 2</span>
+        <div class="subject">🐘</div>
+        <div class="audio-opts">
+          <div class="audio-opt">🔊 A</div>
+          <div class="audio-opt" style="border-color:var(--mint); background:rgba(6,214,160,.15);">🔊 B</div>
+        </div>
+        <div class="feedback-banner pill-mint">🎉 Ja! Das ist „der Elefant" — super zugehört!</div>
+      </div>
+
+    </div>
+
+    <div class="card" style="margin-top:26px; text-align:center;">
+      <span class="pill pill-coral">⚠️ Wäre hier auch der 2. Versuch falsch, würde die Engine als Nächstes eine <b>Nachhilfeaufgabe vom Typ C</b> einfügen (Fehlerschwelle erreicht).</span>
+    </div>
+
+    <div style="text-align:right; margin-top:22px;">
+      <a class="btn btn-lg btn-coral" href="15-task-grammar-article.html">Weiter ▶</a>
+    </div>
+  </div>
+
+</body>
+</html>

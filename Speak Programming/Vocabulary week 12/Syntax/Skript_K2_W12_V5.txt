@@ -1,0 +1,506 @@
+SPEAK Cohort 2 Vocabulary Week 12 2024
+
+W12_V5
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 block_type W12_V5
+setcycle 0 week 12
+setcycle 0 explanation_image "i_264.jpg"
+setcycle 0 explanation_audio "ai_098.mp3"
+setcycle 0 task_type V5
+setcycle 0 goodbye_audio "ai_097.mp3"
+run V5_block_sequence
+
+
+V5_block_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run C_block_variables True
+run C_instructions True
+run C_play_explanation True
+run W12_V5_loop True
+run yoohoo True
+
+C_block_variables
+
+set description "Executes Python code"
+set _run ""
+set _prepare ""
+
+
+C_instructions
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{explanation_image}" scale=1 show_if=True x=0 y=0 z_index=0
+draw image center=1 file="highlight_box_gray_large.png" scale=1 show_if=True x=0 y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+
+
+C_play_explanation
+
+set volume 1
+set stop_after 0
+set sample "{explanation_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+
+W12_V5_loop
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 10
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 audio "at_5304.mp3"
+setcycle 0 target "i_531.jpg"
+setcycle 1 audio "at_5305.mp3"
+setcycle 1 target "i_532.jpg"
+setcycle 2 audio "at_5306.mp3"
+setcycle 2 target "i_533.jpg"
+setcycle 3 audio "at_5307.mp3"
+setcycle 3 target "i_534.jpg"
+setcycle 4 audio "at_5308.mp3"
+setcycle 4 target "i_245.jpg"
+setcycle 5 audio "at_5309.mp3"
+setcycle 5 target "i_257.jpg"
+setcycle 6 audio "at_5310.mp3"
+setcycle 6 target "i_535.jpg"
+setcycle 7 audio "at_5311.mp3"
+setcycle 7 target "i_246.jpg"
+setcycle 8 audio "at_5312.mp3"
+setcycle 8 target "i_536.jpg"
+setcycle 9 audio "at_5313.mp3"
+setcycle 9 target "i_537.jpg"
+run C_trial_sequence
+
+
+C_trial_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run C_start_timing True
+run C_trial_variables True
+run C_trial_booleans True
+run C_click_loop True
+run C_show_stars True
+run C_empty_box True
+run C_stars_sound True
+run C_end_timer True
+run C_logger True
+
+
+C_start_timing
+
+set description "Executes Python code"
+set _run "s_time = Date.now()"
+set _prepare ""
+
+
+
+C_trial_variables
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+image1 = target
+x_image1 = 0
+y_image1 = -100
+
+scale1 = 0.7
+scale_image_box = 0.7
+__end__
+
+
+
+
+
+C_trial_booleans
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+// By default, the audio is (re)played 
+play_audio = 1
+
+// By default, no image is clicked on:
+clicked_on_an_image = 0
+image_is_clickable = 1
+
+show_continue = 0
+
+// HACK
+play_definition = 1
+
+pause_after_audio = 1
+__end__
+
+
+
+
+C_click_loop
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 empty_column ""
+run C_click_sequence
+
+
+C_show_continue
+
+if (play_definition == 1){
+  show_continue = 1
+  }
+
+
+C_click_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run C_display True
+run C_target_audio "play_audio == 1"
+run C_pause_after_audio "pause_after_audio == 1"
+run C_show_continue True
+run C_display True
+run C_mouse True
+run C_analyze_click True
+run C_repeat_if True
+run C_repeat_cycle True
+
+
+C_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="{image1}" name=image1 scale="{scale1}" show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="next_empty.png" name=None scale="{scale_response_bar}" show_if="block_type!='W3_V1'" x=0 y="{y_next_icon}" z_index=0
+draw image center=1 file="next.png" name=continue_arrow scale="{scale_response_bar}" show_if="show_continue == 1" x=0 y="{y_next_icon}" z_index=0
+draw image center=1 file="highlight_box_gray_large.png" name=None scale="{scale_image_box}" show_if=always x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_orange_large.png" name=None scale="{scale_image_box}" show_if="play_definition==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+
+
+C_target_audio
+
+set volume 1
+set stop_after 0
+set sample "{audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+C_pause_after_audio
+
+set jitter_mode Uniform
+set jitter 0
+set duration 3000
+set description "A random delay sampled from either a normal or uniform distribution"
+
+
+C_show_continue
+
+set description "Executes Python code"
+___run__
+if (play_definition == 1){
+  show_continue = 1
+  }
+__end__
+set _prepare ""
+
+
+C_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="{image1}" name=image1 scale="{scale1}" show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="next_empty.png" name=None scale="{scale_response_bar}" show_if="block_type!='W3_V1'" x=0 y="{y_next_icon}" z_index=0
+draw image center=1 file="next.png" name=continue_arrow scale="{scale_response_bar}" show_if="show_continue == 1" x=0 y="{y_next_icon}" z_index=0
+draw image center=1 file="highlight_box_gray_large.png" name=None scale="{scale_image_box}" show_if=always x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_orange_large.png" name=None scale="{scale_image_box}" show_if="play_definition==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+
+
+C_mouse
+
+set timeout infinite
+set show_cursor yes
+set linked_sketchpad C_display
+set flush yes
+set event_type mouseclick
+set duration mouseclick
+set description "Collects mouse responses"
+
+
+
+
+
+C_analyze_click
+
+set description "Executes Python code"
+___run__
+// HACK:
+// Strip cursor_roi:
+cursor_roi = removeSubstring(cursor_roi, "None")
+cursor_roi = removeSubstring(cursor_roi, ";")
+
+
+
+// Determine whether to (re)play audio file or not
+
+
+if (cursor_roi === 'image1') {
+	play_audio = 1
+	pause_after_audio = 0
+}
+else {
+	play_audio = 0
+}
+__end__
+set _prepare ""
+
+
+
+
+C_repeat_if
+
+set description "Executes Python code"
+___run__
+// HACK:
+// Strip cursor_roi:
+cursor_roi = removeSubstring(cursor_roi, "None")
+cursor_roi = removeSubstring(cursor_roi, ";")
+
+
+// Determine whether or not to repeat the current trial (cycle):
+// By default, the trial is repeated
+repeat_cycle_variable = 1
+// Except when the continue button is clicked AND the child
+// selected an image:
+if (cursor_roi === "continue_arrow") {
+	repeat_cycle_variable = 0
+	}
+__end__
+set _prepare ""
+
+
+
+C_repeat_cycle
+
+set description "Optionally repeat a cycle from a loop"
+set condition "repeat_cycle_variable == 1"
+
+
+
+C_show_stars
+
+set description "Executes Python code"
+set _run "show_stars = 1"
+set _prepare ""
+
+
+C_empty_box
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="highlight_box_orange_large.png" name=None scale="{scale_image_box}" show_if=always x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="next_empty.png" name=None scale="{scale_response_bar}" show_if="show_continue == 1" x=0 y="{y_next_icon}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="stars.png" scale=1 show_if=True x=0 y=-64 z_index=0
+
+
+C_stars_sound
+
+set volume 1
+set stop_after 0
+set sample "stars_correct.mp3"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+
+
+
+C_end_timer
+
+
+set description "Executes Python code"
+___run__
+// Get end time
+e_time = Date.now()
+
+response_time = e_time - s_time
+__end__
+set _prepare ""
+
+
+
+C_logger
+
+set description "Logs experimental data"
+set auto_log yes
+
+
+yoohoo
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 show_continue_button 0
+run yoohoo_sequence
+
+
+yoohoo_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run yoohoo_variables True
+run yoohoo_display True
+run play_yoohoo True
+run yoohoo_click_loop True
+
+
+
+yoohoo_variables
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+scale_yoohoo = 0.5
+yoohoo_image = "i_002.jpg"
+__end__
+
+
+yoohoo_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="i_002.jpg" scale="{scale_yoohoo}" show_if=True x=0 y=-96 z_index=0
+draw image center=1 file="next.png" name=continue_arrow scale=1 show_if="show_continue_button==1" x=0 y=288 z_index=0
+
+
+
+play_yoohoo
+
+set volume 1
+set stop_after 0
+set sample "{goodbye_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+yoohoo_click_loop
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 show_continue_button 1
+run yoohoo_click_sequence
+
+
+yoohoo_click_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run yoohoo_display True
+run yoohoo_click True
+run analyze_yoohoo_click True
+run repeat_yoohoo_cycle True
+
+
+yoohoo_display
+
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="i_002.jpg" scale="{scale_yoohoo}" show_if=True x=0 y=-96 z_index=0
+draw image center=1 file="next.png" name=continue_arrow scale=1 show_if="show_continue_button==1" x=0 y=288 z_index=0
+
+
+yoohoo_click
+
+set timeout infinite
+set show_cursor yes
+set linked_sketchpad yoohoo_display
+set flush yes
+set event_type mouseclick
+set duration mouseclick
+set description "Collects mouse responses"
+
+
+analyze_yoohoo_click
+
+
+set description "Executes Python code"
+___run__
+repeat_yoohoo = 1
+if (cursor_roi === 'continue_arrow'){
+  repeat_yoohoo = 0
+  }
+__end__
+set _prepare ""
+
+
+repeat_yoohoo_cycle
+
+set description "Optionally repeat a cycle from a loop"
+set condition "repeat_yoohoo == 1"
+
+
+
+
+
+

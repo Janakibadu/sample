@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>SPEAK — Belohnungs-/Abschlussbildschirm</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+  .wrap {
+    min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;
+    background: radial-gradient(circle at 30% 20%, rgba(255,201,60,.4), transparent 45%),
+                radial-gradient(circle at 75% 75%, rgba(155,93,229,.28), transparent 45%);
+    position:relative; text-align:center;
+  }
+  .trophy { font-size:120px; }
+  .stars-row { display:flex; gap:10px; font-size:44px; }
+  .stat-pills { display:flex; justify-content:center; gap:12px; margin-top:6px; }
+</style>
+</head>
+<body class="app-student">
+
+  <div class="funder-bar">
+    <img class="funder-logo-tud" src="assets/tud_logo_cmyk.png" alt="TU Dortmund Logo">
+    <img src="assets/IFS.png" alt="IFS Logo">
+    <img src="assets/speak-logo.png" alt="SPEAK Logo">
+    <img class="funder-logo-bund" src="assets/Bundesministrerium.jpg" alt="Bundesministerium Logo">
+    <img src="assets/EBF.jpg" alt="EBF Logo">
+  </div>
+
+  <div class="wrap">
+    <div class="trophy">🏆</div>
+    <div class="h1" style="font-size:32px;">Super gemacht, Elli!</div>
+    <div class="muted" style="font-size:16px;">Du hast Einheit 10 · Grammatik abgeschlossen.</div>
+
+    <div class="stat-pills">
+      <span class="pill pill-mint">✅ 5/5 Aufgaben abgeschlossen</span>
+    </div>
+
+    <a class="btn btn-xl btn-coral" href="10-student-home.html" style="margin-top:22px;">Zurück zu meinen Einheiten 🏠</a>
+  </div>
+
+</body>
+</html>

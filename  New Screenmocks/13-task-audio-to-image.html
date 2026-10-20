@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>SPEAK — Aufgabe: Audio zu Bild (Typ B)</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+  .stage { min-height: calc(100vh - 84px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:34px; position:relative; }
+  .prompt-btn {
+    width:150px; height:150px; border-radius:50%; background: linear-gradient(160deg, var(--coral), #ff9a8b);
+    display:flex; align-items:center; justify-content:center; font-size:64px; box-shadow: var(--shadow-lg); color:#fff;
+  }
+  .options { display:flex; gap:26px; }
+  .opt {
+    width:170px; height:170px; border-radius:26px; background:#fff; box-shadow:var(--shadow-md);
+    display:flex; align-items:center; justify-content:center; font-size:80px; border:5px solid transparent;
+    text-decoration:none;
+  }
+  .opt.correct { border-color: var(--mint); }
+</style>
+</head>
+<body class="app-student">
+
+  <div class="funder-bar">
+    <img class="funder-logo-tud" src="assets/tud_logo_cmyk.png" alt="TU Dortmund Logo">
+    <img src="assets/IFS.png" alt="IFS Logo">
+    <img src="assets/speak-logo.png" alt="SPEAK Logo">
+    <img class="funder-logo-bund" src="assets/Bundesministrerium.jpg" alt="Bundesministerium Logo">
+    <img src="assets/EBF.jpg" alt="EBF Logo">
+  </div>
+
+  <div class="student-top">
+    <a class="back-link" href="11-module-player.html">← Aufgabenpfad</a>
+    <div class="h3">Typ B · Audio → Bildauswahl</div>
+    <div class="progress-track" style="width:220px;"><div class="progress-fill" style="width:40%; background:var(--sky);"></div></div>
+  </div>
+
+  <div class="stage">
+    <div class="sticker" style="top:60px; left:80px;">🎧</div>
+    <div class="sticker" style="top:60px; right:80px;">✨</div>
+
+    <div class="prompt-btn">🔊</div>
+    <div class="muted" style="font-size:16px;">„Tippe auf das Bild für <b style="color:var(--ink);">der Apfel</b>"</div>
+
+    <div class="options">
+      <div class="opt">🍇</div>
+      <a class="opt correct" href="14-task-audio-choice-feedback.html">🍎</a>
+      <div class="opt">🍌</div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>SPEAK — Lehrkraft-Registrierung</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+  .split { display:flex; min-height:100vh; }
+  .side {
+    flex: .85; background: linear-gradient(160deg, var(--sky), var(--grape));
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; color:#fff; position:relative;
+  }
+  .form-wrap { flex:1.15; display:flex; align-items:center; justify-content:center; padding:40px; }
+  .form-card { width:100%; max-width:400px; }
+  .field { margin-bottom:16px; }
+  .field label { display:block; font-size:13px; font-weight:700; color:var(--ink-soft); margin-bottom:6px; }
+  .field input {
+    width:100%; height:46px; border-radius:14px; border:2px solid var(--line); padding:0 14px;
+    font-size:15px; font-family:var(--font-clean); color:var(--ink); background:#fff;
+  }
+  .field input::placeholder{ color:var(--ink-faint); }
+</style>
+</head>
+<body class="app">
+
+  <div class="funder-bar">
+    <img class="funder-logo-tud" src="assets/tud_logo_cmyk.png" alt="TU Dortmund Logo">
+    <img src="assets/IFS.png" alt="IFS Logo">
+    <img src="assets/speak-logo.png" alt="SPEAK Logo">
+    <img class="funder-logo-bund" src="assets/Bundesministrerium.jpg" alt="Bundesministerium Logo">
+    <img src="assets/EBF.jpg" alt="EBF Logo">
+  </div>
+
+  <div class="split">
+    <div class="side">
+      <img class="logo-mark" src="assets/speak-logo.png" alt="SPEAK" style="height:110px;">
+      <div class="h1" style="color:#fff; text-align:center; max-width:260px;">Willkommen im SPEAK-Lehrkräftezimmer</div>
+      <div style="opacity:.9; text-align:center; max-width:260px; font-size:14.5px;">
+        Einmal registrieren - von hier aus verwalten Sie Ihre eigenen Klassen und Schüler:innen.
+      </div>
+    </div>
+
+    <div class="form-wrap">
+      <div class="form-card">
+        <a class="back-link" href="01-home.html" style="margin-bottom:14px; display:inline-flex;">← Startseite</a>
+        <div class="h2" style="margin:6px 0 22px;">Erstellen Sie Ihr Lehrkraft-Konto</div>
+
+        <div class="field">
+          <label>Vollständiger Name</label>
+          <input placeholder="z. B. Frau Müller">
+        </div>
+        <div class="field">
+          <label>E-Mail-Adresse</label>
+          <input placeholder="du@schule.de">
+        </div>
+        <div class="field">
+          <label>Passwort</label>
+          <input type="password" placeholder="••••••••••">
+        </div>
+        <div class="field">
+          <label>Passwort bestätigen</label>
+          <input type="password" placeholder="••••••••••">
+        </div>
+
+        <a class="btn btn-lg btn-coral" href="05-teacher-dashboard.html" style="width:100%; margin-top:10px;">Mein Konto erstellen</a>
+        <div class="muted" style="text-align:center; margin-top:14px;">Bereits registriert?
+          <a href="03-teacher-login.html" style="color:var(--ink); font-weight:700; text-decoration:none;">Anmelden</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

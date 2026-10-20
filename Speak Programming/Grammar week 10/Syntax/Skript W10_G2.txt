@@ -1,0 +1,1342 @@
+W10_G2
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 block_type W10_G2
+setcycle 0 goodbye_audio "ai_090.mp3"
+setcycle 0 week 10
+setcycle 0 task_type G2
+setcycle 0 instruction_msg "ai_103.mp3"
+setcycle 0 bg_lower "i_231_3.png"
+setcycle 0 bg_upper "i_231_2.png"
+setcycle 0 start_filling "at_1421.mp3"
+run U_block_sequence
+
+
+U_block_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run U_init_block_booleans True
+run U_block_variables True
+run U_block_loop True
+
+
+U_init_block_booleans
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+practice = 1
+play_start_filling = 1
+play_instructions_fill_suitcase = 1
+__end__
+
+
+U_block_variables
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+// x_item1 = -250
+// x_item2 = 0
+// x_item3 = 250
+
+// y_item1 = -50
+// y_item2 = -50
+// y_item3 = -50
+
+
+
+
+
+x_bg = 0
+y_bg = -150
+
+
+x_item1 = x_bg
+x_item2 = x_bg
+x_item3 = x_bg
+
+y_item1 = y_bg
+y_item2 = y_bg
+y_item3 = y_bg
+
+
+scale_bg = 1
+scale_orig = 0.6
+
+scale_smaller = 0.3
+scale_box = 0.55
+
+x_start = -350;
+x_end = 350;
+
+// x_dest1 = -100
+// x_dest2 = 25
+// x_dest3 = 150
+__end__
+
+
+U_block_loop
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 4
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 description_images "at_5194.mp3"
+setcycle 0 image1 "i_250.png"
+setcycle 0 audio_image1 "at_1549.mp3"
+setcycle 0 image2 "i_320.png"
+setcycle 0 audio_image2 "at_1430.mp3"
+setcycle 0 image3 "i_147.png"
+setcycle 0 audio_image3 "at_421.mp3"
+setcycle 0 fb_incorrect "at_1435.mp3"
+setcycle 0 image4 "i_319.jpg"
+setcycle 0 image5 "i_150.jpg"
+setcycle 0 audio_image4 "at_1406.mp3"
+setcycle 0 audio_image5 "at_1432.mp3"
+setcycle 0 question "at_1421.mp3"
+setcycle 1 description_images "at_5195.mp3"
+setcycle 1 image1 "i_249.png"
+setcycle 1 audio_image1 "at_1548.mp3"
+setcycle 1 image2 "i_559.png"
+setcycle 1 audio_image2 "at_5192.mp3"
+setcycle 1 image3 "i_341.png"
+setcycle 1 audio_image3 "at_1428.mp3"
+setcycle 1 fb_incorrect "at_1434.mp3"
+setcycle 1 image4 "i_135.jpg"
+setcycle 1 image5 "i_340.jpg"
+setcycle 1 audio_image4 "at_1422.mp3"
+setcycle 1 audio_image5 "at_1423.mp3"
+setcycle 1 question "at_1421.mp3"
+setcycle 2 description_images "at_5196.mp3"
+setcycle 2 image1 "i_410.png"
+setcycle 2 audio_image1 "at_1597.mp3"
+setcycle 2 image2 "i_044.png"
+setcycle 2 audio_image2 "at_1404.mp3"
+setcycle 2 image3 "i_196.png"
+setcycle 2 audio_image3 "at_5190.mp3"
+setcycle 2 fb_incorrect "at_5193.mp3"
+setcycle 2 image4 "i_355.jpg"
+setcycle 2 image5 "i_134.jpg"
+setcycle 2 audio_image4 "at_1458.mp3"
+setcycle 2 audio_image5 "at_445.mp3"
+setcycle 2 question "at_1421.mp3"
+setcycle 3 description_images "at_5197.mp3"
+setcycle 3 image1 "i_150.png"
+setcycle 3 audio_image1 "at_1432.mp3"
+setcycle 3 image2 "i_145.png"
+setcycle 3 audio_image2 "at_423.mp3"
+setcycle 3 image3 "i_785.png"
+setcycle 3 audio_image3 "at_5191.mp3"
+setcycle 3 fb_incorrect "at_1435.mp3"
+setcycle 3 image4 "i_320.jpg"
+setcycle 3 image5 "i_250.jpg"
+setcycle 3 audio_image4 "at_1430.mp3"
+setcycle 3 audio_image5 "at_1549.mp3"
+setcycle 3 question "at_1421.mp3"
+run U_trial_sequence
+
+
+U_start_time
+
+set description "Executes Python code"
+set _run "s_time = Date.now()"
+set _prepare ""
+
+
+U_init_trial_booleans
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+show_item1 = 0
+show_item2 = 0
+show_item3 = 0
+
+show_disappear = 0
+
+show_image1 = 1
+show_image2 = 1
+show_image3 = 1
+show_image4 = 1
+show_image5 = 1
+
+clicked_on_image = 0
+show_selection = 0
+play_image_audio = 0
+
+// HACK
+image_audio = "None.mp3"
+fb_audio = "None.mp3"
+show_dest1 = 0
+show_dest2 = 0
+show_dest3 = 0
+
+show_stars = 0
+
+correct = "None"
+
+n_correct = 0
+__end__
+
+
+U_trial_variables
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+item1 = image1
+item2 = image2
+item3 = image3
+
+audio_item1 = audio_image1
+audio_item2 = audio_image2
+audio_item3 = audio_image3
+
+x_coordinates = linspace(x_start, x_end, 5);
+shuffleArray(x_coordinates);
+
+[x_image1, x_image2, x_image3, x_image4, x_image5] = x_coordinates;
+
+y_image1 = 300
+y_image2 = 300
+y_image3 = 300
+y_image4 = 300
+y_image5 = 300
+__end__
+
+
+U_show_starting_image
+
+set source_file ""
+set source table
+set repeat 1
+set order sequential
+set description "Repeatedly runs another item"
+set cycles 3
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 item_counter 1
+setcycle 1 item_counter 2
+setcycle 2 item_counter 3
+run U_show_starting_image_sequence
+
+
+U_show_starting_image_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run U_show_starting_display True
+run U_pause_1000ms "item_counter == 1"
+run U_show_new_item True
+run U_show_starting_display True
+run U_appear_sound True
+
+
+U_show_starting_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{bg_lower}" scale="{scale_bg}" show_if=True x="{x_bg}" y="{y_bg}" z_index=0
+draw image center=1 file="template_{item1}" scale="{scale_bg}" show_if="show_item1==1" x="{x_item1}" y="{y_item1}" z_index=0
+draw image center=1 file="template_{item2}" scale="{scale_bg}" show_if="show_item2==1" x="{x_item2}" y="{y_item2}" z_index=0
+draw image center=1 file="template_{item3}" scale="{scale_bg}" show_if="show_item3==1" x="{x_item3}" y="{y_item3}" z_index=0
+draw image center=1 file="disappear.png" scale=1 show_if="show_disappear==1" x="{x_item2}" y="{y_item2}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes name=None show_if=True text="{task_type}" x=350 y=-350 z_index=0
+
+
+U_pause_1000ms
+
+set jitter_mode Uniform
+set jitter 0
+set duration 1000
+set description "A random delay sampled from either a normal or uniform distribution"
+
+
+U_show_new_item
+
+set description "Executes Python code"
+___run__
+window["show_item" + item_counter] = 1
+__end__
+set _prepare ""
+
+
+U_show_starting_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{bg_lower}" scale="{scale_bg}" show_if=True x="{x_bg}" y="{y_bg}" z_index=0
+draw image center=1 file="template_{item1}" scale="{scale_bg}" show_if="show_item1==1" x="{x_item1}" y="{y_item1}" z_index=0
+draw image center=1 file="template_{item2}" scale="{scale_bg}" show_if="show_item2==1" x="{x_item2}" y="{y_item2}" z_index=0
+draw image center=1 file="template_{item3}" scale="{scale_bg}" show_if="show_item3==1" x="{x_item3}" y="{y_item3}" z_index=0
+draw image center=1 file="disappear.png" scale=1 show_if="show_disappear==1" x="{x_item2}" y="{y_item2}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes name=None show_if=True text="{task_type}" x=350 y=-350 z_index=0
+
+
+U_appear_sound
+
+set volume 1
+set stop_after 0
+set sample "appear.mp3"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+U_play_msg
+
+set volume 1
+set stop_after 0
+set sample "{instruction_msg}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+U_play_description_images
+
+set volume 1
+set stop_after 0
+set sample "{description_images}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+U_encoding_interval
+
+set jitter_mode Uniform
+set jitter 0
+set duration 3000
+set description "A random delay sampled from either a normal or uniform distribution"
+
+
+U_disappear
+
+set description "Executes Python code"
+___run__
+show_item1 = 0
+show_item2 = 0
+show_item3 = 0
+
+show_disappear = 1
+__end__
+set _prepare ""
+
+
+U_show_starting_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{bg_lower}" scale="{scale_bg}" show_if=True x="{x_bg}" y="{y_bg}" z_index=0
+draw image center=1 file="template_{item1}" scale="{scale_bg}" show_if="show_item1==1" x="{x_item1}" y="{y_item1}" z_index=0
+draw image center=1 file="template_{item2}" scale="{scale_bg}" show_if="show_item2==1" x="{x_item2}" y="{y_item2}" z_index=0
+draw image center=1 file="template_{item3}" scale="{scale_bg}" show_if="show_item3==1" x="{x_item3}" y="{y_item3}" z_index=0
+draw image center=1 file="disappear.png" scale=1 show_if="show_disappear==1" x="{x_item2}" y="{y_item2}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes name=None show_if=True text="{task_type}" x=350 y=-350 z_index=0
+
+
+U_disappear_sound
+
+set volume 0.5
+set stop_after 0
+set sample "disappear.mp3"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+U_click_loop
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 empty_column ""
+run U_click_sequence
+
+
+U_click_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run U_reset_correct True
+run U_display True
+run U_start_filling_suitcase "play_instructions_fill_suitcase == 1"
+run U_click True
+run U_analyze_click True
+run U_display True
+run U_HACK_play_selected_sound "play_image_audio == 1"
+run U_show_fb True
+run U_display True
+run U_determine_fb True
+run U_HACK_play_fb "correct != \"None\""
+run U_put_in_suitcase True
+run U_display True
+run U_pause_after_all_correct "n_correct == 3"
+run U_repeat True
+
+
+U_reset_correct
+
+set description "Executes Python code"
+___run__
+correct = "None"
+__end__
+set _prepare ""
+
+
+U_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{bg_lower}" name=None scale="{scale_bg}" show_if=True x="{x_bg}" y="{y_bg}" z_index=0
+draw image center=1 file="template_{item1}" scale="{scale_bg}" show_if="show_dest1==1" x="{x_item1}" y="{y_item1}" z_index=0
+draw image center=1 file="template_{item2}" scale="{scale_bg}" show_if="show_dest2==1" x="{x_item2}" y="{y_item2}" z_index=0
+draw image center=1 file="template_{item3}" scale="{scale_bg}" show_if="show_dest3==1" x="{x_item3}" y="{y_item3}" z_index=0
+draw image center=1 file="{image1}" name=None scale="{scale_smaller}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=None scale="{scale_smaller}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" name=None scale="{scale_smaller}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="{image4}" name=None scale="{scale_smaller}" show_if="show_image4==1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="{image5}" name=None scale="{scale_smaller}" show_if="show_image5==1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=image1 scale="{scale_box}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=image2 scale="{scale_box}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=image3 scale="{scale_box}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=image4 scale="{scale_box}" show_if="show_image4==1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=image5 scale="{scale_box}" show_if="show_image5==1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="stars.png" name=None scale="{0.5}" show_if="show_stars==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes name=None show_if=True text="{task_type}" x=350 y=-350 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="show_selection==1 and correct==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red.png" name=None scale="{scale_box}" show_if="show_fb==1 and correct==0" x="{x_highlight}" y="{y_highlight}" z_index=0
+
+
+U_start_filling_suitcase
+
+set volume 1
+set stop_after 0
+set sample "{start_filling}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+U_click
+
+set timeout infinite
+set show_cursor yes
+set linked_sketchpad U_display
+set flush yes
+set event_type mouseclick
+set duration mouseclick
+set description "Collects mouse responses"
+
+
+U_analyze_click
+
+set description "Executes Python code"
+___run__
+// HACK:
+// Strip cursor_roi:
+cursor_roi = removeSubstring(cursor_roi, "None")
+cursor_roi = removeSubstring(cursor_roi, ";")
+
+play_image_audio = 0
+
+play_instructions_fill_suitcase = 1
+
+correct = "None"
+if (cursor_roi.includes("image")) {
+  clicked_on_image = 1
+  image_id = cursor_roi[5]
+
+  x_highlight = window["x_image" + image_id]
+  y_highlight = window["y_image" + image_id]
+  show_selection = 1
+
+  image_audio = window["audio_image" + image_id]
+
+  console.log("IMAGE AUDIO = " + image_audio)
+  play_image_audio = 1
+
+  if (["image1", "image2", "image3"].includes(cursor_roi)) {
+
+    // window["show_dest" + image_id] = 1
+    // window["show_image" + image_id] = 1
+    correct = 1
+    n_correct += 1
+    }
+  else {
+    correct = 0}
+
+  }
+
+else {
+  play_instructions_fill_suitcase = 0
+  }
+__end__
+set _prepare ""
+
+
+
+
+U_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{bg_lower}" name=None scale="{scale_bg}" show_if=True x="{x_bg}" y="{y_bg}" z_index=0
+draw image center=1 file="template_{item1}" scale="{scale_bg}" show_if="show_dest1==1" x="{x_item1}" y="{y_item1}" z_index=0
+draw image center=1 file="template_{item2}" scale="{scale_bg}" show_if="show_dest2==1" x="{x_item2}" y="{y_item2}" z_index=0
+draw image center=1 file="template_{item3}" scale="{scale_bg}" show_if="show_dest3==1" x="{x_item3}" y="{y_item3}" z_index=0
+draw image center=1 file="{image1}" name=None scale="{scale_smaller}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=None scale="{scale_smaller}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" name=None scale="{scale_smaller}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="{image4}" name=None scale="{scale_smaller}" show_if="show_image4==1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="{image5}" name=None scale="{scale_smaller}" show_if="show_image5==1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=image1 scale="{scale_box}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=image2 scale="{scale_box}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=image3 scale="{scale_box}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=image4 scale="{scale_box}" show_if="show_image4==1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=image5 scale="{scale_box}" show_if="show_image5==1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="stars.png" name=None scale="{0.5}" show_if="show_stars==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes name=None show_if=True text="{task_type}" x=350 y=-350 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="show_selection==1 and correct==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red.png" name=None scale="{scale_box}" show_if="show_fb==1 and correct==0" x="{x_highlight}" y="{y_highlight}" z_index=0
+
+
+U_HACK_play_selected_sound
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 empty_column ""
+run U_HACK_play_selected_sound_sequence
+
+
+U_HACK_play_selected_sound_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run U_sound True
+
+
+U_sound
+
+set volume 1
+set stop_after 0
+set sample "{image_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+U_show_fb
+
+set description "Executes Python code"
+set _run ""
+set _prepare "show_fb = 1"
+
+
+U_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{bg_lower}" name=None scale="{scale_bg}" show_if=True x="{x_bg}" y="{y_bg}" z_index=0
+draw image center=1 file="template_{item1}" scale="{scale_bg}" show_if="show_dest1==1" x="{x_item1}" y="{y_item1}" z_index=0
+draw image center=1 file="template_{item2}" scale="{scale_bg}" show_if="show_dest2==1" x="{x_item2}" y="{y_item2}" z_index=0
+draw image center=1 file="template_{item3}" scale="{scale_bg}" show_if="show_dest3==1" x="{x_item3}" y="{y_item3}" z_index=0
+draw image center=1 file="{image1}" name=None scale="{scale_smaller}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=None scale="{scale_smaller}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" name=None scale="{scale_smaller}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="{image4}" name=None scale="{scale_smaller}" show_if="show_image4==1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="{image5}" name=None scale="{scale_smaller}" show_if="show_image5==1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=image1 scale="{scale_box}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=image2 scale="{scale_box}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=image3 scale="{scale_box}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=image4 scale="{scale_box}" show_if="show_image4==1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=image5 scale="{scale_box}" show_if="show_image5==1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="stars.png" name=None scale="{0.5}" show_if="show_stars==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes name=None show_if=True text="{task_type}" x=350 y=-350 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="show_selection==1 and correct==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red.png" name=None scale="{scale_box}" show_if="show_fb==1 and correct==0" x="{x_highlight}" y="{y_highlight}" z_index=0
+
+
+U_determine_fb
+
+set description "Executes Python code"
+___run__
+if (correct === 1) {
+  fb_audio = "stars_correct.mp3"
+  }
+else if (correct === 0){
+  fb_audio = fb_incorrect
+  }
+else {
+  fb_audio = "None.mp3"
+  }
+__end__
+set _prepare ""
+
+
+U_HACK_play
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 empty_column ""
+run U_HACK_play_fb_sequence
+
+
+U_HACK_play_fb_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run U_fb True
+
+
+U_fb
+
+set volume 1
+set stop_after 0
+set sample "{fb_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+U_put_in_suitcase
+
+set description "Executes Python code"
+___run__
+if (correct === 1){
+  window["show_dest" + image_id] = 1
+  window["show_image" + image_id] = 0
+  show_stars = 0
+  show_selection = 0
+  }
+__end__
+set _prepare ""
+
+U_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{bg_lower}" name=None scale="{scale_bg}" show_if=True x="{x_bg}" y="{y_bg}" z_index=0
+draw image center=1 file="template_{item1}" scale="{scale_bg}" show_if="show_dest1==1" x="{x_item1}" y="{y_item1}" z_index=0
+draw image center=1 file="template_{item2}" scale="{scale_bg}" show_if="show_dest2==1" x="{x_item2}" y="{y_item2}" z_index=0
+draw image center=1 file="template_{item3}" scale="{scale_bg}" show_if="show_dest3==1" x="{x_item3}" y="{y_item3}" z_index=0
+draw image center=1 file="{image1}" name=None scale="{scale_smaller}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" name=None scale="{scale_smaller}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" name=None scale="{scale_smaller}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="{image4}" name=None scale="{scale_smaller}" show_if="show_image4==1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="{image5}" name=None scale="{scale_smaller}" show_if="show_image5==1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=image1 scale="{scale_box}" show_if="show_image1==1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=image2 scale="{scale_box}" show_if="show_image2==1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=image3 scale="{scale_box}" show_if="show_image3==1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=image4 scale="{scale_box}" show_if="show_image4==1" x="{x_image4}" y="{y_image4}" z_index=0
+draw image center=1 file="highlight_box_gray.png" name=image5 scale="{scale_box}" show_if="show_image5==1" x="{x_image5}" y="{y_image5}" z_index=0
+draw image center=1 file="stars.png" name=None scale="{0.5}" show_if="show_stars==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes name=None show_if=True text="{task_type}" x=350 y=-350 z_index=0
+draw image center=1 file="highlight_box_green.png" name=None scale="{scale_box}" show_if="show_selection==1 and correct==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red.png" name=None scale="{scale_box}" show_if="show_fb==1 and correct==0" x="{x_highlight}" y="{y_highlight}" z_index=0
+
+
+
+U_pause_after_all_correct
+
+set jitter_mode Uniform
+set jitter 0
+set duration 1000
+set description "A random delay sampled from either a normal or uniform distribution"
+
+
+U_repeat
+
+set description "Optionally repeat a cycle from a loop"
+set condition "n_correct < 3"
+
+
+U_play_full_sequence
+
+set volume 1
+set stop_after 0
+set sample "ai_057.mp3"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+U_reset_practice
+
+set _run "practice = 0"
+set _prepare ""
+
+
+U_end_time
+
+set description "Executes Python code"
+___run__
+// Get end time
+e_time = Date.now()
+
+response_time = e_time - s_time
+__end__
+set _prepare ""
+
+
+U_logger
+
+set description "Logs experimental data"
+set auto_log yes
+
+
+W10_G2_reflection
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 start_reflection_image "i_264.jpg"
+setcycle 0 intro_reflection_audio "ai_228.mp3"
+setcycle 0 grammar_icon "None.png"
+setcycle 0 reflection_first_half "ai_120.mp3"
+setcycle 0 explanation_audio "ai_126.mp3"
+setcycle 0 task_type W10_G2_reflection
+setcycle 0 block_type W10_G2_reflection
+setcycle 0 week 10
+setcycle 0 goodbye_audio "ai_090.mp3"
+run AT_main_sequence
+
+
+AT_main_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run AT_booleans True
+run AT_block_variables True
+run AT_reflection_variables True
+run AT_show_instructions True
+run AT_audio_instructions True
+run AT_reflection True
+run yoohoo True
+
+
+AT_booleans
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+audio_file = "None.mp3"
+fb_audio = "None.mp3"
+
+
+show_image1 = 1
+show_image2 = 1
+show_image3 = 1
+show_image4 = 1
+show_image5 = 1
+show_image6 = 1
+show_image7 = 1
+show_image8 = 1
+
+show_image9 = 0
+show_image10 = 0
+
+show_placeholder_image1 = 0
+show_placeholder_image2 = 0
+show_placeholder_image3 = 0
+show_placeholder_image4 = 0
+show_placeholder_image5 = 0
+show_placeholder_image6 = 0
+show_placeholder_image7 = 0
+show_placeholder_image8 = 0
+show_placeholder_image9 = 0
+show_placeholder_image10 = 0
+
+show_stars = 0
+play_stars = 0
+correct = "None"
+break_from_loop = 0
+
+audio_length = 0
+
+present_images = 0
+
+show_speaker = 0
+__end__
+
+
+AT_block_variables
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+x_start = -350;
+x_end = 350;
+
+y_start = 0
+y_end = 250
+
+// Possible x and y coordinates (4 by 2):
+x_coordinates= linspace(x_start,x_end,4);
+y_coordinates = [y_start, y_end];
+
+// Possible 8 combinations:
+xy_coordinates = generateCombinations(x_coordinates, y_coordinates);
+
+// Shuffle combinations:
+shuffleArray(xy_coordinates);
+
+
+// Unwrap the shuffled coordinates into separate arrays of x and y coordinates
+x_new_coordinates = [];
+y_new_coordinates = [];
+
+xy_coordinates.forEach(coordinate => {
+  x_new_coordinates.push(coordinate[0]);
+  y_new_coordinates.push(coordinate[1]);
+});
+
+
+// The placeholder coordinates are NOT shuffled (for the animation in the beginning)
+[x_placeholder_image1, x_placeholder_image2, x_placeholder_image3, x_placeholder_image4, x_placeholder_image5, x_placeholder_image6, x_placeholder_image7, x_placeholder_image8] = x_coordinates.concat(x_coordinates);
+
+y_placeholder_image1 = y_start;
+y_placeholder_image2 = y_start;
+y_placeholder_image3 = y_start;
+y_placeholder_image4 = y_start;
+y_placeholder_image5 = y_end;
+y_placeholder_image6 = y_end;
+y_placeholder_image7 = y_end;
+y_placeholder_image8 = y_end;
+
+
+// The image coordinates ARE shuffled
+[x_image1, x_image2, x_image3, x_image4, x_image5, x_image6, x_image7, x_image8] = x_new_coordinates;
+[y_image1, y_image2, y_image3, y_image4, y_image5, y_image6, y_image7, y_image8] = y_new_coordinates;
+
+
+scale_image = 0.40;
+scale_text_box = 0.7
+scale_stars  = 0.6
+
+play_animation = 1
+n_incorrect_trials = 0
+
+x_speaker = 0
+y_speaker = -200
+__end__
+
+
+AT_reflection_variables
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+show_image1 = 0;
+show_image2 = 0;
+show_image3 = 0;
+
+
+show_image4 = 0;
+show_image5 = 0;
+show_image6 = 0;
+
+show_article1 = 0;
+show_article2 = 0;
+show_article3 = 0;
+show_acc_article1 = 0;
+show_acc_article2 = 0;
+show_acc_article3 = 0;
+
+show_reflection = 0
+
+scale_image = 0.5;
+scale_helper_image = 0.5
+
+x_ecc = 350;
+
+[x_image1, x_image2, x_image3] = [-x_ecc, 0, x_ecc];
+[x_article1, x_article2, x_article3] = [-x_ecc, 0, x_ecc];
+[x_acc_article1, x_acc_article2, x_acc_article3] = [-x_ecc, 0, x_ecc];
+
+[y_image1, y_image2, y_image3] = [-250, -250, -250];
+[y_article1, y_article2, y_article3] = [0, 0, 0];
+[y_acc_article1, y_acc_article2, y_acc_article3] = [200, 200, 200];
+
+font_size = 100;
+
+[x_image4, x_image5, x_image6] = [-x_ecc, 0, x_ecc];
+[y_image4, y_image5, y_image6] = [-150, -150, -150];
+
+scale_box = 1
+__end__
+
+
+AT_show_instructions
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{start_reflection_image}" scale=1 show_if=True x=0 y=0 z_index=0
+draw image center=1 file="highlight_box_gray_large.png" scale=1 show_if=True x=0 y=0 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes name=None show_if=True text="{task_type}" x=350 y=-350 z_index=0
+
+
+AT_audio_instructions
+
+set volume 1
+set stop_after 0
+set sample "{intro_reflection_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+AT_reflection
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 image1 "i_371.jpg"
+setcycle 0 image2 "i_326.jpg"
+setcycle 0 image3 "i_115.jpg"
+setcycle 0 article1 der
+setcycle 0 article2 das
+setcycle 0 article3 die
+setcycle 0 acc_article1 den
+setcycle 0 acc_article2 das
+setcycle 0 acc_article3 die
+setcycle 0 audio_image1 "appear.mp3"
+setcycle 0 audio_image2 "appear.mp3"
+setcycle 0 audio_image3 "appear.mp3"
+setcycle 0 color1 blue
+setcycle 0 color2 green
+setcycle 0 color3 red
+setcycle 0 audio_article1 "at_5224.mp3"
+setcycle 0 audio_article2 "at_2788.mp3"
+setcycle 0 audio_article3 "at_4880.mp3"
+setcycle 0 audio_acc_article1 "at_5225.mp3"
+setcycle 0 audio_acc_article2 "at_4891.mp3"
+setcycle 0 audio_acc_article3 "at_4881.mp3"
+run AT_reflection_sequence
+
+
+
+AT_reflection_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run AT_trial_variables True
+run AT_reflection_loop True
+run AT_first_end_reflection_audio True
+run AT_highlight_words True
+run AT_reflection_display True
+run AT_second_end_reflection_audio True
+
+
+AT_trial_variables
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+show_image1 = 0;
+show_image2 = 0;
+show_image3 = 0;
+
+
+show_image4 = 0;
+show_image5 = 0;
+show_image6 = 0;
+
+show_article1 = 0;
+show_article2 = 0;
+show_article3 = 0;
+show_acc_article1 = 0;
+show_acc_article2 = 0;
+show_acc_article3 = 0;
+
+show_reflection = 0
+
+scale_image = 0.5;
+scale_helper_image = 0.5
+
+x_ecc = 350;
+
+[x_image1, x_image2, x_image3] = [-x_ecc, 0, x_ecc];
+[x_article1, x_article2, x_article3] = [-x_ecc, 0, x_ecc];
+[x_acc_article1, x_acc_article2, x_acc_article3] = [-x_ecc, 0, x_ecc];
+
+[y_image1, y_image2, y_image3] = [-150, -150, -150];
+[y_article1, y_article2, y_article3] = [50, 50, 50];
+[y_acc_article1, y_acc_article2, y_acc_article3] = [200, 200, 200];
+
+font_size = 100;
+
+[x_image4, x_image5, x_image6] = [-x_ecc, 0, x_ecc];
+[y_image4, y_image5, y_image6] = [-150, -150, -150];
+__end__
+
+
+AT_reflection_loop
+
+set source_file ""
+set source table
+set repeat 1
+set order sequential
+set description "Repeatedly runs another item"
+set cycles 3
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 column_counter 1
+setcycle 1 column_counter 2
+setcycle 2 column_counter 3
+run AT_reflection_one_by_one
+
+
+AT_reflection_one_by_one
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run AT_inner_loop True
+
+
+AT_inner_loop
+
+set source_file ""
+set source table
+set repeat 1
+set order sequential
+set description "Repeatedly runs another item"
+set cycles 3
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 stimulus_type image
+setcycle 1 stimulus_type article
+setcycle 2 stimulus_type acc_article
+run AT_inner_sequence
+
+
+AT_inner_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run AT_flip_stimulus True
+run AT_reflection_display True
+run AT_HACK True
+
+
+AT_flip_stimulus
+
+set description "Executes Python code"
+___run__
+window["show_" + stimulus_type + column_counter] = 1
+reflection_audio = window["audio_" + stimulus_type + column_counter]
+
+console.log("XX " + reflection_audio)
+
+
+//if (stimulus_type === 'acc_article') {
+//  window["show_" + helper_image] = 1
+//  }
+__end__
+set _prepare ""
+
+
+AT_reflection_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" scale="{scale_image}" show_if="show_image1 == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" scale="{scale_image}" show_if="show_image2 == 1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" scale="{scale_image}" show_if="show_image3 == 1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" scale="{scale_box}" show_if="show_image1 == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" scale="{scale_box}" show_if="show_image2 == 1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" scale="{scale_box}" show_if="show_image3 == 1" x="{x_image3}" y="{y_image3}" z_index=0
+draw textline center=1 color="{color1}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_article1 == 1" text="{article1}" x="{x_article1}" y="{y_article1}" z_index=0
+draw textline center=1 color="{color2}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_article2 == 1" text="{article2}" x="{x_article2}" y="{y_article2}" z_index=0
+draw textline center=1 color="{color3}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_article3 == 1" text="{article3}" x="{x_article3}" y="{y_article3}" z_index=0
+draw textline center=1 color="{color1}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_acc_article1 == 1" text="{acc_article1}" x="{x_acc_article1}" y="{y_acc_article1}" z_index=0
+draw textline center=1 color="{color2}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_acc_article2 == 1" text="{acc_article2}" x="{x_acc_article2}" y="{y_acc_article2}" z_index=0
+draw textline center=1 color="{color3}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_acc_article3 == 1" text="{acc_article3}" x="{x_acc_article3}" y="{y_acc_article3}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_yellow.png" scale="{scale_text_box}" show_if="show_reflection== 1" x="{x_acc_article1}" y="{y_acc_article1}" z_index=0
+
+
+AT_HACK
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 empty_column ""
+run AT_HACK_sequence
+
+
+
+AT_HACK_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run AT_reflection_audio True
+
+
+AT_reflection_audio
+
+set volume 1
+set stop_after 0
+set sample "{reflection_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+AT_first_end_reflection_audio
+
+set volume 1
+set stop_after 0
+set sample "{reflection_first_half}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+
+AT_highlight_words
+
+set description "Executes Python code"
+set _run "show_reflection = 1"
+set _prepare ""
+
+
+AT_reflection_display
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{image1}" scale="{scale_image}" show_if="show_image1 == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="{image2}" scale="{scale_image}" show_if="show_image2 == 1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="{image3}" scale="{scale_image}" show_if="show_image3 == 1" x="{x_image3}" y="{y_image3}" z_index=0
+draw image center=1 file="highlight_box_gray.png" scale="{scale_box}" show_if="show_image1 == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="highlight_box_gray.png" scale="{scale_box}" show_if="show_image2 == 1" x="{x_image2}" y="{y_image2}" z_index=0
+draw image center=1 file="highlight_box_gray.png" scale="{scale_box}" show_if="show_image3 == 1" x="{x_image3}" y="{y_image3}" z_index=0
+draw textline center=1 color="{color1}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_article1 == 1" text="{article1}" x="{x_article1}" y="{y_article1}" z_index=0
+draw textline center=1 color="{color2}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_article2 == 1" text="{article2}" x="{x_article2}" y="{y_article2}" z_index=0
+draw textline center=1 color="{color3}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_article3 == 1" text="{article3}" x="{x_article3}" y="{y_article3}" z_index=0
+draw textline center=1 color="{color1}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_acc_article1 == 1" text="{acc_article1}" x="{x_acc_article1}" y="{y_acc_article1}" z_index=0
+draw textline center=1 color="{color2}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_acc_article2 == 1" text="{acc_article2}" x="{x_acc_article2}" y="{y_acc_article2}" z_index=0
+draw textline center=1 color="{color3}" font_bold=no font_family=ABeeZee font_italic=no font_size="{font_size}" html=yes show_if="show_acc_article3 == 1" text="{acc_article3}" x="{x_acc_article3}" y="{y_acc_article3}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=ABeeZee font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_yellow.png" scale="{scale_text_box}" show_if="show_reflection== 1" x="{x_acc_article1}" y="{y_acc_article1}" z_index=0
+
+
+
+AT_second_end_reflection_audio
+
+set volume 1
+set stop_after 0
+set sample "{explanation_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+yoohoo
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 show_continue_button 0
+run yoohoo_sequence
+
+
+yoohoo_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run yoohoo_variables True
+run yoohoo_display True
+run play_yoohoo True
+run yoohoo_click_loop True
+
+
+yoohoo_variables
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+scale_yoohoo = 0.5
+yoohoo_image = "i_002.jpg"
+__end__
+
+
+yoohoo_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="i_002.jpg" scale="{scale_yoohoo}" show_if=True x=0 y=-96 z_index=0
+draw image center=1 file="next.png" name=continue_arrow scale=1 show_if="show_continue_button==1" x=0 y=288 z_index=0
+
+
+play_yoohoo
+
+set volume 1
+set stop_after 0
+set sample "{goodbye_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+yoohoo_click_loop
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 show_continue_button 1
+run yoohoo_click_sequence
+
+
+yoohoo_click_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run yoohoo_display True
+run yoohoo_click True
+run analyze_yoohoo_click True
+run repeat_yoohoo_cycle True
+
+
+yoohoo_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="i_002.jpg" scale="{scale_yoohoo}" show_if=True x=0 y=-96 z_index=0
+draw image center=1 file="next.png" name=continue_arrow scale=1 show_if="show_continue_button==1" x=0 y=288 z_index=0
+
+
+yoohoo_click
+
+set timeout infinite
+set show_cursor yes
+set linked_sketchpad yoohoo_display
+set flush yes
+set event_type mouseclick
+set duration mouseclick
+set description "Collects mouse responses"
+
+
+analyze_yoohoo_click
+
+set description "Executes Python code"
+___run__
+repeat_yoohoo = 1
+if (cursor_roi === 'continue_arrow'){
+  repeat_yoohoo = 0
+  }
+__end__
+set _prepare ""
+
+
+repeat_yoohoo_cycle
+
+set description "Optionally repeat a cycle from a loop"
+set condition "repeat_yoohoo == 1"

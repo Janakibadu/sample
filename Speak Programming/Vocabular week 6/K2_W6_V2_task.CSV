@@ -1,0 +1,8 @@
+audio;target_image;distractor_1;distractor_2;distractor_3;followup_audio_correct_answer;followup_audio_false_answer;followup_audio_second_false_answer
+at_197.mp3;i_113.jpg;i_009.jpg;i_011.jpg;i_118.jpg;stars_correctt.mp3;at_137.mp3;at_158.mp3
+at_198.mp3;i_114.jpg;i_119.jpg;i_120.jpg;i_121.jpg;stars_correctt.mp3;at_137.mp3;at_159.mp3
+at_199.mp3;i_115.jpg;i_122.jpg;i_123.jpg;i_124.jpg;stars_correctt.mp3;at_137.mp3;at_160.mp3
+at_200.mp3;i_116.jpg;i_125.jpg;i_126.jpg;i_699.jpg;stars_correctt.mp3;at_137.mp3;at_161.mp3
+at_201.mp3;i_117.jpg;i_128.jpg;i_129.jpg;i_130.jpg;stars_correctt.mp3;at_137.mp3;at_162.mp3
+at_1205.mp3;i_247.jpg;i_018.jpg;i_193.jpg;i_343.jpg;at_1287.mp3;stars_correct_mp3;at_137.mp3
+at_1204.mp3;i_258.jpg;i_197.jpg;i_230.jpg;i_342.jpg;at_1286.mp3;stars_correct_mp3;at_137.mp3

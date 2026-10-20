@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>SPEAK — Modul-Player (Aufgabenpfad)</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+  .path { position:relative; padding: 30px 60px; max-width:900px; margin:0 auto; }
+  .stop-row { display:flex; align-items:center; justify-content:space-between; margin-bottom:36px; }
+  .stop-row:nth-child(even) { flex-direction:row-reverse; }
+  .stop {
+    width:96px; height:96px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-size:36px; box-shadow: var(--shadow-md); border: 5px solid #fff; position:relative; text-decoration:none;
+  }
+  .stop.done { background: var(--mint); }
+  .stop.current { background: var(--coral); width:112px; height:112px; font-size:42px; color:#fff; }
+  .stop.todo { background: #fff; color: var(--ink-faint); border-color: var(--line); }
+  .stop-label { max-width:300px; }
+  .stop-label .tag { font-size:12px; font-weight:700; color: var(--ink-faint); text-transform:uppercase; letter-spacing:.05em; }
+</style>
+</head>
+<body class="app-student">
+
+  <div class="funder-bar">
+    <img class="funder-logo-tud" src="assets/tud_logo_cmyk.png" alt="TU Dortmund Logo">
+    <img src="assets/IFS.png" alt="IFS Logo">
+    <img src="assets/speak-logo.png" alt="SPEAK Logo">
+    <img class="funder-logo-bund" src="assets/Bundesministrerium.jpg" alt="Bundesministerium Logo">
+    <img src="assets/EBF.jpg" alt="EBF Logo">
+  </div>
+
+  <div class="student-top">
+    <a class="brand" href="10-student-home.html" style="text-decoration:none;"><img class="logo-mark" src="assets/speak-logo.png" alt="SPEAK" style="height:65px;"></a>
+    <div class="h3">Einheit 10 · Grammatik</div>
+    <div class="progress-track" style="width:200px;"><div class="progress-fill" style="width:45%; background:var(--coral);"></div></div>
+  </div>
+
+  <div class="path">
+    <div class="stop-row">
+      <div class="stop done">✅</div>
+      <div class="stop-label"><div class="tag">Aufgabe 1 · Typ AT</div><div class="h3">Lernen: der, die, das</div></div>
+    </div>
+    <div class="stop-row">
+      <div class="stop-label"><div class="tag">Aufgabe 2 · Typ G1</div><div class="h3">Artikel-Reime</div></div>
+      <div class="stop done">✅</div>
+    </div>
+    <div class="stop-row">
+      <a class="stop current" href="15-task-grammar-article.html">▶</a>
+      <div class="stop-label"><div class="tag">Aufgabe 3 · Typ G2</div><div class="h3">Den richtigen Artikel wählen — du bist hier</div></div>
+    </div>
+    <div class="stop-row">
+      <div class="stop-label"><div class="tag">Aufgabe 4 · Typ V_3</div><div class="h3">Lückensätze</div></div>
+      <div class="stop todo">4</div>
+    </div>
+    <div class="stop-row">
+      <div class="stop todo">5</div>
+      <div class="stop-label"><div class="tag">Aufgabe 5 · Typ AX</div><div class="h3">Reflexion: alle drei Fälle</div></div>
+    </div>
+    <div class="stop-row" style="margin-bottom:0;">
+      <div class="stop-label"><div class="tag">Aufgabe 6</div><div class="h3">🏆 Belohnungsbildschirm</div></div>
+      <a class="stop todo" href="17-reward-completion.html">🏁</a>
+    </div>
+  </div>
+
+</body>
+</html>

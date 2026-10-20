@@ -1,0 +1,727 @@
+W12_A3
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 block_type W12_A3
+setcycle 0 explanation_audio "ai_034.mp3"
+setcycle 0 goodbye_audio "ai_094.mp3"
+setcycle 0 week 12
+setcycle 0 task_type A3
+setcycle 0 explanation_image "Week12_A3.png"
+setcycle 0 show_image 1
+run R_block_sequence
+
+
+R_block_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run R_init_block_booleans True
+run R_block_variables True
+run R_instructions True
+run R_instructions_sampler True
+run R_block_loop True
+run yoohoo True
+
+
+R_init_block_booleans
+
+set description "Executes Python code"
+___run__
+play_instruction = 1
+
+n_incorrect = 0
+
+// HACK:
+audio = "None.mp3"
+__end__
+set _prepare ""
+
+
+R_block_variables
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+scale_response_bar = 1
+y_response_buttons = 250
+y_speaker = -300
+scale1 = 0.55
+scale_response_options = 0.6
+
+//image1 = target
+x_image1 = 0
+y_image1 = -50
+
+
+y_same= 250
+y_different= 250
+
+scale_highlight_box = 0.7
+scale_sound = 0.5
+
+x_locations = [-350, 350];
+
+[x_same, x_different] = x_locations;
+
+wait_duration = 700
+__end__
+
+
+R_instructions
+
+set reset_variables yes
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{explanation_image}" scale=1 show_if=True x=0 y=0 z_index=0
+
+
+R_instructions_sampler
+
+set volume 1
+set stop_after 0
+set sample "{explanation_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+
+R_block_loop
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 10
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 image1 "i_531.jpg"
+setcycle 0 audio_file "at_5264.mp3"
+setcycle 0 correct_response_option 2
+setcycle 0 fb_incorrect_first_try "at_5274.mp3"
+setcycle 0 fb_correct "stars_correct.mp3"
+setcycle 1 image1 "i_532.jpg"
+setcycle 1 audio_file "at_5265.mp3"
+setcycle 1 correct_response_option 1
+setcycle 1 fb_incorrect_first_try "at_5275.mp3"
+setcycle 1 fb_correct "stars_correct.mp3"
+setcycle 2 image1 "i_533.jpg"
+setcycle 2 audio_file "at_5266.mp3"
+setcycle 2 correct_response_option 1
+setcycle 2 fb_incorrect_first_try "at_5276.mp3"
+setcycle 2 fb_correct "stars_correct.mp3"
+setcycle 3 image1 "i_534.jpg"
+setcycle 3 audio_file "at_5267.mp3"
+setcycle 3 correct_response_option 1
+setcycle 3 fb_incorrect_first_try "at_5277.mp3"
+setcycle 3 fb_correct "stars_correct.mp3"
+setcycle 4 image1 "i_245.jpg"
+setcycle 4 audio_file "at_5268.mp3"
+setcycle 4 correct_response_option 2
+setcycle 4 fb_incorrect_first_try "at_5278.mp3"
+setcycle 4 fb_correct "stars_correct.mp3"
+setcycle 5 image1 "i_257.jpg"
+setcycle 5 audio_file "at_5269.mp3"
+setcycle 5 correct_response_option 2
+setcycle 5 fb_incorrect_first_try "at_5279.mp3"
+setcycle 5 fb_correct "stars_correct.mp3"
+setcycle 6 image1 "i_535.jpg"
+setcycle 6 audio_file "at_5270.mp3"
+setcycle 6 correct_response_option 2
+setcycle 6 fb_incorrect_first_try "at_5280.mp3"
+setcycle 6 fb_correct "stars_correct.mp3"
+setcycle 7 image1 "i_246.jpg"
+setcycle 7 audio_file "at_5271.mp3"
+setcycle 7 correct_response_option 1
+setcycle 7 fb_incorrect_first_try "at_5281.mp3"
+setcycle 7 fb_correct "stars_correct.mp3"
+setcycle 8 image1 "i_536.jpg"
+setcycle 8 audio_file "at_5272.mp3"
+setcycle 8 correct_response_option 1
+setcycle 8 fb_incorrect_first_try "at_5282.mp3"
+setcycle 8 fb_correct "stars_correct.mp3"
+setcycle 9 image1 "i_537.jpg"
+setcycle 9 audio_file "at_5273.mp3"
+setcycle 9 correct_response_option 2
+setcycle 9 fb_incorrect_first_try "at_5283.mp3"
+setcycle 9 fb_correct "stars_correct.mp3"
+run R_sequence
+
+
+R_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run R_trial_properties True
+run R_init_trial_booleans True
+run R_start_timing True
+run R_click_loop True
+run R_determine_response_accuracy True
+run R_display True
+run R_fb_correct "correct == 1"
+run R_fb_incorrect_first_time "correct == 0"
+run R_end_timer True
+run R_logger True
+
+
+
+R_trial_properties
+
+set description "Executes Python code"
+set _run ""
+set _prepare ""
+
+
+R_init_trial_booleans
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+repeat_W2_A3 = 1
+
+show_highlight = 0
+play_audio = 1
+
+// HACK:
+selected_sound = "None.mp3"
+//audio = "None.mp3"
+
+n_mistakes = 0
+clicked_on_response_option = 0
+
+show_response_bar = 1
+highlight_sound_playing = 0
+show_highlight = 0
+
+wait = 1
+__end__
+
+
+R_start_timing
+
+set description "Executes Python code"
+set _run "s_time = Date.now()"
+set _prepare ""
+
+
+R_click_loop
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 empty_column ""
+run R_click_sequence
+
+
+
+R_click_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run R_reset_correct True
+run R_display True
+run R_wait_1000 "wait == 1"
+run R_highlight_speaker True
+run R_display True
+run R_play_audio "play_audio == 1"
+run R_dehighlight_speaker True
+run R_display True
+run R_click True
+run R_analyze_click True
+run R_determine_repeat True
+run R_display True
+run R_repeat_click True
+
+
+R_reset_correct
+
+set description "Executes Python code"
+___run__
+correct = "None"
+__end__
+set _prepare ""
+
+
+
+
+R_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="response_bar.png" name=None scale=1 show_if=always x=0 y="{y_response_buttons}" z_index=0
+draw image center=1 file="response_bar_correct.png" name=None scale=1 show_if="correct == 1" x=0 y="{y_response_buttons}" z_index=0
+draw image center=1 file="response_bar_incorrect.png" name=None scale=1 show_if="correct == 0" x=0 y="{y_response_buttons}" z_index=0
+draw image center=1 file="{image1}" name=image1 scale="{scale1}" show_if="show_image == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="same.png" name=response1 scale="{scale_response_options}" show_if="show_response_bar==1" x="{x_same}" y="{y_response_buttons}" z_index=0
+draw image center=1 file="different.png" name=response2 scale="{scale_response_options}" show_if="show_response_bar==1" x="{x_different}" y="{y_response_buttons}" z_index=0
+draw image center=1 file="speaker.png" name=speaker scale="{scale_response_bar}" show_if="highlight_sound_playing==0" x="{x_speaker}" y="{y_speaker}" z_index=0
+draw image center=1 file="speaker_playing.png" scale="{scale_response_bar}" show_if="highlight_sound_playing==1" x="{x_speaker}" y="{y_speaker}" z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=0 y=200 z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=-64 y=300 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_gray_large.png" scale=0.55 show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+
+
+R_wait_1000
+
+set jitter_mode Uniform
+set jitter 0
+set duration 1000
+set description "A random delay sampled from either a normal or uniform distribution"
+
+
+R_highlight_speaker
+
+set description "Executes Python code"
+___run__
+highlight_sound_playing = 1
+__end__
+set _prepare ""
+
+
+R_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="response_bar.png" name=None scale=1 show_if=always x=0 y="{y_response_buttons}" z_index=0
+draw image center=1 file="response_bar_correct.png" name=None scale=1 show_if="correct == 1" x=0 y="{y_response_buttons}" z_index=0
+draw image center=1 file="response_bar_incorrect.png" name=None scale=1 show_if="correct == 0" x=0 y="{y_response_buttons}" z_index=0
+draw image center=1 file="{image1}" name=image1 scale="{scale1}" show_if="show_image == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="same.png" name=response1 scale="{scale_response_options}" show_if="show_response_bar==1" x="{x_same}" y="{y_response_buttons}" z_index=0
+draw image center=1 file="different.png" name=response2 scale="{scale_response_options}" show_if="show_response_bar==1" x="{x_different}" y="{y_response_buttons}" z_index=0
+draw image center=1 file="speaker.png" name=speaker scale="{scale_response_bar}" show_if="highlight_sound_playing==0" x="{x_speaker}" y="{y_speaker}" z_index=0
+draw image center=1 file="speaker_playing.png" scale="{scale_response_bar}" show_if="highlight_sound_playing==1" x="{x_speaker}" y="{y_speaker}" z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=0 y=200 z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=-64 y=300 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_gray_large.png" scale=0.55 show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+
+
+
+R_play_audio
+
+set volume 1
+set stop_after 0
+set sample "{audio_file}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+R_dehighlight_speaker
+
+set description "Executes Python code"
+set _run "highlight_sound_playing = 0"
+set _prepare ""
+
+
+R_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="response_bar.png" name=None scale=1 show_if=always x=0 y="{y_response_buttons}" z_index=0
+draw image center=1 file="response_bar_correct.png" name=None scale=1 show_if="correct == 1" x=0 y="{y_response_buttons}" z_index=0
+draw image center=1 file="response_bar_incorrect.png" name=None scale=1 show_if="correct == 0" x=0 y="{y_response_buttons}" z_index=0
+draw image center=1 file="{image1}" name=image1 scale="{scale1}" show_if="show_image == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="same.png" name=response1 scale="{scale_response_options}" show_if="show_response_bar==1" x="{x_same}" y="{y_response_buttons}" z_index=0
+draw image center=1 file="different.png" name=response2 scale="{scale_response_options}" show_if="show_response_bar==1" x="{x_different}" y="{y_response_buttons}" z_index=0
+draw image center=1 file="speaker.png" name=speaker scale="{scale_response_bar}" show_if="highlight_sound_playing==0" x="{x_speaker}" y="{y_speaker}" z_index=0
+draw image center=1 file="speaker_playing.png" scale="{scale_response_bar}" show_if="highlight_sound_playing==1" x="{x_speaker}" y="{y_speaker}" z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=0 y=200 z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=-64 y=300 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_gray_large.png" scale=0.55 show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+
+
+R_click
+
+set timeout infinite
+set show_cursor yes
+set linked_sketchpad R_display
+set flush yes
+set event_type mouseclick
+set duration mouseclick
+set description "Collects mouse responses"
+
+
+R_analyze_click
+
+set description "Executes Python code"
+___run__
+show_highlight = 0
+//clicked_on_response_option = 0
+// HACK:
+// Strip cursor_roi:
+cursor_roi = removeSubstring(cursor_roi, "None")
+cursor_roi = removeSubstring(cursor_roi, ";")
+
+console.log("cursor_roi" + cursor_roi)
+
+//clicked_on_sound = 0
+show_highlight = 0
+play_instruction = 0
+
+if 	(cursor_roi.includes("response") ) {
+  clicked_on_response_option = 1
+
+  	response_id = (cursor_roi.slice(8))
+  console.log(response_id )
+  x_highlight = window["x_image" + response_id]
+  y_highlight = window["y_image" + response_id]
+
+
+  show_highlight = 1
+
+
+
+
+  }
+
+play_audio = 0
+if (cursor_roi === 'speaker') {
+
+    play_audio = 1
+    wait = 0
+  }
+
+
+__end__
+set _prepare ""
+
+
+
+R_determine_repeat
+
+set description "Executes Python code"
+___run__
+repeat_W2_A3 = 1
+
+
+
+if (clicked_on_response_option === 1) {
+	repeat_W2_A3 = 0
+	}
+__end__
+set _prepare ""
+
+
+R_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="response_bar.png" name=None scale=1 show_if=always x=0 y="{y_response_buttons}" z_index=0
+draw image center=1 file="response_bar_correct.png" name=None scale=1 show_if="correct == 1" x=0 y="{y_response_buttons}" z_index=0
+draw image center=1 file="response_bar_incorrect.png" name=None scale=1 show_if="correct == 0" x=0 y="{y_response_buttons}" z_index=0
+draw image center=1 file="{image1}" name=image1 scale="{scale1}" show_if="show_image == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="same.png" name=response1 scale="{scale_response_options}" show_if="show_response_bar==1" x="{x_same}" y="{y_response_buttons}" z_index=0
+draw image center=1 file="different.png" name=response2 scale="{scale_response_options}" show_if="show_response_bar==1" x="{x_different}" y="{y_response_buttons}" z_index=0
+draw image center=1 file="speaker.png" name=speaker scale="{scale_response_bar}" show_if="highlight_sound_playing==0" x="{x_speaker}" y="{y_speaker}" z_index=0
+draw image center=1 file="speaker_playing.png" scale="{scale_response_bar}" show_if="highlight_sound_playing==1" x="{x_speaker}" y="{y_speaker}" z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=0 y=200 z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=-64 y=300 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_gray_large.png" scale=0.55 show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+
+
+R_repeat_click
+
+set description "Optionally repeat a cycle from a loop"
+set condition "repeat_W2_A3 == 1"
+
+
+
+R_determine_response_accuracy
+
+set description "Executes Python code"
+___run__
+// Determine accuracy
+
+if (clicked_on_response_option === 1) {
+  if (parseInt(response_id) === parseInt(correct_response_option)) {
+    correct = 1}
+  else {
+    correct = 0}
+}
+
+else {
+  correct = "None"
+  }
+__end__
+set _prepare ""
+
+
+
+R_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="response_bar.png" name=None scale=1 show_if=always x=0 y="{y_response_buttons}" z_index=0
+draw image center=1 file="response_bar_correct.png" name=None scale=1 show_if="correct == 1" x=0 y="{y_response_buttons}" z_index=0
+draw image center=1 file="response_bar_incorrect.png" name=None scale=1 show_if="correct == 0" x=0 y="{y_response_buttons}" z_index=0
+draw image center=1 file="{image1}" name=image1 scale="{scale1}" show_if="show_image == 1" x="{x_image1}" y="{y_image1}" z_index=0
+draw image center=1 file="same.png" name=response1 scale="{scale_response_options}" show_if="show_response_bar==1" x="{x_same}" y="{y_response_buttons}" z_index=0
+draw image center=1 file="different.png" name=response2 scale="{scale_response_options}" show_if="show_response_bar==1" x="{x_different}" y="{y_response_buttons}" z_index=0
+draw image center=1 file="speaker.png" name=speaker scale="{scale_response_bar}" show_if="highlight_sound_playing==0" x="{x_speaker}" y="{y_speaker}" z_index=0
+draw image center=1 file="speaker_playing.png" scale="{scale_response_bar}" show_if="highlight_sound_playing==1" x="{x_speaker}" y="{y_speaker}" z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=0 y=200 z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=-64 y=300 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_gray_large.png" scale=0.55 show_if=True x="{x_image1}" y="{y_image1}" z_index=0
+
+
+
+R_fb_correct
+
+set volume 1
+set stop_after 0
+set sample "{fb_correct}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+
+R_fb_incorrect_first_time
+
+set volume 1
+set stop_after 0
+set sample "{fb_incorrect_first_try}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+
+R_end_timer
+
+set description "Executes Python code"
+___run__
+// Get end time
+e_time = Date.now()
+
+response_time = e_time - s_time
+__end__
+set _prepare ""
+
+
+
+R_logger
+
+set description "Logs experimental data"
+set auto_log yes
+
+
+yoohoo
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 show_continue_button 0
+run yoohoo_sequence
+
+
+yoohoo_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run yoohoo_variables True
+run yoohoo_display True
+run play_yoohoo True
+run yoohoo_click_loop True
+
+
+yoohoo_variables
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+scale_yoohoo = 0.5
+yoohoo_image = "i_002.jpg"
+__end__
+
+
+yoohoo_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="i_002.jpg" scale="{scale_yoohoo}" show_if=True x=0 y=-96 z_index=0
+draw image center=1 file="next.png" name=continue_arrow scale=1 show_if="show_continue_button==1" x=0 y=288 z_index=0
+
+
+play_yoohoo
+
+set volume 1
+set stop_after 0
+set sample "{goodbye_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+
+
+yoohoo_click_loop
+
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 show_continue_button 1
+run yoohoo_click_sequence
+
+
+
+yoohoo_click_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run yoohoo_display True
+run yoohoo_click True
+run analyze_yoohoo_click True
+run repeat_yoohoo_cycle True
+
+
+yoohoo_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="i_002.jpg" scale="{scale_yoohoo}" show_if=True x=0 y=-96 z_index=0
+draw image center=1 file="next.png" name=continue_arrow scale=1 show_if="show_continue_button==1" x=0 y=288 z_index=0
+
+
+yoohoo_click
+
+set timeout infinite
+set show_cursor yes
+set linked_sketchpad yoohoo_display
+set flush yes
+set event_type mouseclick
+set duration mouseclick
+set description "Collects mouse responses"
+
+
+analyze_yoohoo_click
+
+set description "Executes Python code"
+___run__
+repeat_yoohoo = 1
+if (cursor_roi === 'continue_arrow'){
+  repeat_yoohoo = 0
+  }
+__end__
+set _prepare ""
+
+
+repeat_yoohoo_cycle
+
+set description "Optionally repeat a cycle from a loop"
+set condition "repeat_yoohoo == 1"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

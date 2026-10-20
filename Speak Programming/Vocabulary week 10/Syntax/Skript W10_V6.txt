@@ -1,0 +1,727 @@
+W10_V6
+
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 block_type W10_V3
+setcycle 0 explanation_audio "ai_234.mp3"
+setcycle 0 goodbye_audio "ai_121.mp3"
+setcycle 0 week 10
+setcycle 0 task_type V6
+setcycle 0 explanation_image "Week10_V6.png"
+run W10_V6_sequence
+
+W10_V6_sequence 
+
+set description "Runs a number of items in sequence"
+run T_init_block_booleans True
+run T_block_variables True
+run T_show_instructions True
+run T_play_instructions True
+run W10_V6_loop True
+run yoohoo True
+
+T_init_block_booleans 
+
+play_instruction = 1
+
+n_incorrect_trials = 0
+n_trials = 0
+show_next_button = 0
+
+T_block_variables
+
+// HACK
+audio = "None.mp3"
+
+scale_response_bar = 1
+y_continue = 250
+y_speaker = -300
+
+scale1 = 0.7
+scale2 = 0.7
+scale_image_box = 0.7
+
+scale_highlight_box = 0.72
+scale_sound = 0.5
+
+y_speaker1 = 100
+y_speaker2 = 100
+
+x_locations = [-250, 250];
+[x_speaker1, x_speaker2] = x_locations;
+
+highlight_sound_playing = 0
+
+T_show_instructions
+
+set duration 0
+set description "Provides feedback to the participant"
+draw image center=1 file="{explanation_image}" scale=1 show_if=True x=0 y=0 z_index=0
+
+T_play_instructions
+
+set stop_after 0
+set sample "{explanation_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+W10_V6_loop
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 7
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 image1 "i_367.jpg"
+setcycle 0 audio_target "None.mp3"
+setcycle 0 audio_distractor "None.mp3"
+setcycle 0 fb_incorrect_second_try "at_1651.mp3"
+setcycle 0 fb_correct "stars_correct.mp3"
+setcycle 0 question "at_1623.mp3"
+setcycle 0 image2 "i_116.jpg"
+setcycle 1 image1 "i_373.jpg"
+setcycle 1 audio_target "None.mp3"
+setcycle 1 audio_distractor "None.mp3"
+setcycle 1 fb_incorrect_second_try "at_1982.mp3"
+setcycle 1 fb_correct "stars_correct.mp3"
+setcycle 1 question "at_1961.mp3"
+setcycle 1 image2 "i_251.jpg"
+setcycle 2 image1 "i_114.jpg"
+setcycle 2 audio_target "None.mp3"
+setcycle 2 audio_distractor "None.mp3"
+setcycle 2 fb_incorrect_second_try "at_159.mp3"
+setcycle 2 fb_correct "stars_correct.mp3"
+setcycle 2 question "at_198.mp3"
+setcycle 2 image2 "i_363.jpg"
+setcycle 3 image1 "i_263.jpg"
+setcycle 3 audio_target "None.mp3"
+setcycle 3 audio_distractor "None.mp3"
+setcycle 3 fb_incorrect_second_try "at_1375.mp3"
+setcycle 3 fb_correct "stars_correct.mp3"
+setcycle 3 question "at_1347.mp3"
+setcycle 3 image2 "i_253.jpg"
+setcycle 4 image1 "i_249.jpg"
+setcycle 4 audio_target "None.mp3"
+setcycle 4 audio_distractor "None.mp3"
+setcycle 4 fb_incorrect_second_try "at_1369.mp3"
+setcycle 4 fb_correct "stars_correct.mp3"
+setcycle 4 question "at_1341.mp3"
+setcycle 4 image2 "i_250.jpg"
+setcycle 5 image1 "i_365.jpg"
+setcycle 5 audio_target "None.mp3"
+setcycle 5 audio_distractor "None.mp3"
+setcycle 5 fb_incorrect_second_try "at_1649.mp3"
+setcycle 5 fb_correct "stars_correct.mp3"
+setcycle 5 question "at_1621.mp3"
+setcycle 5 image2 "i_371.jpg"
+setcycle 6 image1 "i_368.jpg"
+setcycle 6 audio_target "None.mp3"
+setcycle 6 audio_distractor "None.mp3"
+setcycle 6 fb_incorrect_second_try "at_1652.mp3"
+setcycle 6 fb_correct "stars_correct.mp3"
+setcycle 6 question "at_1624.mp3"
+setcycle 6 image2 "i_117.jpg"
+run T_trial_sequence
+
+T-trail_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run T_start_timing True
+run T_trial_properties True
+run T_init_trial_booleans True
+run T_shuffle_audios True
+run T_empty True
+run T_click_loop True
+run T_play_selected_sound False
+run T_determine_accuracy True
+run T_show_fb True
+run T_display True
+run T_wait "correct == 0"
+run T_reveal_correct True
+run T_display True
+run T_fb_correct "correct == 1"
+run T_display True
+run T_fb_incorrect_second_try "correct == 0"
+run T_end_timer True
+run T_logger True
+
+T_start_timing
+
+set description "Executes Python code"
+set _run "s_time = Date.now()"
+set _prepare ""
+
+T_trail_properties
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+sound1 = audio_target
+sound2 = audio_distractor
+__end__
+
+t_init_trial_booleans
+
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+repeat_cycle = 1
+clicked_on_sound = 0
+show_highlight = 0
+play_selection = 0
+
+// HACK:
+selected_sound = "None.mp3"
+//audio = "None.mp3"
+
+n_mistakes = 0
+
+play_question = 1
+
+
+wait = 1
+show_response_bar = 1
+show_next_button = 0
+
+correct = "None"
+show_fb = 0
+reveal_correct = 0
+__end__
+
+T_shuffle_audios
+
+set description "Executes Python code"
+___run__
+// Shuffle sound position:
+
+random.shuffle(x_locations);
+
+console.log(x_locations);
+
+[x_speaker1, x_speaker2] = x_locations;
+__end__
+set _prepare ""
+
+t_empty
+
+set reset_variables yes
+set duration 500
+set description "Displays stimuli"
+draw image center=1 file="speaker.png" name=speaker scale="{scale_response_bar}" show_if=True x=0 y="{y_speaker}" z_index=0
+draw image center=1 file="speaker_playing.png" name=None scale="{scale_response_bar}" show_if="highlight_sound_playing==1" x=0 y="{y_speaker}" z_index=0
+draw image center=1 file="highlight_box_gray_large.png" name=None scale="{scale_highlight_box}" show_if="show_response_bar==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+draw image center=1 file="highlight_box_gray_large.png" name=None scale="{scale_highlight_box}" show_if="show_response_bar==1" x="{x_speaker2}" y="{y_speaker2}" z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+
+T_click_loop
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 empty_column ""
+run T_click_sequence
+
+T_click_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run T_display True
+run T_init_booleans True
+run T_wait_500ms "wait == 1"
+run T_is_playing True
+run T_display True
+run T_play_question "play_question == 1"
+run T_stopped_playing True
+run T_display True
+run T_click True
+run T_analyze_click True
+run T_display True
+run T_repeat True
+
+T-display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="speaker.png" name=speaker scale="{scale_response_bar}" show_if=True x=0 y="{y_speaker}" z_index=0
+draw image center=1 file="speaker_playing.png" name=None scale="{scale_response_bar}" show_if="highlight_sound_playing==1" x=0 y="{y_speaker}" z_index=0
+draw image center=1 file="{image1}" name=roi_sound1 scale="{scale1}" show_if="show_response_bar==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+draw image center=1 file="{image2}" name=roi_sound2 scale="{scale2}" show_if="show_response_bar==1" x="{x_speaker2}" y="{y_speaker2}" z_index=0
+draw image center=1 file="highlight_box_gray_large.png" name=None scale="{scale_highlight_box}" show_if="show_response_bar==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+draw image center=1 file="highlight_box_gray_large.png" name=None scale="{scale_highlight_box}" show_if="show_response_bar==1" x="{x_speaker2}" y="{y_speaker2}" z_index=0
+draw image center=1 file="highlight_box_yellow_large.png" name=None scale="{scale_highlight_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green_large.png" name=None scale="{scale_highlight_box}" show_if="correct==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red_large.png" name=None scale="{scale_highlight_box}" show_if="correct==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=0 y=200 z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=-64 y=300 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_yellow_large.png" name=None scale="{scale_highlight_box}" show_if="reveal_correct==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+
+
+T_init_booleans
+
+set description "Executes Python code"
+___run__
+correct = "None"
+__end__
+set _prepare ""
+
+T_wait_500ms
+
+set jitter_mode Uniform
+set jitter 0
+set duration 500
+set description "A random delay sampled from either a normal or uniform Distribution"
+
+T_is_playing
+
+set description "Executes Python code"
+set _run "highlight_sound_playing = 1"
+set _prepare ""
+
+T_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="speaker.png" name=speaker scale="{scale_response_bar}" show_if=True x=0 y="{y_speaker}" z_index=0
+draw image center=1 file="speaker_playing.png" name=None scale="{scale_response_bar}" show_if="highlight_sound_playing==1" x=0 y="{y_speaker}" z_index=0
+draw image center=1 file="{image1}" name=roi_sound1 scale="{scale1}" show_if="show_response_bar==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+draw image center=1 file="{image2}" name=roi_sound2 scale="{scale2}" show_if="show_response_bar==1" x="{x_speaker2}" y="{y_speaker2}" z_index=0
+draw image center=1 file="highlight_box_gray_large.png" name=None scale="{scale_highlight_box}" show_if="show_response_bar==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+draw image center=1 file="highlight_box_gray_large.png" name=None scale="{scale_highlight_box}" show_if="show_response_bar==1" x="{x_speaker2}" y="{y_speaker2}" z_index=0
+draw image center=1 file="highlight_box_yellow_large.png" name=None scale="{scale_highlight_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green_large.png" name=None scale="{scale_highlight_box}" show_if="correct==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red_large.png" name=None scale="{scale_highlight_box}" show_if="correct==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=0 y=200 z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=-64 y=300 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_yellow_large.png" name=None scale="{scale_highlight_box}" show_if="reveal_correct==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+
+T_play_question
+
+set volume 1
+set stop_after 0
+set sample "{question}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+T_stopped_playing
+
+set description "Executes Python code"
+set _run "highlight_sound_playing = 0"
+set _prepare ""
+
+T_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="speaker.png" name=speaker scale="{scale_response_bar}" show_if=True x=0 y="{y_speaker}" z_index=0
+draw image center=1 file="speaker_playing.png" name=None scale="{scale_response_bar}" show_if="highlight_sound_playing==1" x=0 y="{y_speaker}" z_index=0
+draw image center=1 file="{image1}" name=roi_sound1 scale="{scale1}" show_if="show_response_bar==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+draw image center=1 file="{image2}" name=roi_sound2 scale="{scale2}" show_if="show_response_bar==1" x="{x_speaker2}" y="{y_speaker2}" z_index=0
+draw image center=1 file="highlight_box_gray_large.png" name=None scale="{scale_highlight_box}" show_if="show_response_bar==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+draw image center=1 file="highlight_box_gray_large.png" name=None scale="{scale_highlight_box}" show_if="show_response_bar==1" x="{x_speaker2}" y="{y_speaker2}" z_index=0
+draw image center=1 file="highlight_box_yellow_large.png" name=None scale="{scale_highlight_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green_large.png" name=None scale="{scale_highlight_box}" show_if="correct==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red_large.png" name=None scale="{scale_highlight_box}" show_if="correct==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=0 y=200 z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=-64 y=300 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_yellow_large.png" name=None scale="{scale_highlight_box}" show_if="reveal_correct==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+
+T_click
+
+set timeout infinite
+set show_cursor yes
+set linked_sketchpad T_display
+set flush yes
+set event_type mouseclick
+set duration mouseclick
+set description "Collects mouse responses"
+
+T_analyze_click 
+
+set description "Executes Python code"
+___run__
+// HACK:
+// Strip cursor_roi:
+cursor_roi = removeSubstring(cursor_roi, "None")
+cursor_roi = removeSubstring(cursor_roi, ";")
+
+console.log("cursor_roi" + cursor_roi)
+
+//clicked_on_sound = 0
+show_highlight = 0
+play_selection = 0
+play_question = 0
+play_instruction = 0
+
+wait = 0
+
+repeat_cycle = 1
+
+if 	(cursor_roi.includes("roi_sound") ) {
+  clicked_on_sound = 1
+  repeat_cycle = 0
+
+  	sound_id = (cursor_roi.slice(9))
+  console.log(sound_id )
+  x_highlight = window["x_speaker" + sound_id]
+  y_highlight = window["y_speaker" + sound_id]
+
+  selected_sound = window["sound"+sound_id]
+  play_selection = 1
+  show_highlight = 1
+  show_next_button = 1
+  }
+
+
+if (cursor_roi === 'speaker') {
+    play_question = 1
+    clicked_on_sound = 0
+  }
+
+__end__
+set _prepare ""
+
+T_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="speaker.png" name=speaker scale="{scale_response_bar}" show_if=True x=0 y="{y_speaker}" z_index=0
+draw image center=1 file="speaker_playing.png" name=None scale="{scale_response_bar}" show_if="highlight_sound_playing==1" x=0 y="{y_speaker}" z_index=0
+draw image center=1 file="{image1}" name=roi_sound1 scale="{scale1}" show_if="show_response_bar==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+draw image center=1 file="{image2}" name=roi_sound2 scale="{scale2}" show_if="show_response_bar==1" x="{x_speaker2}" y="{y_speaker2}" z_index=0
+draw image center=1 file="highlight_box_gray_large.png" name=None scale="{scale_highlight_box}" show_if="show_response_bar==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+draw image center=1 file="highlight_box_gray_large.png" name=None scale="{scale_highlight_box}" show_if="show_response_bar==1" x="{x_speaker2}" y="{y_speaker2}" z_index=0
+draw image center=1 file="highlight_box_yellow_large.png" name=None scale="{scale_highlight_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green_large.png" name=None scale="{scale_highlight_box}" show_if="correct==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red_large.png" name=None scale="{scale_highlight_box}" show_if="correct==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=0 y=200 z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=-64 y=300 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_yellow_large.png" name=None scale="{scale_highlight_box}" show_if="reveal_correct==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+
+T_repeat
+
+set description "Optionally repeat a cycle from a loop"
+set condition "repeat_cycle == 1"
+
+T_play_selected_sound
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 empty_column ""
+run T_play_selected_sound_sequence
+
+T_play_selected_sound_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run T_play_selected_sound_sampler True
+
+T_play_selected_sound_sampler
+
+set volume 1
+set stop_after 0
+set sample "{selected_sound}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+T_determine_accuracy
+
+set description "Executes Python code"
+___run__
+// Determine response accuracy:
+
+console.log("SOUND ID = " + sound_id)
+show_next_button = 0
+if (sound_id === "1") {
+  correct = 1
+  }
+else {
+  correct = 0
+  }
+
+if (correct === 0) {
+  n_mistakes += 1
+  // Update n_incorrect_trials
+  n_incorrect_trials += 1
+}
+console.log(`n_incorrect_trials = ${n_incorrect_trials}`)
+__end__
+set _prepare ""
+
+T_show_fb
+
+set description "Executes Python code"
+___run__
+show_fb = 1
+show_highlight = 0
+__end__
+set _prepare ""
+
+T_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="speaker.png" name=speaker scale="{scale_response_bar}" show_if=True x=0 y="{y_speaker}" z_index=0
+draw image center=1 file="speaker_playing.png" name=None scale="{scale_response_bar}" show_if="highlight_sound_playing==1" x=0 y="{y_speaker}" z_index=0
+draw image center=1 file="{image1}" name=roi_sound1 scale="{scale1}" show_if="show_response_bar==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+draw image center=1 file="{image2}" name=roi_sound2 scale="{scale2}" show_if="show_response_bar==1" x="{x_speaker2}" y="{y_speaker2}" z_index=0
+draw image center=1 file="highlight_box_gray_large.png" name=None scale="{scale_highlight_box}" show_if="show_response_bar==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+draw image center=1 file="highlight_box_gray_large.png" name=None scale="{scale_highlight_box}" show_if="show_response_bar==1" x="{x_speaker2}" y="{y_speaker2}" z_index=0
+draw image center=1 file="highlight_box_yellow_large.png" name=None scale="{scale_highlight_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green_large.png" name=None scale="{scale_highlight_box}" show_if="correct==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red_large.png" name=None scale="{scale_highlight_box}" show_if="correct==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=0 y=200 z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=-64 y=300 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_yellow_large.png" name=None scale="{scale_highlight_box}" show_if="reveal_correct==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+
+T_wait
+
+set jitter_mode Uniform
+set jitter 0
+set duration 500
+set description "A random delay sampled from either a normal or uniform distribution"
+
+T_reveal_correct
+
+set description "Executes Python code"
+___run__
+if (correct === 0) {
+  show_fb = 0
+  reveal_correct = 1
+  show_highlight = 0
+  }
+__end__
+set _prepare ""
+
+T_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="speaker.png" name=speaker scale="{scale_response_bar}" show_if=True x=0 y="{y_speaker}" z_index=0
+draw image center=1 file="speaker_playing.png" name=None scale="{scale_response_bar}" show_if="highlight_sound_playing==1" x=0 y="{y_speaker}" z_index=0
+draw image center=1 file="{image1}" name=roi_sound1 scale="{scale1}" show_if="show_response_bar==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+draw image center=1 file="{image2}" name=roi_sound2 scale="{scale2}" show_if="show_response_bar==1" x="{x_speaker2}" y="{y_speaker2}" z_index=0
+draw image center=1 file="highlight_box_gray_large.png" name=None scale="{scale_highlight_box}" show_if="show_response_bar==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+draw image center=1 file="highlight_box_gray_large.png" name=None scale="{scale_highlight_box}" show_if="show_response_bar==1" x="{x_speaker2}" y="{y_speaker2}" z_index=0
+draw image center=1 file="highlight_box_yellow_large.png" name=None scale="{scale_highlight_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green_large.png" name=None scale="{scale_highlight_box}" show_if="correct==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red_large.png" name=None scale="{scale_highlight_box}" show_if="correct==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=0 y=200 z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=-64 y=300 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_yellow_large.png" name=None scale="{scale_highlight_box}" show_if="reveal_correct==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+
+T_fb_correct
+
+set volume 1
+set stop_after 0
+set sample "{fb_correct}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+T_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="speaker.png" name=speaker scale="{scale_response_bar}" show_if=True x=0 y="{y_speaker}" z_index=0
+draw image center=1 file="speaker_playing.png" name=None scale="{scale_response_bar}" show_if="highlight_sound_playing==1" x=0 y="{y_speaker}" z_index=0
+draw image center=1 file="{image1}" name=roi_sound1 scale="{scale1}" show_if="show_response_bar==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+draw image center=1 file="{image2}" name=roi_sound2 scale="{scale2}" show_if="show_response_bar==1" x="{x_speaker2}" y="{y_speaker2}" z_index=0
+draw image center=1 file="highlight_box_gray_large.png" name=None scale="{scale_highlight_box}" show_if="show_response_bar==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+draw image center=1 file="highlight_box_gray_large.png" name=None scale="{scale_highlight_box}" show_if="show_response_bar==1" x="{x_speaker2}" y="{y_speaker2}" z_index=0
+draw image center=1 file="highlight_box_yellow_large.png" name=None scale="{scale_highlight_box}" show_if="show_highlight==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_green_large.png" name=None scale="{scale_highlight_box}" show_if="correct==1 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="highlight_box_red_large.png" name=None scale="{scale_highlight_box}" show_if="correct==0 and show_fb==1" x="{x_highlight}" y="{y_highlight}" z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=0 y=200 z_index=0
+draw image center=1 file="stars.png" scale=1 show_if="correct==1" x=-64 y=300 z_index=0
+draw textline center=1 color=black font_bold=no font_family=mono font_italic=no font_size=18 html=yes show_if=True text="{task_type}" x=352 y=-320 z_index=0
+draw image center=1 file="highlight_box_yellow_large.png" name=None scale="{scale_highlight_box}" show_if="reveal_correct==1" x="{x_speaker1}" y="{y_speaker1}" z_index=0
+
+T_fb_incorrect_second_try
+
+set volume 1
+set stop_after 0
+set sample "{fb_incorrect_second_try}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+
+T_end_timer
+
+set description "Executes Python code"
+___run__
+// Get end time
+e_time = Date.now()
+
+response_time = e_time - s_time
+__end__
+set _prepare ""
+
+T_logger
+
+set description "Logs experimental data"
+set auto_log yes
+
+yoohoo
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if never
+setcycle 0 show_continue_button 0
+run yoohoo_sequence
+
+
+yoohoo_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run yoohoo_variables True
+run yoohoo_display True
+run play_yoohoo True
+run yoohoo_click_loop True
+
+
+yoohoo_variables
+
+set description "Executes Python code"
+set _run ""
+___prepare__
+scale_yoohoo = 0.5
+yoohoo_image = "i_002.jpg"
+__end__
+
+
+yoohoo_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="i_002.jpg" scale="{scale_yoohoo}" show_if=True x=0 y=-96 z_index=0
+draw image center=1 file="next.png" name=continue_arrow scale=1 show_if="show_continue_button==1" x=0 y=288 z_index=0
+
+play_yoohoo
+
+set volume 1
+set stop_after 0
+set sample "{goodbye_audio}"
+set pitch 1
+set pan 0
+set fade_in 0
+set duration sound
+set description "Plays a sound file in .wav or .ogg format"
+
+yoohoo_click_loop
+
+set source_file ""
+set source table
+set repeat 1
+set order random
+set description "Repeatedly runs another item"
+set cycles 1
+set continuous no
+set break_if_on_first yes
+set break_if False
+setcycle 0 show_continue_button 1
+run yoohoo_click_sequence
+
+yoohoo_click_sequence
+
+set flush_keyboard yes
+set description "Runs a number of items in sequence"
+run yoohoo_display True
+run yoohoo_click True
+run analyze_yoohoo_click True
+run repeat_yoohoo_cycle True
+
+yoohoo_display
+
+set reset_variables yes
+set duration 0
+set description "Displays stimuli"
+draw image center=1 file="i_002.jpg" scale="{scale_yoohoo}" show_if=True x=0 y=-96 z_index=0
+draw image center=1 file="next.png" name=continue_arrow scale=1 show_if="show_continue_button==1" x=0 y=288 z_index=0
+
+
+yoohoo_click
+
+set timeout infinite
+set show_cursor yes
+set linked_sketchpad yoohoo_display
+set flush yes
+set event_type mouseclick
+set duration mouseclick
+set description "Collects mouse responses"
+
+analyze_yoohoo_click
+
+set description "Executes Python code"
+___run__
+repeat_yoohoo = 1
+if (cursor_roi === 'continue_arrow'){
+  repeat_yoohoo = 0
+  }
+__end__
+set _prepare ""
+
+repeat_yoohoo_cycle
+
+set description "Optionally repeat a cycle from a loop"
+set condition "repeat_yoohoo == 1"
+

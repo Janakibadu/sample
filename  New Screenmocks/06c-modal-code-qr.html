@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>SPEAK — Klassen- &amp; Schüler:innenverwaltung — Code &amp; QR</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+  .class-tabs { display:flex; gap:10px; margin-bottom:18px; }
+  .class-tab { padding:9px 18px; border-radius:12px; font-weight:700; font-size:13.5px; background:#fff; border:1px solid var(--line); color:var(--ink-soft); }
+  .class-tab.active { background:var(--ink); color:#fff; border-color:var(--ink); }
+  .toolbar { display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; }
+  .code-chip { font-family:"Consolas",monospace; background:var(--app-bg); padding:4px 10px; border-radius:8px; font-weight:700; letter-spacing:.06em; }
+</style>
+</head>
+<body class="app">
+
+  <div class="funder-bar">
+    <img class="funder-logo-tud" src="assets/tud_logo_cmyk.png" alt="TU Dortmund Logo">
+    <img src="assets/IFS.png" alt="IFS Logo">
+    <img src="assets/speak-logo.png" alt="SPEAK Logo">
+    <img class="funder-logo-bund" src="assets/Bundesministrerium.jpg" alt="Bundesministerium Logo">
+    <img src="assets/EBF.jpg" alt="EBF Logo">
+  </div>
+
+  <div class="app-shell">
+    <div class="sidebar">
+      <img class="logo-mark" src="assets/speak-logo.png" alt="SPEAK" style="height:65px; margin-bottom:20px;">
+      <a class="nav-item" href="05-teacher-dashboard.html"><span class="ic">🏠</span> Dashboard</a>
+      <a class="nav-item active" href="06-class-management.html"><span class="ic">👥</span> Klassen &amp; Schüler:innen</a>
+      <a class="nav-item" href="07-assignment.html"><span class="ic">📌</span> Zuweisungen</a>
+      <a class="nav-item" href="09-results.html"><span class="ic">📊</span> Ergebnisse</a>
+      <div class="nav-spacer"></div>
+      <div class="nav-foot"><a class="nav-item" href="01-home.html"><span class="ic">🚪</span> Abmelden</a></div>
+    </div>
+
+    <div style="flex:1; display:flex; flex-direction:column;">
+      <div class="topbar">
+        <div class="h3">Klassen &amp; Schüler:innen</div>
+        <a class="avatar" href="01-home.html" title="Abmelden">FM</a>
+      </div>
+
+      <div class="main">
+        <div class="class-tabs">
+          <div class="class-tab active">Klasse 1A · 19 Schüler:innen</div>
+          <div class="class-tab">Klasse 1B · 21 Schüler:innen</div>
+          <div class="class-tab">Klasse 1C · 17 Schüler:innen</div>
+          <a class="class-tab" style="background:transparent; border-style:dashed; text-decoration:none;" href="06a-modal-new-class.html">＋ Neue Klasse</a>
+        </div>
+
+        <div class="toolbar">
+          <span class="muted">Zugangscodes werden nur einmal angezeigt - bitte geben Sie diese direkt an die Schüler:innen weiter.</span>
+          <a class="btn btn-md btn-coral" href="06b-modal-add-student.html">＋ Schüler:in hinzufügen</a>
+        </div>
+
+        <div class="card" style="padding:0;">
+          <table class="data">
+            <tr><th>Anzeigename</th><th>Zugangscode</th><th>Status</th><th>Zuletzt aktiv</th><th></th></tr>
+            <tr><td>🧒 Elli</td><td><span class="code-chip">F7KQ2M</span></td><td><span class="pill pill-mint">Aktiv</span></td><td>Heute</td>
+              <td style="text-align:right;"><a class="btn btn-ghost" style="height:34px; padding:0 14px; font-size:12.5px;" href="06c-modal-code-qr.html">Code &amp; QR</a></td></tr>
+            <tr><td>🧒 Yusuf</td><td><span class="code-chip">R2XZ9B</span></td><td><span class="pill pill-mint">Aktiv</span></td><td>Gestern</td>
+              <td style="text-align:right;"><a class="btn btn-ghost" style="height:34px; padding:0 14px; font-size:12.5px;" href="06c-modal-code-qr.html">Code &amp; QR</a></td></tr>
+            <tr><td>🧒 Lio</td><td><span class="code-chip">L9QQ4T</span></td><td><span class="pill pill-mint">Aktiv</span></td><td>Vor 2 Tagen</td>
+              <td style="text-align:right;"><a class="btn btn-ghost" style="height:34px; padding:0 14px; font-size:12.5px;" href="06c-modal-code-qr.html">Code &amp; QR</a></td></tr>
+            <tr><td>🧒 Wiki</td><td><span class="code-chip">•••••• </span></td><td><span class="pill pill-coral">Deaktiviert</span></td><td>Vor 3 Wochen</td>
+              <td style="text-align:right;"><button class="btn btn-ghost" style="height:34px; padding:0 14px; font-size:12.5px;">Reaktivieren</button></td></tr>
+          </table>
+        </div>
+
+        <div style="margin-top:22px; text-align:right;">
+          <a class="btn btn-md btn-primary" href="07-assignment.html">📌 Modul dieser Klasse zuweisen ▶</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div class="h2">Lio</div>
+        <a class="modal-close" href="06-class-management.html" title="Schließen">✕</a>
+      </div>
+      <div class="modal-sub">Geben Sie diesen Code an die Schüler:in weiter, oder lassen Sie sie den QR-Code scannen.</div>
+
+      <div class="modal-code">
+        <div class="code-big">793117</div>
+        <svg class="qr-mock" viewBox="0 0 210 210" xmlns="http://www.w3.org/2000/svg" fill="var(--ink)"><rect width="210" height="210" fill="#fff"/><rect x="0" y="0" width="10" height="10"/><rect x="0" y="10" width="10" height="10"/><rect x="0" y="20" width="10" height="10"/><rect x="0" y="30" width="10" height="10"/><rect x="0" y="40" width="10" height="10"/><rect x="0" y="50" width="10" height="10"/><rect x="0" y="60" width="10" height="10"/><rect x="10" y="0" width="10" height="10"/><rect x="10" y="60" width="10" height="10"/><rect x="20" y="0" width="10" height="10"/><rect x="20" y="20" width="10" height="10"/><rect x="20" y="30" width="10" height="10"/><rect x="20" y="40" width="10" height="10"/><rect x="20" y="60" width="10" height="10"/><rect x="30" y="0" width="10" height="10"/><rect x="30" y="20" width="10" height="10"/><rect x="30" y="30" width="10" height="10"/><rect x="30" y="40" width="10" height="10"/><rect x="30" y="60" width="10" height="10"/><rect x="40" y="0" width="10" height="10"/><rect x="40" y="20" width="10" height="10"/><rect x="40" y="30" width="10" height="10"/><rect x="40" y="40" width="10" height="10"/><rect x="40" y="60" width="10" height="10"/><rect x="50" y="0" width="10" height="10"/><rect x="50" y="60" width="10" height="10"/><rect x="60" y="0" width="10" height="10"/><rect x="60" y="10" width="10" height="10"/><rect x="60" y="20" width="10" height="10"/><rect x="60" y="30" width="10" height="10"/><rect x="60" y="40" width="10" height="10"/><rect x="60" y="50" width="10" height="10"/><rect x="60" y="60" width="10" height="10"/><rect x="140" y="0" width="10" height="10"/><rect x="140" y="10" width="10" height="10"/><rect x="140" y="20" width="10" height="10"/><rect x="140" y="30" width="10" height="10"/><rect x="140" y="40" width="10" height="10"/><rect x="140" y="50" width="10" height="10"/><rect x="140" y="60" width="10" height="10"/><rect x="150" y="0" width="10" height="10"/><rect x="150" y="60" width="10" height="10"/><rect x="160" y="0" width="10" height="10"/><rect x="160" y="20" width="10" height="10"/><rect x="160" y="30" width="10" height="10"/><rect x="160" y="40" width="10" height="10"/><rect x="160" y="60" width="10" height="10"/><rect x="170" y="0" width="10" height="10"/><rect x="170" y="20" width="10" height="10"/><rect x="170" y="30" width="10" height="10"/><rect x="170" y="40" width="10" height="10"/><rect x="170" y="60" width="10" height="10"/><rect x="180" y="0" width="10" height="10"/><rect x="180" y="20" width="10" height="10"/><rect x="180" y="30" width="10" height="10"/><rect x="180" y="40" width="10" height="10"/><rect x="180" y="60" width="10" height="10"/><rect x="190" y="0" width="10" height="10"/><rect x="190" y="60" width="10" height="10"/><rect x="200" y="0" width="10" height="10"/><rect x="200" y="10" width="10" height="10"/><rect x="200" y="20" width="10" height="10"/><rect x="200" y="30" width="10" height="10"/><rect x="200" y="40" width="10" height="10"/><rect x="200" y="50" width="10" height="10"/><rect x="200" y="60" width="10" height="10"/><rect x="0" y="140" width="10" height="10"/><rect x="0" y="150" width="10" height="10"/><rect x="0" y="160" width="10" height="10"/><rect x="0" y="170" width="10" height="10"/><rect x="0" y="180" width="10" height="10"/><rect x="0" y="190" width="10" height="10"/><rect x="0" y="200" width="10" height="10"/><rect x="10" y="140" width="10" height="10"/><rect x="10" y="200" width="10" height="10"/><rect x="20" y="140" width="10" height="10"/><rect x="20" y="160" width="10" height="10"/><rect x="20" y="170" width="10" height="10"/><rect x="20" y="180" width="10" height="10"/><rect x="20" y="200" width="10" height="10"/><rect x="30" y="140" width="10" height="10"/><rect x="30" y="160" width="10" height="10"/><rect x="30" y="170" width="10" height="10"/><rect x="30" y="180" width="10" height="10"/><rect x="30" y="200" width="10" height="10"/><rect x="40" y="140" width="10" height="10"/><rect x="40" y="160" width="10" height="10"/><rect x="40" y="170" width="10" height="10"/><rect x="40" y="180" width="10" height="10"/><rect x="40" y="200" width="10" height="10"/><rect x="50" y="140" width="10" height="10"/><rect x="50" y="200" width="10" height="10"/><rect x="60" y="140" width="10" height="10"/><rect x="60" y="150" width="10" height="10"/><rect x="60" y="160" width="10" height="10"/><rect x="60" y="170" width="10" height="10"/><rect x="60" y="180" width="10" height="10"/><rect x="60" y="190" width="10" height="10"/><rect x="60" y="200" width="10" height="10"/><rect x="0" y="80" width="10" height="10"/><rect x="0" y="90" width="10" height="10"/><rect x="0" y="100" width="10" height="10"/><rect x="10" y="70" width="10" height="10"/><rect x="10" y="80" width="10" height="10"/><rect x="10" y="90" width="10" height="10"/><rect x="10" y="100" width="10" height="10"/><rect x="10" y="120" width="10" height="10"/><rect x="10" y="130" width="10" height="10"/><rect x="20" y="90" width="10" height="10"/><rect x="20" y="120" width="10" height="10"/><rect x="30" y="80" width="10" height="10"/><rect x="30" y="90" width="10" height="10"/><rect x="30" y="110" width="10" height="10"/><rect x="30" y="120" width="10" height="10"/><rect x="30" y="130" width="10" height="10"/><rect x="40" y="130" width="10" height="10"/><rect x="50" y="130" width="10" height="10"/><rect x="60" y="70" width="10" height="10"/><rect x="60" y="80" width="10" height="10"/><rect x="60" y="90" width="10" height="10"/><rect x="60" y="100" width="10" height="10"/><rect x="60" y="110" width="10" height="10"/><rect x="60" y="120" width="10" height="10"/><rect x="70" y="0" width="10" height="10"/><rect x="70" y="10" width="10" height="10"/><rect x="70" y="20" width="10" height="10"/><rect x="70" y="30" width="10" height="10"/><rect x="70" y="70" width="10" height="10"/><rect x="70" y="90" width="10" height="10"/><rect x="70" y="100" width="10" height="10"/><rect x="70" y="170" width="10" height="10"/><rect x="70" y="180" width="10" height="10"/><rect x="70" y="190" width="10" height="10"/><rect x="70" y="200" width="10" height="10"/><rect x="80" y="0" width="10" height="10"/><rect x="80" y="30" width="10" height="10"/><rect x="80" y="50" width="10" height="10"/><rect x="80" y="70" width="10" height="10"/><rect x="80" y="80" width="10" height="10"/><rect x="80" y="90" width="10" height="10"/><rect x="80" y="110" width="10" height="10"/><rect x="80" y="140" width="10" height="10"/><rect x="80" y="150" width="10" height="10"/><rect x="80" y="180" width="10" height="10"/><rect x="80" y="190" width="10" height="10"/><rect x="80" y="200" width="10" height="10"/><rect x="90" y="20" width="10" height="10"/><rect x="90" y="30" width="10" height="10"/><rect x="90" y="40" width="10" height="10"/><rect x="90" y="90" width="10" height="10"/><rect x="90" y="130" width="10" height="10"/><rect x="90" y="150" width="10" height="10"/><rect x="90" y="160" width="10" height="10"/><rect x="90" y="170" width="10" height="10"/><rect x="90" y="200" width="10" height="10"/><rect x="100" y="10" width="10" height="10"/><rect x="100" y="40" width="10" height="10"/><rect x="100" y="70" width="10" height="10"/><rect x="100" y="120" width="10" height="10"/><rect x="100" y="130" width="10" height="10"/><rect x="100" y="140" width="10" height="10"/><rect x="100" y="180" width="10" height="10"/><rect x="100" y="190" width="10" height="10"/><rect x="110" y="10" width="10" height="10"/><rect x="110" y="30" width="10" height="10"/><rect x="110" y="60" width="10" height="10"/><rect x="110" y="90" width="10" height="10"/><rect x="110" y="110" width="10" height="10"/><rect x="110" y="120" width="10" height="10"/><rect x="110" y="150" width="10" height="10"/><rect x="110" y="160" width="10" height="10"/><rect x="110" y="190" width="10" height="10"/><rect x="120" y="0" width="10" height="10"/><rect x="120" y="10" width="10" height="10"/><rect x="120" y="20" width="10" height="10"/><rect x="120" y="40" width="10" height="10"/><rect x="120" y="50" width="10" height="10"/><rect x="120" y="60" width="10" height="10"/><rect x="120" y="80" width="10" height="10"/><rect x="120" y="110" width="10" height="10"/><rect x="120" y="120" width="10" height="10"/><rect x="120" y="140" width="10" height="10"/><rect x="120" y="150" width="10" height="10"/><rect x="130" y="0" width="10" height="10"/><rect x="130" y="10" width="10" height="10"/><rect x="130" y="20" width="10" height="10"/><rect x="130" y="30" width="10" height="10"/><rect x="130" y="80" width="10" height="10"/><rect x="130" y="90" width="10" height="10"/><rect x="130" y="100" width="10" height="10"/><rect x="130" y="120" width="10" height="10"/><rect x="130" y="130" width="10" height="10"/><rect x="130" y="140" width="10" height="10"/><rect x="130" y="150" width="10" height="10"/><rect x="130" y="160" width="10" height="10"/><rect x="130" y="170" width="10" height="10"/><rect x="130" y="190" width="10" height="10"/><rect x="140" y="80" width="10" height="10"/><rect x="140" y="140" width="10" height="10"/><rect x="140" y="160" width="10" height="10"/><rect x="140" y="170" width="10" height="10"/><rect x="140" y="180" width="10" height="10"/><rect x="140" y="190" width="10" height="10"/><rect x="150" y="70" width="10" height="10"/><rect x="150" y="90" width="10" height="10"/><rect x="150" y="100" width="10" height="10"/><rect x="150" y="150" width="10" height="10"/><rect x="150" y="160" width="10" height="10"/><rect x="160" y="70" width="10" height="10"/><rect x="160" y="110" width="10" height="10"/><rect x="160" y="130" width="10" height="10"/><rect x="160" y="140" width="10" height="10"/><rect x="160" y="170" width="10" height="10"/><rect x="160" y="180" width="10" height="10"/><rect x="160" y="200" width="10" height="10"/><rect x="170" y="90" width="10" height="10"/><rect x="170" y="130" width="10" height="10"/><rect x="170" y="150" width="10" height="10"/><rect x="170" y="160" width="10" height="10"/><rect x="170" y="180" width="10" height="10"/><rect x="170" y="190" width="10" height="10"/><rect x="180" y="70" width="10" height="10"/><rect x="180" y="80" width="10" height="10"/><rect x="180" y="110" width="10" height="10"/><rect x="180" y="120" width="10" height="10"/><rect x="180" y="130" width="10" height="10"/><rect x="180" y="170" width="10" height="10"/><rect x="180" y="180" width="10" height="10"/><rect x="190" y="100" width="10" height="10"/><rect x="190" y="120" width="10" height="10"/><rect x="190" y="150" width="10" height="10"/><rect x="190" y="160" width="10" height="10"/><rect x="190" y="170" width="10" height="10"/><rect x="190" y="190" width="10" height="10"/><rect x="200" y="80" width="10" height="10"/><rect x="200" y="100" width="10" height="10"/><rect x="200" y="140" width="10" height="10"/><rect x="200" y="150" width="10" height="10"/><rect x="200" y="160" width="10" height="10"/><rect x="200" y="170" width="10" height="10"/><rect x="200" y="200" width="10" height="10"/></svg>
+      </div>
+
+      <div class="modal-actions" style="justify-content:center;">
+        <button class="btn btn-md btn-primary" style="flex:none;">🖨️ Drucken</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

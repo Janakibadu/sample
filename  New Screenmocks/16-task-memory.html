@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>SPEAK — Aufgabe: Gedächtnis / Koffer (Typ U)</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+  .stage { min-height: calc(100vh - 84px); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; }
+  .suitcase {
+    width:520px; background: linear-gradient(160deg, var(--sun), #ffdf8a); border-radius:28px; padding:30px;
+    box-shadow: var(--shadow-lg); position:relative;
+  }
+  .suitcase .handle { position:absolute; top:-22px; left:50%; transform:translateX(-50%); width:90px; height:26px; border-radius:14px 14px 0 0; background:#e0a92b; }
+  .grid-cards { display:grid; grid-template-columns: repeat(4, 1fr); gap:14px; }
+  .mem-card {
+    aspect-ratio: 1; border-radius:16px; background:#fff; box-shadow: var(--shadow-sm);
+    display:flex; align-items:center; justify-content:center; font-size:38px;
+  }
+  .mem-card.flipped { background: var(--grape); color:#fff; }
+</style>
+</head>
+<body class="app-student">
+
+  <div class="funder-bar">
+    <img class="funder-logo-tud" src="assets/tud_logo_cmyk.png" alt="TU Dortmund Logo">
+    <img src="assets/IFS.png" alt="IFS Logo">
+    <img src="assets/speak-logo.png" alt="SPEAK Logo">
+    <img class="funder-logo-bund" src="assets/Bundesministrerium.jpg" alt="Bundesministerium Logo">
+    <img src="assets/EBF.jpg" alt="EBF Logo">
+  </div>
+
+  <div class="student-top">
+    <div style="display:flex; align-items:center; gap:14px;">
+      <img class="logo-mark" src="assets/speak-logo.png" alt="SPEAK" style="height:65px;">
+      <a class="back-link" href="11-module-player.html">← Aufgabenpfad</a>
+    </div>
+    <div class="h3">Typ U · Gedächtnis (Koffer)</div>
+    <div class="progress-track" style="width:220px;"><div class="progress-fill" style="width:80%; background:var(--sky);"></div></div>
+  </div>
+
+  <div class="stage">
+    <div class="muted" style="font-size:16px;">🔊 „Was davon haben wir in den Koffer gepackt?"</div>
+    <div class="suitcase">
+      <div class="handle"></div>
+      <div class="grid-cards">
+        <div class="mem-card flipped">🧦</div>
+        <div class="mem-card">?</div>
+        <div class="mem-card flipped">🪥</div>
+        <div class="mem-card">?</div>
+        <div class="mem-card">?</div>
+        <div class="mem-card flipped">👕</div>
+        <div class="mem-card">?</div>
+        <div class="mem-card">?</div>
+      </div>
+    </div>
+    <div class="pill pill-grape">🧠 3 von 8 bisher erinnert</div>
+
+    <a class="btn btn-lg btn-coral" href="17-reward-completion.html">Aufgabe beenden ▶</a>
+  </div>
+
+</body>
+</html>

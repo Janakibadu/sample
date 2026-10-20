@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>SPEAK — Startseite / Landing</title>
+<link rel="stylesheet" href="theme.css">
+<style>
+  .hero { display:flex; min-height:100vh; }
+  .hero-copy {
+    flex: 1.1; padding: 64px 72px; display:flex; flex-direction:column; justify-content:center; gap:22px;
+    background: #fff;
+  }
+  .hero-art {
+    flex: .9; background: linear-gradient(160deg, var(--sky), var(--grape));
+    display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden;
+  }
+  .hero-art .blob {
+    width:340px; height:340px; border-radius:50%; background: rgba(255,255,255,.16);
+    display:flex; align-items:center; justify-content:center; font-size:150px; overflow:hidden;
+  }
+  .hero-art .blob img { width:100%; height:100%; object-fit:cover; }
+  .brand-lockup { display:flex; align-items:center; gap:12px; }
+  .cta-row { display:flex; gap:14px; margin-top:8px; flex-wrap:wrap; }
+  .code-card {
+    position:absolute; bottom:40px; left:40px; right:40px; background:#fff; border-radius:22px;
+    padding:22px 26px; box-shadow: var(--shadow-lg); display:flex; flex-direction:column; align-items:flex-start; gap:16px;
+    text-decoration:none; color:inherit;
+  }
+  .code-card .code-top { display:flex; align-items:center; gap:16px; width:100%; }
+  .code-card .code-bottom { display:flex; align-items:center; justify-content:space-between; width:100%; gap:16px; }
+  .code-boxes { display:flex; gap:8px; }
+  .code-boxes div {
+    width:44px; height:54px; border-radius:12px; background:var(--app-bg); border:2px solid var(--line);
+    display:flex; align-items:center; justify-content:center; font-family:var(--font-fun); font-size:22px; color:var(--ink-faint);
+  }
+</style>
+</head>
+<body class="app">
+
+  <div class="funder-bar">
+    <img class="funder-logo-tud" src="assets/tud_logo_cmyk.png" alt="TU Dortmund Logo">
+    <img src="assets/IFS.png" alt="IFS Logo">
+    <img src="assets/speak-logo.png" alt="SPEAK Logo">
+    <img class="funder-logo-bund" src="assets/Bundesministrerium.jpg" alt="Bundesministerium Logo">
+    <img src="assets/EBF.jpg" alt="EBF Logo">
+  </div>
+
+  <div class="hero">
+    <div class="hero-copy">
+      <div class="brand-lockup">
+        <img class="logo-mark" src="assets/speak-logo.png" alt="SPEAK" style="height:105px;">
+      </div>
+      <div class="h1" style="font-size:20px; font-weight:600; max-width:480px; margin-top:-8px;">Willkommen bei SPEAK - abwechslungsreiche und spielerische Übungen zur Förderung von Wortschatz und Grammatik in der ersten Klasse</div>
+
+      <div class="cta-row">
+        <a class="btn btn-lg btn-coral" href="03-teacher-login.html">👩‍🏫 Lehrkraft-Login</a>
+        <a class="btn btn-lg btn-ghost" href="02-teacher-register.html">✍️ Als Lehrkraft registrieren</a>
+      </div>
+
+      <div style="display:flex; gap:10px; margin-top:18px;">
+        <span class="pill pill-sky">🇪🇺 Daten bleiben in der EU</span>
+        <span class="pill pill-mint">🔒 Keine E-Mail für Kinder nötig</span>
+        <span class="pill pill-sun">🎧 Audio-first</span>
+      </div>
+    </div>
+
+    <div class="hero-art">
+      <div class="blob"><img src="assets/speak-gruppe.png" alt="SPEAK Kindergruppe"></div>
+
+      <a class="code-card" href="04-student-login.html">
+        <div class="code-top">
+          <div style="font-size:34px;">🧒</div>
+          <div style="flex:1;">
+            <div class="h3">Ich bin Schüler:in — meinen Code eingeben</div>
+            <div class="muted">Frag deine Lehrkraft nach deinem 6-stelligen Code</div>
+          </div>
+        </div>
+        <div class="code-bottom">
+          <div class="code-boxes">
+            <div>4</div><div>7</div><div>2</div><div>9</div><div>1</div><div>6</div>
+          </div>
+          <span class="btn btn-md btn-mint">Los ▶</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

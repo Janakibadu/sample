@@ -1,0 +1,239 @@
+/* ============================================================
+   SPEAK — gemeinsames Mockup-Theme
+   Nur nicht-funktionale Visual-Design-Referenz. Nicht das echte App-CSS.
+   ============================================================ */
+
+:root {
+  /* Leinwand (die "Figma-Seite" hinter jedem Artboard) */
+  --canvas: #ECEEF9;
+  --canvas-line: #D6D9EC;
+
+  /* Tinte */
+  --ink: #2B2D42;
+  --ink-soft: #6A6D89;
+  --ink-faint: #A2A5C0;
+
+  /* Markenakzente — hell, warm, etwas verspielt, nie grell-neon */
+  --sun: #FFC93C;
+  --sun-ink: #7A5A00;
+  --coral: #FF6B6B;
+  --coral-ink: #7A1F1F;
+  --mint: #06D6A0;
+  --mint-ink: #045C46;
+  --sky: #4CC9F0;
+  --sky-ink: #04465A;
+  --grape: #9B5DE5;
+  --grape-ink: #3E1F73;
+
+  /* Oberflächen */
+  --white: #FFFFFF;
+  --cream: #FFF9F0;
+  --app-bg: #EAF6FF;
+  --line: #E7E9F5;
+
+  --shadow-sm: 0 4px 10px rgba(43,45,66,.08);
+  --shadow-md: 0 12px 28px rgba(43,45,66,.12);
+  --shadow-lg: 0 24px 48px rgba(43,45,66,.16);
+
+  --font-fun: "Segoe UI Rounded", "Comic Sans MS", "Trebuchet MS", sans-serif;
+  --font-clean: "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --funder-bar-h: 140px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+/* ---- Seiten in voller Größe (echter Maßstab, keine verkleinerte Vorschau) ---- */
+body {
+  font-family: var(--font-clean);
+  color: var(--ink);
+  min-height: 100vh;
+  width: 100%;
+  /* reserves space so the fixed funder-bar never permanently covers content —
+     scrolling to the bottom of the page clears it */
+  padding-bottom: var(--funder-bar-h);
+}
+body.app { background: var(--app-bg); }
+body.app-student { background: var(--cream); }
+
+/* kleiner, dezenter Weg zurück zur Galerie — nicht Teil der Produkt-UI */
+.corner-nav {
+  position: fixed; top: 16px; left: 16px; z-index: 999;
+  background: rgba(43,45,66,.82); color: #fff; text-decoration: none;
+  font-family: var(--font-clean); font-size: 12px; font-weight: 700;
+  padding: 8px 14px; border-radius: 999px; box-shadow: var(--shadow-sm);
+  letter-spacing: .02em;
+}
+.back-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  text-decoration: none; color: var(--ink-soft); font-weight: 700; font-size: 13.5px;
+}
+
+.page { min-height: 100vh; display: flex; flex-direction: column; position: relative; }
+.page-row { min-height: 100vh; display: flex; position: relative; }
+
+/* ---- Sticker (Emoji, absolut positionierte Dekoration) ---- */
+.sticker {
+  position: absolute;
+  font-size: 40px;
+  filter: drop-shadow(0 6px 8px rgba(43,45,66,.15));
+  pointer-events: none;
+  line-height: 1;
+  user-select: none;
+}
+
+/* ---- Typografie ---- */
+.h1 { font-family: var(--font-fun); font-weight: 800; font-size: 30px; margin: 0; color: var(--ink); }
+.h2 { font-family: var(--font-fun); font-weight: 800; font-size: 22px; margin: 0; color: var(--ink); }
+.h3 { font-family: var(--font-fun); font-weight: 700; font-size: 17px; margin: 0; color: var(--ink); }
+.muted { color: var(--ink-soft); font-size: 14px; }
+.eyebrow {
+  font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* ---- Buttons ---- */
+.btn {
+  border: none; cursor: pointer; font-weight: 700; font-family: var(--font-clean);
+  border-radius: 999px; display: inline-flex; align-items: center; justify-content:center; gap: 8px;
+  white-space: nowrap; text-decoration: none;
+}
+.btn.disabled, a.btn.disabled { cursor: default; }
+.tile[href], a.tile { text-decoration: none; cursor: pointer; }
+.tile.locked { cursor: default; filter: grayscale(.15) brightness(.92); }
+.btn-md { height: 46px; padding: 0 22px; font-size: 14.5px; }
+.btn-lg { height: 68px; padding: 0 36px; font-size: 20px; font-family: var(--font-fun); }
+.btn-xl { height: 96px; padding: 0 44px; font-size: 26px; font-family: var(--font-fun); border-radius: 32px; }
+.btn-primary { background: var(--sky); color: var(--sky-ink); box-shadow: var(--shadow-sm); }
+.btn-coral { background: var(--coral); color: #fff; box-shadow: var(--shadow-sm); }
+.btn-mint { background: var(--mint); color: var(--mint-ink); box-shadow: var(--shadow-sm); }
+.btn-sun { background: var(--sun); color: var(--sun-ink); box-shadow: var(--shadow-sm); }
+.btn-ghost { background: #fff; color: var(--ink); border: 2px solid var(--line); }
+.btn-outline { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+.btn:disabled, .btn.disabled { opacity: .45; }
+
+/* ---- Karten / Oberflächen ---- */
+.card {
+  background: #fff; border-radius: 20px; padding: 20px; box-shadow: var(--shadow-sm);
+  border: 1px solid var(--line);
+}
+.pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 12px; border-radius: 999px; font-size: 12.5px; font-weight: 700;
+  text-decoration: none;
+}
+.pill-mint { background: rgba(6,214,160,.14); color: var(--mint-ink); }
+.pill-coral { background: rgba(255,107,107,.14); color: var(--coral-ink); }
+.pill-sun { background: rgba(255,201,60,.2); color: var(--sun-ink); }
+.pill-sky { background: rgba(76,201,240,.16); color: var(--sky-ink); }
+.pill-grape { background: rgba(155,93,229,.14); color: var(--grape-ink); }
+
+/* ---- Lehrkraft-App-Hülle ---- */
+.app-shell { display: flex; min-height: 100vh; }
+.sidebar {
+  width: 232px; flex: none; background: #fff; border-right: 1px solid var(--line);
+  padding: 22px 14px; display: flex; flex-direction: column; gap: 2px;
+}
+.brand {
+  display: flex; align-items: center; gap: 10px; padding: 6px 10px 22px;
+  font-family: var(--font-fun); font-weight: 800; font-size: 19px; color: var(--ink);
+}
+.logo-mark { height: 34px; width: auto; display: block; }
+.sidebar .logo-mark { align-self: center; }
+.brand .logo-badge {
+  width: 34px; height: 34px; border-radius: 10px; background: var(--sky);
+  display: flex; align-items: center; justify-content: center; font-size: 18px;
+}
+.nav-item {
+  padding: 11px 14px; border-radius: 13px; color: var(--ink-soft); font-weight: 600; font-size: 14.5px;
+  display: flex; align-items: center; gap: 10px; text-decoration: none;
+}
+.nav-item .ic { font-size: 17px; }
+.nav-item.active { background: var(--app-bg); color: var(--ink); }
+.nav-spacer { flex: 1; }
+.nav-foot { border-top: 1px solid var(--line); padding-top: 12px; margin-top: 8px; }
+
+.topbar {
+  height: 68px; border-bottom: 1px solid var(--line); background: #fff;
+  display: flex; align-items: center; justify-content: space-between; padding: 0 28px;
+}
+.avatar {
+  width: 38px; height: 38px; border-radius: 50%; background: var(--grape); color: #fff;
+  display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px;
+  text-decoration: none;
+}
+.main { flex: 1; padding: 28px 32px; }
+
+table.data { width: 100%; border-collapse: collapse; font-size: 14px; }
+table.data th {
+  text-align: left; font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--ink-faint); padding: 0 14px 10px; font-weight: 700;
+}
+table.data td { padding: 14px; background: #fff; border-top: 1px solid var(--line); }
+table.data tr td:first-child { border-radius: 12px 0 0 12px; }
+table.data tr td:last-child { border-radius: 0 12px 12px 0; }
+
+/* ---- Schüler:innen-App-Hülle ---- */
+.student-top {
+  height: 84px; display: flex; align-items: center; justify-content: space-between;
+  padding: 0 28px; background: rgba(255,255,255,.55);
+}
+.student-main { padding: 20px 36px 48px; }
+.tile {
+  border-radius: 26px; padding: 22px; box-shadow: var(--shadow-md); color: #fff;
+  display: flex; flex-direction: column; justify-content: space-between; min-height: 168px;
+  font-family: var(--font-fun);
+}
+.mic-btn {
+  width: 220px; height: 220px; border-radius: 50%; display:flex; align-items:center; justify-content:center;
+  box-shadow: var(--shadow-lg); font-size: 84px;
+}
+.progress-track { height: 16px; border-radius: 999px; background: rgba(43,45,66,.08); overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 999px; }
+
+.badge-corner {
+  position: absolute; top: 18px; right: 18px; z-index: 5;
+}
+
+/* ---- Modale (Dialoge, die über einer gedimmten App-Hülle schweben) ---- */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 500;
+  background: rgba(43,45,66,.32);
+  display: flex; align-items: center; justify-content: center;
+}
+.modal-card {
+  background: #fff; border-radius: 26px; padding: 34px 38px; box-shadow: var(--shadow-lg);
+  width: 460px; max-width: 90vw;
+}
+.modal-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.modal-close {
+  background: none; border: none; cursor: pointer; color: var(--ink-faint);
+  font-size: 22px; line-height: 1; padding: 2px;
+}
+.modal-sub { color: var(--ink-soft); font-size: 14px; margin: 8px 0 24px; line-height: 1.45; }
+.field-label { display: block; font-weight: 700; font-size: 13.5px; margin-bottom: 8px; color: var(--ink); }
+.field-input {
+  width: 100%; height: 54px; border-radius: 14px; border: 2px solid var(--sky);
+  padding: 0 18px; font-size: 16px; font-family: var(--font-clean); color: var(--ink);
+  margin-bottom: 26px; outline: none; background: #fff;
+}
+.modal-code { text-align: center; }
+.modal-code .code-big {
+  font-family: "Consolas", monospace; font-size: 42px; font-weight: 800;
+  letter-spacing: .06em; margin: 6px 0 26px; color: var(--ink);
+}
+.qr-mock { width: 220px; height: 220px; margin: 0 auto 30px; display: block; }
+.modal-actions { display: flex; gap: 12px; }
+.modal-actions .btn { flex: 1; }
+
+/* ---- Förderer-Logos (Funder logos), fixed full-width bottom banner on every mockup page ---- */
+.funder-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; width: 100%; z-index: 998;
+  display: flex; align-items: center; justify-content: center; gap: 40px;
+  background: rgba(255,255,255,.99); box-shadow: 0 -4px 14px rgba(43,45,66,.12);
+  padding: 16px 24px; flex-wrap: wrap;
+}
+.funder-bar img { display: block; height: 56px; width: auto; }
+.funder-bar img.funder-logo-bund { height: 100px; }
+.funder-bar img.funder-logo-tud { height: 36px; }
